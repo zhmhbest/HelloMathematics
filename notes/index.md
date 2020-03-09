@@ -2,7 +2,10 @@
 
 # 数学
 
-## [极限](.\极限\index.html)
+## [极限](./Limit/index.html)
 
-## 导数
+## 微分
 
+## 积分
+
+## [线代](./LinearAlgebra/index.html)
