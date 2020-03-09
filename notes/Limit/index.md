@@ -32,8 +32,8 @@ $$
 
 $\lim f(x)=A$、$\lim g(x)=B$
 
-- $\lim \left[ C_1 ⋅ f(x) ± C_2 ⋅ g(x) \right] = C_1A ± C_2B$
-- $\lim \left[ f(x) ⋅ g(x) \right] = AB$
+- $\lim [ C_1 ⋅ f(x) ± C_2 ⋅ g(x) ] = C_1A ± C_2B$
+- $\lim [ f(x) ⋅ g(x) ] = AB$
 - $\lim \dfrac{f(x)}{g(x)} = \dfrac{\lim f(x)}{\lim g(x)} = \dfrac{A}{B},\,(B≠0)$
 
 ## 数列的极限
@@ -57,8 +57,8 @@ $$
 
 $\lim x_n=A$、$\lim y_n=B$
 
-- $\lim \left( x_n ± y_n \right) = A ± B$
-- $\lim \left( x_n ⋅ y_n \right) = AB$
+- $\lim ( x_n ± y_n) = A ± B$
+- $\lim ( x_n ⋅ y_n) = AB$
 - $\lim \dfrac{x_n}{y_n} = \dfrac{A}{B},\,(y_n≠0)$
 
 ## 极限的性质
@@ -71,3 +71,14 @@ $\lim x_n=A$、$\lim y_n=B$
 
 - 单调有界准则
 - 夹逼准则
+
+## 函数连续性
+
+### 定义1
+
+$f(x)$在点$x_0$处连续$\,\,⇔\,\, \lim\limits_{Δx→0} Δy = \lim\limits_{Δx→0} [f(x_0+Δx)-f(x_0)] = 0$
+
+### 定义2
+
+$f(x)$在点$x_0$处连续$\,\,⇔\,\, \lim\limits_{x→x_0} f(x) = x_0$
+
