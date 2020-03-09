@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='../../style/index.css'>
 <script src='../../style/index.js'></script>
 
-# 线性代数
+# [线性代数](../index.html)
 
 [TOC]
 
