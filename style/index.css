@@ -57,6 +57,16 @@ html body h1:before {
     margin-right: 5px;
 }
 
+html body h1>a {
+    color:inherit;
+}
+html body h1>a:after {
+    content: '↵';
+    font-size: 80%;
+    font-weight:bold;
+    margin-left: 5px;
+}
+
 html body h2 {
     margin-left: 2%;
     margin-top: 40px;
