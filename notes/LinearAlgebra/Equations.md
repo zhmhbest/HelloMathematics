@@ -5,16 +5,14 @@
 
 ## 方程组与矩阵
 
-$
+$$
     \begin{cases}
         a_{11} ⋅ x_1 + a_{12} ⋅ x_2 + \cdots + a_{1n} ⋅ x_n = b_1
     \\  a_{21} ⋅ x_1 + a_{22} ⋅ x_2 + \cdots + a_{2n} ⋅ x_n = b_2
     \\ \cdots
     \\  a_{m1} ⋅ x_1 + a_{m2} ⋅ x_2 + \cdots + a_{mn} ⋅ x_n = b_m
     \end{cases}
-$
-
-$
+    ⇒
     \left[\begin{array}{c}
         a_{11} & a_{12} & \cdots & a_{1n}
     \\  a_{21} & a_{22} & \cdots & a_{2n}
@@ -25,7 +23,7 @@ $
     \left[\begin{array}{c} x_1 \\ x_2 \\ \vdots  \\ x_n \end{array}\right]
     =
     \left[\begin{array}{c} b_1 \\ b_2 \\ \vdots \\ b_m \end{array}\right]
-$
+$$
 
 $$Ax=b$$
 
