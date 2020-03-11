@@ -2,14 +2,16 @@
 
 # 数学
 
+## 数列
+
 ## [极限](./Limit/index.html)
 
-## 微分
+## 函数导数
 
-## 积分
+## 微分积分
 
-## [线代](./LinearAlgebra/index.html)
+## [线性代数](./LinearAlgebra/index.html)
 
 ## 概率论
 
-## [数据分析](./DataAnalysis/index.html)
+## [数值分析](./DataAnalysis/index.html)
