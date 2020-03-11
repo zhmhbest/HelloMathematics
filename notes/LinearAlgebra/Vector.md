@@ -9,7 +9,7 @@
 
 具有$n$个相互独立的维度的对象。
 
-**向量的模**：向量的长度。
+**向量的模**：向量的长度。记作$|\vec{a}|$或$\|\vec{a}\|$。
 
 **单位向量**：长度为1的向量。
 
@@ -24,4 +24,4 @@
 | **数乘** | $λ\vec{x}=(λx_1,\cdots,λx_n)^T$
 | **内积** | $\vec{x} \bullet \vec{y} = \vert\vec{x}\vert ⋅ \vert\vec{y}\vert \cosθ = x^Ty = y^Tx = x_1y_1 + x_2y_2 + \cdots + x_ny_n$
 | **外积** | $\vert\vec{a} ⋅ \vec{b}\vert = \vert\vec{a}\vert ⋅ \vert\vec{b}\vert \sinθ$
-| **模**   | $\|\vec{a}\| = \sqrt{\vec{a} \bullet \vec{a}} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$
+| **模**   | $\vert\vec{a}\vert = \|\vec{a}\| = \sqrt{\vec{a} \bullet \vec{a}} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$
