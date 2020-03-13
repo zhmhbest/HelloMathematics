@@ -7,8 +7,9 @@
 
 ## [第二章：线性方程组直接解法](./02-DirectSolutionOFLinearEquations.html)
 
+## [第三章：线性方程组迭代法](./03-IterativeMethodOFLinearEquations.html)
+
 <!--
-## [线性方程组迭代法](./03-线性方程组迭代法.html)
 
 ## [非线性方程求根](./04-非线性方程求根.html)
 
