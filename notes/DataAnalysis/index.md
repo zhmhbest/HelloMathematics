@@ -9,9 +9,9 @@
 
 ## [第三章：线性方程组迭代法](./03-IterativeMethodOFLinearEquations.html)
 
-<!--
+## [第四章：非线性方程求根](./04-SolutionOFNon-linearEquation.html)
 
-## [非线性方程求根](./04-非线性方程求根.html)
+<!--
 
 ## [插值逼近](./05-插值逼近.html)
 
