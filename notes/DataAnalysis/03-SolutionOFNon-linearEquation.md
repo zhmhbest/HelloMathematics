@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [非线性方程求根](./index.html)
+# [解非线性方程组](./index.html)
 
 [TOC]
 
