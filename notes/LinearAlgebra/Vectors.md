@@ -58,3 +58,36 @@ $$k_1a_1+k_2a_2+\dots+k_sa_s=0$$
 
 向量组$B$能由向量组$A$**线性表示**的充要条件为$r(A) = r(B)$。
 若$B$能被$A$线性表示的同时，$A$也能被$B$线性表示，则称$A$与$B$**等价**。
+
+## Schmidt正交化
+
+已知$\vec{α_1}$、$\vec{α_2}$、$\vec{α_3}$线性无关。
+
+$\vec{β_1} = \vec{α_1}$
+
+$\vec{β_2} = \vec{α_2} - 
+\dfrac{
+    \vec{α_2} \bullet \vec{β_1}
+}{
+    \vec{β_1} \bullet \vec{β_1}
+}\vec{β_1}$
+
+$\vec{β_3} = \vec{α_3} - 
+\dfrac{
+    \vec{α_3} \bullet \vec{β_1}
+}{
+    \vec{β_1} \bullet \vec{β_1}
+}\vec{β_1} - 
+\dfrac{
+    \vec{α_3} \bullet \vec{β_2}
+}{
+    \vec{β_2} \bullet \vec{β_2}
+}\vec{β_2}$
+
+则$\vec{β_1}$、$\vec{β_2}$、$\vec{β_3}$为正交向量组。
+
+$\vec{γ_1} = \dfrac{\vec{β_1}}{\|\vec{β_1}\|}$
+$\vec{γ_2} = \dfrac{\vec{β_2}}{\|\vec{β_2}\|}$
+$\vec{γ_3} = \dfrac{\vec{β_3}}{\|\vec{β_3}\|}$
+
+从$\vec{α_1}$、$\vec{α_2}$、$\vec{α_3}$到$\vec{γ_1}$、$\vec{γ_2}$、$\vec{γ_3}$即称为**Schmidt正交化**。
