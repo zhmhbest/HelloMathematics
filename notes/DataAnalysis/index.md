@@ -13,7 +13,7 @@
 
 ## [第三章：解非线性方程组](./03-SolutionOFNon-linearEquation.html)
 
-## [第四章：插值逼近](./.html)
+## [第四章：插值逼近](./04-Interpolation.html)
 
 ## [第五章：数值积分](./.html)
 
