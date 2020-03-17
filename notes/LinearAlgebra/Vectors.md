@@ -61,33 +61,33 @@ $$k_1a_1+k_2a_2+\dots+k_sa_s=0$$
 
 ## Schmidt正交化
 
-已知$\vec{α_1}$、$\vec{α_2}$、$\vec{α_3}$线性无关。
+已知$\vec{α}_1$、$\vec{α}_2$、$\vec{α}_3$线性无关。
 
-$\vec{β_1} = \vec{α_1}$
+$\vec{β}_1 = \vec{α}_1$
 
-$\vec{β_2} = \vec{α_2} - 
+$\vec{β}_2 = \vec{α}_2 - 
 \dfrac{
-    \vec{α_2} \bullet \vec{β_1}
+    \vec{α}_2 \bullet \vec{β}_1
 }{
-    \vec{β_1} \bullet \vec{β_1}
-}\vec{β_1}$
+    \vec{β}_1 \bullet \vec{β}_1
+}\vec{β}_1$
 
-$\vec{β_3} = \vec{α_3} - 
+$\vec{β}_3 = \vec{α}_3 - 
 \dfrac{
-    \vec{α_3} \bullet \vec{β_1}
+    \vec{α}_3 \bullet \vec{β}_1
 }{
-    \vec{β_1} \bullet \vec{β_1}
-}\vec{β_1} - 
+    \vec{β}_1 \bullet \vec{β}_1
+}\vec{β}_1 - 
 \dfrac{
-    \vec{α_3} \bullet \vec{β_2}
+    \vec{α}_3 \bullet \vec{β}_2
 }{
-    \vec{β_2} \bullet \vec{β_2}
-}\vec{β_2}$
+    \vec{β}_2 \bullet \vec{β}_2
+}\vec{β}_2$
 
-则$\vec{β_1}$、$\vec{β_2}$、$\vec{β_3}$为正交向量组。
+则$\vec{β}_1$、$\vec{β}_2$、$\vec{β}_3$为正交向量组。
 
-$\vec{γ_1} = \dfrac{\vec{β_1}}{\|\vec{β_1}\|}$
-$\vec{γ_2} = \dfrac{\vec{β_2}}{\|\vec{β_2}\|}$
-$\vec{γ_3} = \dfrac{\vec{β_3}}{\|\vec{β_3}\|}$
+$\vec{γ}_1 = \dfrac{\vec{β}_1}{\|\vec{β}_1\|}$
+$\vec{γ}_2 = \dfrac{\vec{β}_2}{\|\vec{β}_2\|}$
+$\vec{γ}_3 = \dfrac{\vec{β}_3}{\|\vec{β}_3\|}$
 
-从$\vec{α_1}$、$\vec{α_2}$、$\vec{α_3}$到$\vec{γ_1}$、$\vec{γ_2}$、$\vec{γ_3}$即称为**Schmidt正交化**。
+从$\vec{α}_1$、$\vec{α}_2$、$\vec{α}_3$到$\vec{γ}_1$、$\vec{γ}_2$、$\vec{γ}_3$即称为**Schmidt正交化**。
