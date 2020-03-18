@@ -6,9 +6,7 @@
 
 [TOC]
 
-## <span style="color:LimeGreen">定义</span>
-
-### 插值
+## <span style="color:LimeGreen">插值</span>
 
 设函数$y=f(x)$在区间$[a, b]$上连续，给定$n+1$个节点（$a < x_0 < x_1 < \cdots < x_n < b$，不一定均分），在函数类$P$中寻找$φ(x)$作为$f(x)$的近似表达，使其满足
 
@@ -20,19 +18,6 @@ $$φ(x_k)=f(x_k)=y_k, \,\,\, k=0,1,2,\cdots,n$$
 
 函数类$P$的不同选取对应不同的插值方法。
 满足插值条件的多项式$P_n(x)$存在且唯一。
-
-### 差商
-
-- **一阶差商**：$f[x_0, x_k] = \dfrac{f(x_k)-f(x_0)}{x_k-x_0}$
-- **二阶差商**：$f[x_0, x_1, x_k] = \dfrac{f[x_1, x_k]-f[x_0, x_1]}{x_k-x_0}$
-- **$K$阶差商（均差）**：$f[x_0, \cdots, x_k] = \dfrac{f[x_1, \cdots, x_k]-f[x_0, \cdots, x_{k-1}]}{x_k-x_0}$
-
-**性质**
-
-- $f[x_0, \cdots, x_k] = \sum\limits_{j=0}^{k} \dfrac{f(x_j)}{(x_j-x_0)\cdots(x_j-x_{j-1})(x_j-x_{j+1})(x_j-x_k)}$
-- 差商的值与节点的排列次序无关
-- $f[x_0,\cdots,x_k] = \dfrac{f^{(k)}(ξ)}{k!}, \,\,\, ξ∈[a,b]$
-
 
 ## <span style="color:LimeGreen">拉格朗日（Lagrange）插值</span>
 
