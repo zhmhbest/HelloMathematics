@@ -1,5 +1,6 @@
-<link rel='stylesheet' href='../style.css'>
-<script src='../style.js'></script>
+<link rel='stylesheet' href='../../style/index.css'>
+<script src='../../style/index.js'></script>
+
 
 # [常微分方程的数值解法](./index.html)
 
