@@ -15,3 +15,5 @@
 ## 概率论
 
 ## [数值分析](./DataAnalysis/index.html)
+
+## [运筹学](./OperationsResearch/index.html)
