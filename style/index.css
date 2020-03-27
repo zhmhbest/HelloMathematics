@@ -167,16 +167,23 @@ html body table th {
     color: #ccc;
 }
 
-/* 【流程图 边框,填充 颜色】 */
-html body svg rect.flowchart {
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+/* 【流程图 Flowchart】 */
+
+/* 【流程图 Start End Inputoutput Operation Subroutine 颜色】 */
+html body div.flow svg rect {
     stroke: #AAA;
     fill: #555;
 }
-/* 【流程图 文字 颜色】 */
-html body svg text.flowchartt {
-    fill: #EEE;
-}
-/* 【流程图 路径 颜色】 */
-html body svg path {
+
+/* 【流程图 Path 颜色】 */
+html body div.flow svg path {
     stroke: #AAA;
+    fill: #555;
+}
+
+/* 【流程图 Text 颜色】 */
+html body div.flow svg text {
+    fill: #EEE;
 }
