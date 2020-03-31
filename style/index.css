@@ -177,10 +177,14 @@ html body div.flow svg rect {
     fill: #555;
 }
 
+/* 【流程图 Condition 颜色】 */
+html body div.flow svg path.flowchart {
+    fill: #555;
+}
+
 /* 【流程图 Path 颜色】 */
 html body div.flow svg path {
     stroke: #AAA;
-    fill: #555;
 }
 
 /* 【流程图 Text 颜色】 */

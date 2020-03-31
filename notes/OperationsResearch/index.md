@@ -3,7 +3,15 @@
 
 # [运筹学](../index.html)
 
-## [第一章：线性规划](./LinearProgramming.html)
+## 第一章：线性规划
+
+### [导论](./LinearProgramming/Introduction.html)
+
+### [单纯形](./LinearProgramming/Simplex.html)
+
+### [对偶理论](./LinearProgramming/Duality.html)
+
+### [灵敏度分析](./LinearProgramming/Sensitivity.html)
 
 ## 第二章：整数规划
 
