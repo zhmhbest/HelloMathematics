@@ -114,6 +114,16 @@ html body h4 {
     color: #AADDDD;
 }
 
+/* 【粗体标题】
+html body p>strong {
+    font-size: 120%
+}
+html body p>strong:before {
+    content:"✿";
+    font-size: 80%;
+}
+*/
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 
@@ -148,17 +158,23 @@ html body {
 
 /* 【粗体 颜色】 */
 html body strong {
-    color: #eee
+    color: #eee;
+}
+
+/* 【代码 颜色】 */
+html body code {
+    background-color: #666;
+    color: #f0f0f0;
 }
 
 /* 【引用 颜色】 */
 html body blockquote {
     background-color: #444;
-    color: #666;
+    color: #888;
 }
 /* 【引用 粗体 颜色】 */
 html body blockquote strong {
-    color: #aaa;
+    color: #bbb;
 }
 
 /* 【表格 标题 颜色】 */

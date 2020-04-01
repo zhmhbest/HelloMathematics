@@ -17,6 +17,8 @@
 
 ## 第三章：非线性规划
 
+### [导论](./Non-LinearProgramming/Introduction.html)
+
 ### [无约束问题](./Non-LinearProgramming/Unconstrained.html)
 
 ### [约束极值问题](./Non-LinearProgramming/Constrained.html)
