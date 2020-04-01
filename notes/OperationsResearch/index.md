@@ -15,7 +15,11 @@
 
 ## 第二章：整数规划
 
-## [第三章：非线性规划](./Non-LinearProgramming.html)
+## 第三章：非线性规划
+
+### [无约束问题](./Non-LinearProgramming/Unconstrained.html)
+
+### [约束极值问题](./Non-LinearProgramming/Constrained.html)
 
 ## [第四章：动态规划](./DynamicProgramming.html)
 
