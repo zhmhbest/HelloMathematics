@@ -4,11 +4,13 @@
 
 ## 数列
 
-## [极限](./Limit/index.html)
+## 函数
 
-## [函数导数](./Derivative/index.html)
+### [极限](./Function/Limit.html)
 
-## 微分积分
+### [导数](./Function/Derivative.html)
+
+### 微积分
 
 ## [线性代数](./LinearAlgebra/index.html)
 
