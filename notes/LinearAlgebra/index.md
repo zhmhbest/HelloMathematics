@@ -15,4 +15,4 @@
 
 ## [方程组](./Equations.html)
 
-## 二次型
+## [二次型](./QuadraticForm.html)
