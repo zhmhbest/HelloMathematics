@@ -36,11 +36,11 @@ $y = y(x)$
 $
 - $y''(x)
     = \dfrac{
-        {\rm d} (\dfrac{{\rm d}y}{{\rm d}x})
+        {\rm d} (\dfrac{ {\rm d} y}{{\rm d}x})
     }{
         {\rm d}x
     } = 
-    \dfrac{{\rm d}^2y}{{\rm d}x^2}
+    \dfrac{{\rm d}^2y}{ {\rm d}x^2}
 $
 - $x'(y)
     = \dfrac{
@@ -52,7 +52,7 @@ $
 $
 - $x''(y)
     = \dfrac{
-        {\rm d} (\dfrac{{\rm d}x}{{\rm d}y})
+        {\rm d} (\dfrac{ {\rm d}x}{{\rm d}y})
     }{
         {\rm d}y
     }
