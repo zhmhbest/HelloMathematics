@@ -19,3 +19,5 @@
 ## [数值分析](./DataAnalysis/index.html)
 
 ## [运筹学](./OperationsResearch/index.html)
+
+## [机器学习](./MachineLearning/index.html)
