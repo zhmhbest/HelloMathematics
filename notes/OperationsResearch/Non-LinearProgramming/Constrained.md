@@ -7,16 +7,16 @@
 
 >大多数极值问题其变量的取值都会受到一定限制，这种限制由约束条件（$h_i$、$g_j$）来体现。
 >$$
-\begin{cases}
-    \min f(x)
-\\  h_i(x) = 0, i=1,2,\cdots,m
-\\  g_j(x) ≥ 0, j=1,2,\cdots,l
-\end{cases}
+    \begin{cases}
+        \min f(x)
+    \\  h_i(x) = 0, i=1,2,\cdots,m
+    \\  g_j(x) ≥ 0, j=1,2,\cdots,l
+    \end{cases}
 >$$ 或 $$
-\begin{cases}
-    \min f(x) & x∈R⊂E_n
-\\  R = \{ x | g_j(x) ≥ 0, j=1,2,\cdots,l \}
-\end{cases}
+    \begin{cases}
+        \min f(x) & x∈R⊂E_n
+    \\  R = \{ x | g_j(x) ≥ 0, j=1,2,\cdots,l \}
+    \end{cases}
 >$$
 
 
@@ -108,6 +108,136 @@ $
 
 ## 制约函数法
 
-### 外点法 
+### 外点法（惩罚函数）
 
-### 内点法
+构造函数$ψ(t) = \begin{cases}
+    0 & t>0
+\\  ∞ & t<0
+\end{cases}$，显然有$ψ[g_j(x)] = \begin{cases}
+    0 & x∈R
+\\  ∞ & x∉R
+\end{cases}$
+
+再构造函数$φ(x) = f(x) + \sum\limits_{j=1}^{l} ψ[g_j(x)]$，这样一来，就把有约束问题的求解化成了求解无约束问题
+
+$$\min \ φ(x)$$
+
+上述$ψ(t)$在$t=0$处不连续，没有导数。故重新构造$ψ(t) = \begin{cases}
+    0   & t≥0
+\\  t^2 & t<0
+\end{cases}$，则有$\sum\limits_{j=1}^{l} ψ[g_j(x)] \begin{cases}
+    =0       & x∈R
+\\  ∈(0, ∞) & x∉R
+\end{cases}$
+
+取$M>0$（$M$充分大），重新构造$φ(x)$为$P(x,M) = f(x) + M\sum\limits_{j=1}^{l} ψ[g_j(x)]$，即
+
+$$P(x,M) = f(x) + M\sum\limits_{j=1}^{l} [ \min (0,g_j(x)) ]^2$$
+
+$\min P(x, M)$得解$x(M)$即为原问题的极小解或近似极小解。函数$P(x, M)$称为**惩罚函数**，$M\sum\limits_{j=1}^{l} ψ[g_j(x)]$称为**惩罚项**，$M$称为**惩罚因子**。
+
+![](./images/PenaltyFactor.png)
+
+随着$M$得增加惩罚函数中的惩罚项所起的作用随之增大。
+
+#### 例
+
+$
+    \begin{cases}
+        \min f(x) = x_1 + x_2
+    \\  g_1(x) = -x_1^2 + x_2 ≥ 0
+    \\  g_2(x) = x_1 ≥ 0
+    \end{cases}
+$
+
+**解**
+
+从$
+    \begin{cases}
+        -x_1^2 + x_2 < 0
+    \\  x_1 < 0
+    \end{cases}
+$构造，从外侧趋近，即外点法。
+
+构造$P(x,M) = x_1 + x_2 + M\left\{ 
+    [ \min (0, (-x_1^2 + x_2)) ]^2 +
+    [ \min (0, x_1) ]^2
+\right\}$
+
+- $\dfrac{∂P}{∂x_1} = 1 + 2M\left\{
+    (-x_1^2 + x_2)(-2x_1) +
+    x_1
+\right\}$
+- $\dfrac{∂P}{∂x_2} = 1 + 2M\left\{ 
+    (-x_1^2 + x_2)
+\right\}$
+
+令$\dfrac{∂P}{∂x_1} = \dfrac{∂P}{∂x_2} = 0$，得$\min P(x, M)$得解
+
+$$x(M) = \left[\begin{matrix}
+        \dfrac{-1}{2(1+M)}
+    \\  \dfrac{1}{4(1+M)^2} - \dfrac{1}{2M}
+\end{matrix}\right]$$
+
+$
+    M = \begin{cases}
+        1 ⇒ x=\left[ {-\dfrac{1}{4}, -\dfrac{7}{16}} \right]^T
+    \\  2 ⇒ x=\left[ {-\dfrac{1}{6}, -\dfrac{2}{9}} \right]^T
+    \\  3 ⇒ x=\left[ {-\dfrac{1}{8}, -\dfrac{29}{192}} \right]^T
+    \\  4 ⇒ x=\left[ {-\dfrac{1}{10}, -\dfrac{23}{200}} \right]^T
+    \end{cases}
+$
+
+综上，当$M→∞$时，$x(M)→[0, 0]^T$，即$x_{min}=[0, 0]^T$。
+
+### 内点法（障碍函数）
+
+如果要求每次迭代得到的近似解都在可行域内，以便观察目标函数值的变化情况；或者，如果$f(x)$在可行域外的性质比较复杂，甚至没有定义，这时就无法使用外点法。
+
+当越接近边界时，惩罚越大。
+
+$$\begin{matrix}
+        \bar{P}(x, r_k) = f(x) + r_k\sum\limits_{j=1}^{l} \dfrac{1}{g_j(x)}
+    &   r_k>0
+\end{matrix}$$
+
+或
+
+$$\begin{matrix}
+        \bar{P}(x, r_k) = f(x) - r_k\sum\limits_{j=1}^{l} \log[g_j(x)]
+    &   r_k>0
+\end{matrix}$$
+
+$r_k\sum\limits_{j=1}^{l} \dfrac{1}{g_j(x)}$ 或 $-r_k\sum\limits_{j=1}^{l} \log[g_j(x)]$称为**障碍项**。
+
+#### 例
+
+$
+    \begin{cases}
+        \min f(x) = \dfrac{1}{3}(x_1+1)^3 + x_2
+    \\  g_1(x) = x_1 - 1 ≥ 0
+    \\  g_2(x) = x_2 ≥ 0
+    \end{cases}
+$
+
+构造障碍函数$\bar{P}(x, r_k) = 
+    \dfrac{1}{3}(x_1+1)^3 + x_2 +
+    \dfrac{r}{x_1-1} + 
+    \dfrac{r}{x_2}
+$
+
+- $\dfrac{∂\bar{P}}{∂x_1} = (x_1+1)^2 - \dfrac{r}{(x_1-1)^2}$
+- $\dfrac{∂\bar{P}}{∂x_2} = 1 - \dfrac{r}{{x_2}^2}$
+
+令$\dfrac{∂\bar{P}}{∂x_1}=0$、$\dfrac{∂\bar{P}}{∂x_2}=0$，得
+
+$$
+    \begin{cases}
+        x_1(r) = \sqrt{1 + \sqrt{r}}
+    \\  x_2(r) = \sqrt{r}
+    \end{cases}
+$$
+
+综上$x_{min} = \lim\limits_{r→0} \left[\begin{matrix}
+    \sqrt{1 + \sqrt{r}} \\ \sqrt{r}
+\end{matrix}\right] = [1, 0]^T$
