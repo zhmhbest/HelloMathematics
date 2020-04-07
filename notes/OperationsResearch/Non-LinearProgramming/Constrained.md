@@ -226,8 +226,8 @@ $
     \dfrac{r}{x_2}
 $
 
-- $\dfrac{∂\bar{P}}{∂x_1} = (x_1+1)^2 - \dfrac{r}{(x_1-1)^2}$
-- $\dfrac{∂\bar{P}}{∂x_2} = 1 - \dfrac{r}{{x_2}^2}$
+- $\dfrac{∂\bar{P}}{∂x_1} = (x_1+1)^2 - \dfrac{r}{ (x_1-1)^2 }$
+- $\dfrac{∂\bar{P}}{∂x_2} = 1 - \dfrac{r}{ {x_2}^2 }$
 
 令$\dfrac{∂\bar{P}}{∂x_1}=0$、$\dfrac{∂\bar{P}}{∂x_2}=0$，得
 
