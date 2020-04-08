@@ -5,11 +5,6 @@
 
 [TOC]
 
->- $m$：样本数
->- $f(x_i)$：预测值
->- $y_i$：真实值
->- $Ⅱ(.)$：$Ⅱ(true)=1$、$Ⅱ(false)=0$
-
 ## 拟合
 
 ### 过拟合（Overfitting）
@@ -38,7 +33,7 @@
 
 ### 均方误差（Mean squared error）
 
-$$E = \dfrac{ \sum\limits_{i=1}^{m} [f(x_i) - y_i]^2 }{m}$$
+$$MSE(f, y) = \dfrac{ \sum\limits_{i=1}^{m} [f(x_i) - y_i]^2 }{m}$$
 
 回归任务最常用的性能度量方法。
 
