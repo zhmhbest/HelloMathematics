@@ -6,3 +6,5 @@
 ## [导论](./Introduction.html)
 
 ## [模型评估](./Evaluation.html)
+
+## [线性模型](./LinearModel.html)
