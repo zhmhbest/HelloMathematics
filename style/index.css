@@ -18,7 +18,8 @@
 
 /* 【内容 缩进】 */
 html body h1~*,html body h2~*,html body h3~*,html body h4~* {
-    margin-left: 8%
+    margin-left: 8%;
+    width: auto;
 }
 
 /* 【引用 缩进】 */
@@ -33,11 +34,6 @@ html body h3~blockquote {
 }
 html body h4~blockquote {
     margin-left: 6%;
-}
-
-/* 【解决表格缩进后打印异常】 */
-html body table {
-    width: auto;
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
