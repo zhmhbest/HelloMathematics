@@ -1,0 +1,369 @@
+<!DOCTYPE html><html><head>
+      <title>NeuralNetwork</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.7.0/flowchart.min.js"></script>
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <link rel="stylesheet" href="../../style/index.css">
+<script src="../../style/index.js"></script>
+<h1 class="mume-header" id="%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cindexhtml"><a href="./index.html">&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF1A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</a></h1>
+
+<ul>
+<li><a href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cindexhtml">&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF1A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">&#x57FA;&#x672C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</a>
+<ul>
+<li><a href="#m-p%E7%A5%9E%E7%BB%8F%E5%85%83">M-P&#x795E;&#x7ECF;&#x5143;</a></li>
+<li><a href="#%E6%84%9F%E7%9F%A5%E6%9C%BAperceptron">&#x611F;&#x77E5;&#x673A;&#xFF08;Perceptron&#xFF09;</a></li>
+<li><a href="#%E9%9A%90%E8%97%8F%E5%B1%82">&#x9690;&#x85CF;&#x5C42;</a></li>
+<li><a href="#%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cmulti-layer-feedforward-neural">&#x591A;&#x5C42;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Multi-layer Feedforward Neural&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%AF%E5%B7%AE%E9%80%86%E4%BC%A0%E6%92%ADerrorbackpropagation">&#x8BEF;&#x5DEE;&#x9006;&#x4F20;&#x64AD;&#xFF08;errorBackPropagation&#xFF09;</a>
+<ul>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E5%80%BC">&#x6700;&#x5C0F;&#x503C;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">&#x57FA;&#x672C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</h2>
+
+<h3 class="mume-header" id="m-p%E7%A5%9E%E7%BB%8F%E5%85%83">M-P&#x795E;&#x7ECF;&#x5143;</h3>
+
+<p><img src="./images/neuron.png" alt></p>
+<h3 class="mume-header" id="%E6%84%9F%E7%9F%A5%E6%9C%BAperceptron">&#x611F;&#x77E5;&#x673A;&#xFF08;Perceptron&#xFF09;</h3>
+
+<p>&#x7531;&#x4E24;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x7EC4;&#x6210;&#xFF0C;&#x8F93;&#x51FA;&#x5C42;&#x662F;M-P&#x795E;&#x7ECF;&#x5143;&#xFF0C;&#x4EC5;&#x6709;&#x8F93;&#x51FA;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x8FDB;&#x884C;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x5904;&#x7406;&#x3002;</p>
+<p><img src="./images/perceptron.png" alt></p>
+<p>&#x611F;&#x77E5;&#x673A;&#x6A21;&#x578B;&#x4EC5;&#x80FD;&#x89E3;&#x51B3;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x53EF;&#x5212;&#x5206;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x611F;&#x77E5;&#x673A;&#x6A21;&#x578B;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x5F02;&#x6216;&#x95EE;&#x9898;&#x3002;</p>
+<p><img src="./images/linearly_separable.png" alt></p>
+<h3 class="mume-header" id="%E9%9A%90%E8%97%8F%E5%B1%82">&#x9690;&#x85CF;&#x5C42;</h3>
+
+<p>&#x8F93;&#x5165;&#x5C42;&#x4E0E;&#x8F93;&#x51FA;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x5C42;&#x795E;&#x7ECF;&#x5143;&#x79F0;&#x4E3A;<strong>&#x9690;&#x85CF;&#x5C42;&#xFF08;&#x9690;&#x542B;&#x5C42;&#xFF0C;Hidden Layer&#xFF09;</strong>&#x3002;&#x9690;&#x85CF;&#x5C42;&#x548C;&#x8F93;&#x51FA;&#x5C42;&#x90FD;&#x6709;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x5904;&#x7406;&#x3002;</p>
+<p><img src="./images/network1.png" alt></p>
+<p>&#x4EE5;&#x4E0A;&#x591A;&#x5C42;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x5F02;&#x6216;&#x95EE;&#x9898;&#x3002;</p>
+<h3 class="mume-header" id="%E5%A4%9A%E5%B1%82%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cmulti-layer-feedforward-neural">&#x591A;&#x5C42;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF08;Multi-layer Feedforward Neural&#xFF09;</h3>
+
+<p><img src="./images/network2.png" alt></p>
+<h2 class="mume-header" id="%E8%AF%AF%E5%B7%AE%E9%80%86%E4%BC%A0%E6%92%ADerrorbackpropagation">&#x8BEF;&#x5DEE;&#x9006;&#x4F20;&#x64AD;&#xFF08;errorBackPropagation&#xFF09;</h2>
+
+<p>BP&#x7B97;&#x6CD5;&#x57FA;&#x4E8E;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF08;Gradient Descent&#xFF09;&#x7B56;&#x7565;&#xFF0C;&#x4EE5;&#x76EE;&#x6807;&#x7684;&#x8D1F;&#x68AF;&#x5EA6;&#x65B9;&#x5411;&#x5BF9;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">&#x394;</mi><msub><mi>w</mi><mrow><mi>h</mi><mi>j</mi></mrow></msub><mo>=</mo><mo>&#x2212;</mo><mi>&#x3B7;</mi><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><msub><mi>E</mi><mi>k</mi></msub></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><msub><mi>w</mi><mrow><mi>h</mi><mi>j</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">&#x394;w_{hj} = -&#x3B7;\dfrac{&#x2202;E_k}{&#x2202;w_{hj}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord">&#x394;</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.343548em;vertical-align:-0.972108em;"></span><span class="mord">&#x2212;</span><span class="mord mathdefault" style="margin-right:0.03588em;">&#x3B7;</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">&#x2202;</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.972108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B7;</mi></mrow><annotation encoding="application/x-tex">&#x3B7;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">&#x3B7;</span></span></span></span>&#xFF1A;&#x5B66;&#x4E60;&#x7387;&#xFF0C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3B7;</mi><mo>&#x2208;</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">&#x3B7;&#x2208;(0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">&#x3B7;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2208;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>&#xFF0C;&#x8FC7;&#x5927;&#x65F6;&#x5BB9;&#x6613;&#x53D1;&#x751F;&#x9707;&#x8361;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">E_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>&#xFF1A;&#x7B2C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>&#x8F6E;&#x8BAD;&#x7EC3;&#x540E;&#x7684;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>h</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{hj}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">h</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>&#xFF1A;&#x4E0A;&#x4E00;&#x5C42;&#x7B2C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span>&#x4E2A;&#x795E;&#x7ECF;&#x5143;&#x4E0E;&#x4E0B;&#x4E00;&#x5C42;&#x7B2C;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>&#x4E2A;&#x795E;&#x7ECF;&#x5143;&#x7684;&#x8FDE;&#x63A5;&#x6743;</li>
+</ul>
+<h3 class="mume-header" id="%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h3>
+
+<div class="flow">st=&gt;start: &#x5F00;&#x59CB;
+init=&gt;operation: &#x521D;&#x59CB;&#x5316;&#x8FDE;&#x63A5;&#x6743;&#x548C;&#x9608;&#x503C;
+input=&gt;inputoutput: &#x8F93;&#x5165;&#xFF1A;&#x8BAD;&#x7EC3;&#x96C6;&#x3001;&#x5B66;&#x4E60;&#x7387;
+sub1=&gt;operation: &#x524D;&#x5411;&#x4F20;&#x64AD;&#xFF1A;&#x8BA1;&#x7B97;&#x8F93;&#x51FA;&#x503C;&#x3001;&#x8BEF;&#x5DEE;
+sub2=&gt;operation: &#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF1A;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x9876;&#xFF0C;&#x66F4;&#x65B0;&#x8FDE;&#x63A5;&#x6743;&#x548C;&#x9608;&#x503C;
+isend=&gt;condition: &#x6EE1;&#x8DB3;&#x8BAD;&#x7EC3;&#x6B21;&#x6570; Or &#x6EE1;&#x8DB3;&#x6B63;&#x786E;&#x7387;
+output=&gt;inputoutput:  &#x8F93;&#x51FA;&#xFF1A;&#x8FDE;&#x63A5;&#x6743;&#x548C;&#x9608;&#x503C;
+ed=&gt;end: &#x7ED3;&#x675F;
+
+st-&gt;init-&gt;input
+input-&gt;sub1-&gt;isend
+isend(no)-&gt;sub2-&gt;sub1
+isend(yes)-&gt;output-&gt;ed
+</div><h2 class="mume-header" id="%E6%9C%80%E5%B0%8F%E5%80%BC">&#x6700;&#x5C0F;&#x503C;</h2>
+
+<p>&#x5728;&#x4F7F;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x65F6;&#xFF0C;&#x5F88;&#x53EF;&#x80FD;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x6781;&#x5C0F;&#x503C;&#x3002;</p>
+<p><img src="./images/minimum.png" alt></p>
+<p>&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x8DF3;&#x51FA;&#x5C40;&#x90E8;&#x6781;&#x5C0F;&#x503C;&#x7684;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x53C2;&#x6570;&#x503C;&#x521D;&#x59CB;&#x5316;&#x591A;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x53D6;&#x5176;&#x4E2D;&#x8BEF;&#x5DEE;&#x6700;&#x5C0F;&#x7684;&#x89E3;&#x4F5C;&#x4E3A;&#x6700;&#x7EC8;&#x53C2;&#x6570;&#x3002;</li>
+<li><strong>&#x6A21;&#x62DF;&#x9000;&#x706B;&#x6280;&#x672F;</strong>&#xFF1A;&#x6BCF;&#x4E00;&#x6B65;&#x90FD;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x6982;&#x7387;&#x63A5;&#x53D7;&#x6B21;&#x4F18;&#x89E3;&#xFF0C;&#x968F;&#x7740;&#x6B65;&#x6570;&#x589E;&#x52A0;&#x8BE5;&#x6982;&#x7387;&#x9010;&#x6E10;&#x4E0B;&#x964D;&#x3002;</li>
+<li><strong>&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;</strong>&#xFF1A;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x65F6;&#x52A0;&#x5165;&#x968F;&#x673A;&#x56E0;&#x7D20;&#xFF0C;&#x5373;&#x4FBF;&#x9677;&#x5165;&#x5C40;&#x90E8;&#x6781;&#x5C0F;&#x70B9;&#xFF0C;&#x5176;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x7684;&#x68AF;&#x5EA6;&#x503C;&#x4E5F;&#x4E0D;&#x4E3A;0&#xFF0C;&#x4F7F;&#x5176;&#x6709;&#x53EF;&#x80FD;&#x8DF3;&#x51FA;&#x7EE7;&#x7EED;&#x641C;&#x7D22;&#x3002;</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    <script>
+var flowcharts = document.getElementsByClassName('flow')
+for (var i = 0; i < flowcharts.length; i++) {
+  var flow = flowcharts[i]
+  try {
+    var diagram = flowchart.parse(flow.textContent)
+    flow.id = 'flow_' + i
+    flow.innerHTML = ''
+    diagram.drawSVG(flow.id)
+  } catch (error) {
+    flow.innerHTML = '<pre class="language-text">' + error.toString() + '</pre>'
+  }
+}
+</script>
+    
+    
+  
+    </body></html>
