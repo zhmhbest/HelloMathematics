@@ -23,3 +23,4 @@
 
 ## [神经网络](./NeuralNetwork.html)
 
+## [支持向量机](./SVM.html)
