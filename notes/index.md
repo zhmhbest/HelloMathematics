@@ -20,4 +20,6 @@
 
 ## [运筹学](./OperationsResearch/index.html)
 
+## [矩阵论](./MatrixTheory/index.html)
+
 ## [机器学习](./MachineLearning/index.html)
