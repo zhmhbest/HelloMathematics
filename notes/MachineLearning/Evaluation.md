@@ -23,7 +23,7 @@
 
 ### 交叉验证法（Cross Validation）
 
-![](./images/cross_validation.png)
+![](./images/e_CrossValidation.png)
 
 ### 自助法（Bootstrapping）
 
@@ -75,7 +75,7 @@ $$Recall = \dfrac{TP}{True} = \dfrac{TP}{TP + FN}$$
 #### 平衡点（BEP，Break-Even Point）
 
 查准率和查全率是一对矛盾的变量，平衡点就是查准率等于查全率时的取值。
-![](./images/precision_recall.png)
+![](./images/e_BEP.png)
 
 #### $F_1$
 
@@ -122,7 +122,7 @@ ROC（Receiver Operating Characteristic，受试者工作特征）曲线纵轴�
 - $TPR = \dfrac{TP}{True} = \dfrac{TP}{TP + FN}$
 - $FPR = \dfrac{FP}{False} = \dfrac{FP}{FP + TN} $
 
-![](./images/ROC_AUC.png)
+![](./images/e_ROC_AUC.png)
 
 “**AUC（Area Under Curve）**”为ROC曲线所覆盖的区域面积。AUC越大，分类器分类效果越好。
 
@@ -137,7 +137,7 @@ ROC（Receiver Operating Characteristic，受试者工作特征）曲线纵轴�
 
 在非均等代价下ROC曲线不能反映出学习器的期望总体代价。
 
-![](./images/cost2.png)
+![](./images/e_cost2.png)
 
 ### 代价敏感（Cost-Sensitive）错误率
 
@@ -171,7 +171,7 @@ $cost_{norm} = \dfrac{
 - $FNR = \dfrac{FN}{True}$
 - $FPR = \dfrac{FP}{False}$
 
-![](./images/Cost_Curve.png)
+![](./images/e_CostCurve.png)
 
 ## 比较检验
 
@@ -196,8 +196,8 @@ $$ε^2 = \dfrac{
     \sum\limits_{i=1}^{m} {bias_i}^2
  }{m}$$
 
- ### 偏差方差窘境
+ ### 偏差方差窘境（Bias-Variance Dilemma）
 
  一般来说，偏差与方差是有冲突的，假定我们能控制学习算法的训练程度，则在训练不足时，学习器的拟合能力不够强，训练数据的扰动不足以使学习器产生显著变化，此时偏差主导了泛化错误率；随着训练程度的加深，学习器的拟合能力逐渐增强，训练数据发生的扰动渐渐能被学习器学到，方差逐渐主导了泛化错误率。
 
- ![](./images/bias_variance_dilemma.png)
+ ![](./images/e_BVD.png)
