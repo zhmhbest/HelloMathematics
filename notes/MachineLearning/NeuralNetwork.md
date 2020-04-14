@@ -9,29 +9,29 @@
 
 ### M-P神经元
 
-![](./images/neuron.png)
+![](./images/nn_mp.png)
 
 ### 感知机（Perceptron）
 
 由两层神经元组成，输出层是M-P神经元，仅有输出层神经元进行激活函数处理。
 
-![](./images/perceptron.png)
+![](./images/nn_perceptron.png)
 
 感知机模型仅能解决一个线性可划分问题，所以感知机模型不能解决异或问题。
 
-![](./images/linearly_separable.png)
+![](./images/nn_LinearlySeparable.png)
 
 ### 隐藏层
 
 输入层与输出层之间的一层神经元称为**隐藏层（隐含层，Hidden Layer）**。隐藏层和输出层都有激活函数处理。
 
-![](./images/network1.png)
+![](./images/nn_HiddenLayer.png)
 
 以上多层神经网络可以解决异或问题。
 
 ### 多层前馈神经网络（Multi-layer Feedforward Neural）
 
-![](./images/network2.png)
+![](./images/nn_network.png)
 
 
 ## 误差逆传播（errorBackPropagation）
@@ -71,7 +71,7 @@ isend(yes)->output->ed
 
 在使用梯度下降法进行搜索时，很可能我们得到的是一个局部极小值。
 
-![](./images/minimum.png)
+![](./images/nn_minimum.png)
 
 一些常见的跳出局部极小值的方法
 
