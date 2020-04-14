@@ -3,6 +3,8 @@
 
 # [概率论：随机变量](./index.html)
 
+[TOC]
+
 ## 定义
 
 ![](./images/RandomVariable.png)
