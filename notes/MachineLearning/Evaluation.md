@@ -56,6 +56,14 @@ $$Acc = \dfrac{ \sum\limits_{i=1}^{m} Ⅱ[f(x_i)=y_i] }{m}$$
 
 - $m = TP + FP + TN + FN$
 
+#### 准确率
+
+$$Accuracy = \dfrac{TP+TN}{m} = \dfrac{TP+TN}{TP + FP + TN + FN}$$
+
+#### 特异度
+
+$$Specificity = \dfrac{TN}{False} = \dfrac{TN}{FP + TN}$$
+
 #### 精确率（查准率）
 
 $$Precision = \dfrac{TP}{Positive} = \dfrac{TP}{TP + FP}$$
@@ -69,17 +77,43 @@ $$Recall = \dfrac{TP}{True} = \dfrac{TP}{TP + FN}$$
 查准率和查全率是一对矛盾的变量，平衡点就是查准率等于查全率时的取值。
 ![](./images/precision_recall.png)
 
-#### $F1-Score$
+#### $F_1$
 
-$$F1 = \dfrac{2 ⋅ Precision⋅Recall}{Precision + Recall} = \dfrac{2TP}{2TP + FN + FP}$$
+$$ 
+\begin{array}{r}
+    F_1
+\\ \\ \\ \\ \\ \\ \\
+\end{array} \begin{array}{l}
+    = \dfrac{1}{
+        \frac{1}{2} ⋅ \frac{1}{Precision} +
+        \frac{1}{2} ⋅ \frac{1}{Recall}
+    }
+\\
+\\  = \dfrac{2 ⋅ Precision⋅Recall}{Precision + Recall}
+\\
+\\  = \dfrac{2TP}{2TP + FN + FP}
+\end{array} 
+$$
 
 $F1$是基于查准率和查全率的调和平均数。
 
 #### $F_β$
 
-$$F_β = \dfrac{(1+β^2) ⋅ P ⋅ R}{(β^2 ⋅ P) + R}$$
+$$ 
+\begin{array}{r}
+    F_β
+\\ \\ \\ \\ \\
+\end{array} \begin{array}{l}
+    = \dfrac{1}{
+        \frac{1}{β^2+1} ⋅ \frac{1}{Precision} +
+        \frac{β^2}{β^2+1} ⋅ \frac{1}{Recall}
+    }
+\\
+\\  = \dfrac{ (1+β^2) ⋅ Precision ⋅ Recall }{ β^2 ⋅ Precision + Recall }
+\end{array} 
+$$
 
-$F_β$是基于查准率和查全率的加权调和平均数。
+$F_β$是基于查准率和查全率的加权调和平均数，当$β=1$时，即为$F_1$。
 
 #### ROC
 
