@@ -12,14 +12,12 @@
 
 ### [微积分](./Function/Calculus.html)
 
-## [线性代数](./LinearAlgebra/index.html)
-
 ## [概率论](./Probability/index.html)
+
+## [线性代数](./LinearAlgebra/index.html)
 
 ## [数值分析](./DataAnalysis/index.html)
 
 ## [运筹学](./OperationsResearch/index.html)
-
-## [矩阵论](./MatrixTheory/index.html)
 
 ## [机器学习](./MachineLearning/index.html)

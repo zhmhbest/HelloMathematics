@@ -346,11 +346,45 @@ $
 
 满足$A^T=A$的矩阵。
 
-### 正交矩阵
+### 正交
+
+#### 正交向量
+
+若$\vec{a}$与$\vec{b}$正交，则$\vec{a} ⋅ \vec{b} = 0$。
+
+#### 正交矩阵
 
 若$n$阶方阵$A$满足$AA^T=A^TA=E$，则称$A$为**正交矩阵**，简称**正交阵**。
 
 **充要条件**
+
+$A = 
+    \left[\begin{matrix}
+        a_1 & a_2 & \cdots & a_n
+    \end{matrix}\right]
+$
+
+$A^TA =
+    \left[\begin{matrix}
+        {a_1}^T \\ {a_2}^T \\ \vdots \\ {a_n}^T
+    \end{matrix}\right]
+    \left[\begin{matrix}
+        a_1 & a_2 & \cdots & a_n
+    \end{matrix}\right]
+    =
+    \left[\begin{matrix}
+        {a_1}^T a_1 & {a_1}^T a_2 & \cdots & {a_1}^T a_n
+    \\  {a_2}^T a_1 & {a_2}^T a_2 & \cdots & {a_2}^T a_n
+    \\  \vdots  & \vdots  & \ddots & \vdots
+    \\  {a_n}^T a_1 & {a_n}^T a_2 & \cdots & {a_n}^T a_n
+    \end{matrix}\right]
+    = E
+$
+
+即$\begin{cases}
+    {a_i}^T {a_j} = 1 & i=j
+\\  {a_i}^T {a_j} = 0 & i≠j
+\end{cases}$
 
 $A$是正交阵的充要条件是$A$的列（行）向量都是单位向量，且两两正交。
 
