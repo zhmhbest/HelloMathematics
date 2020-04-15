@@ -14,7 +14,7 @@
 
 ## [概率论](./Probability/index.html)
 
-## [线性代数](./LinearAlgebra/index.html)
+## [线性代数与矩阵论](./LinearAlgebra/index.html)
 
 ## [数值分析](./DataAnalysis/index.html)
 
