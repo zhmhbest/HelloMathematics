@@ -269,6 +269,28 @@ $A=
     \end{array}\right]_{n×n}
 $
 
+**单位上三角矩阵**
+
+$A=
+    \left[\begin{array}{c}
+        1      & a_{12} & \cdots & a_{1n}
+    \\  0      & 1      & \cdots & a_{2n}
+    \\  \vdots & \vdots & \ddots & \vdots
+    \\  0      & 0      & \cdots & 1
+    \end{array}\right]_{n×n}
+$
+
+**单位下三角矩阵**
+
+$A=
+    \left[\begin{array}{c}
+        1      & 0      & \cdots & 0
+    \\  a_{21} & 1      & \cdots & 0
+    \\  \vdots & \vdots & \ddots & \vdots
+    \\  a_{n1} & a_{n2} & \cdots & 1
+    \end{array}\right]_{n×n}
+$
+
 #### 副对角
 
 副对角矩阵的行列式满足：$|A| = (-1)^{\frac{n(n-1)}{2}} a_{1n}a_{2,n-1}\cdots a_{n1}$
