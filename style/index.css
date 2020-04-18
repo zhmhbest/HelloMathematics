@@ -53,20 +53,19 @@ html body h4~blockquote {
 /* ★ ☆ ☼ ☀ ◉ ✜ ✠ ✚ ▣ ☽ ☾ ☂ ✲ ❈ ✿ ✲ ❈ */
 /* 0 2% 4% 6% */
 
+
 html body h1 {
     margin-left: 0;
     color: #EF7823;
     border-bottom: 1px solid #666;
     margin-top: 80px;
 }
-
 html body h1:before {
     content:"☀";
     color:#EF7823;
     font-size: 80%;
     margin-right: 5px;
 }
-
 html body h1>a {
     color:inherit;
 }
@@ -76,6 +75,7 @@ html body h1>a:after {
     font-weight:bold;
     margin-left: 5px;
 }
+
 
 html body h2>a {
     color:inherit;
@@ -90,6 +90,13 @@ html body h2 {
     color: #FF69B4;
     border-bottom: 1px solid #666;
 }
+html body h2:before {
+    content:"☾";
+    color:#FF69B4;
+    font-size: 80%;
+    margin-right: 5px;
+}
+
 
 html body h3>a {
     color:inherit;
@@ -98,19 +105,13 @@ html body h3>a:after {
     content:"👈";
     font-size: 50%;
 }
-html body h2:before {
-    content:"☾";
-    color:#FF69B4;
-    font-size: 80%;
-    margin-right: 5px;
-}
+
 
 html body h3 {
     margin-left: 4%;
     margin-top: 20px;
     color: #DEDA00;
 }
-
 html body h3:before {
     content:"☆";
     color:#DEDA00;
@@ -118,21 +119,21 @@ html body h3:before {
     margin-right: 5px;
 }
 
+
 html body h4 {
     margin-left: 6%;
     margin-top: 10px;
     color: #AADDDD;
 }
 
-/* 【粗体标题】
-html body p>strong {
-    font-size: 120%
+
+html body h5 {
+    color: #FFFFFF;
 }
-html body p>strong:before {
+html body h5:before {
     content:"✿";
-    font-size: 80%;
+    margin-right: 2px;
 }
-*/
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
