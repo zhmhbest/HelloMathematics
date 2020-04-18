@@ -83,4 +83,121 @@ $A_{m×n}x=b$
 
 ## 广义逆法
 
-若$A$使可逆矩阵，那么方程组$Ax=b$的解为$x=A^{-1}b$
+若$A$为可逆矩阵，那么方程组$Ax=b$的解为
+
+$$x=A^{-1}b$$
+
+考虑当$A$不可逆时，是否存矩阵$G$使得
+
+$$x=Gb$$
+
+### 减号逆
+
+<span class='hint'>$
+    A(Gb)=b { \ \ \ ⇒ \ \ \ } AG(Ax)=(Ax) { \ \ \ ⇒ \ \ \ } AGAx=Ax
+$</span>
+
+$x=Gb$是$Ax=b$的解${ \ \ \ ⇔ \ \ \ } AGA=A$
+
+若矩阵$G$满足$AGA=A$，则称$G$是$A$的**减号逆**，记作$A^-$。
+
+**求$G$**
+
+将$A$化作标准型
+
+$$
+    \left[\begin{array}{c}
+        A_{m×n} & E_{m×m}
+    \\  E_{n×n} & 0
+    \end{array}\right]
+    \xrightarrow[]{初等变换}
+    \left[\begin{array}{c}
+        \left[\begin{array}{c}
+            E_r & 0
+        \\  0   & 0
+        \end{array}\right] & P_{m×m}
+    \\  Q_{n×n} & 0
+    \end{array}\right]
+$$
+
+即$P_{m×m}A_{m×n}Q_{n×n} = 
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+$，则
+
+<span class='hint'>$
+    A = 
+    P^{-1}
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    Q^{-1}
+$</span>
+
+<span class='hint'>$
+    A = AGA = 
+    P^{-1}
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    Q^{-1} G P^{-1}
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    Q^{-1}
+$</span>
+
+<span class='hint'>$
+    PAQ = 
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    Q^{-1} G P^{-1}
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+$</span>
+
+<span class='hint'>$
+    \xrightarrow[]{
+        Q^{-1} G P^{-1} = 
+        \left[\begin{array}{c}
+            G_{11} & G_{12}
+        \\  G_{21} & G_{22}
+        \end{array}\right]
+    }
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    \left[\begin{array}{c}
+        G_{11} & G_{12}
+    \\  G_{21} & G_{22}
+    \end{array}\right]
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        E_r & 0
+    \\  0   & 0
+    \end{array}\right]
+    { \ \ \ ⇒ \ \ \ } G_{11} = E_r
+$</span>
+
+$$G =
+    Q_{n×n}
+    \left[\begin{array}{c}
+        E_r    & G_{12}
+    \\  G_{21} & G_{22}
+    \end{array}\right]_{n×m}
+    P_{m×m}
+$$
