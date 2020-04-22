@@ -1,3 +1,5 @@
+# Mathematics
 
-- [笔记](https://zhmhbest.github.io/HelloMathematics/notes)
-- [仓库](https://github.com/zhmhbest/HelloMathematics)
+- [Notes](./notes)
+- [Github](https://github.com/zhmhbest/HelloMathematics)
+- [Gitee](https://gitee.com/zhmhbest/HelloMathematics)
