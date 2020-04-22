@@ -1,5 +1,7 @@
 <link rel='stylesheet' href='../style/index.css'>
 
+>这是本人发布于 [Github](https://github.com/zhmhbest/HelloMathematics) / [Gitee](https://gitee.com/zhmhbest/HelloMathematics) 上的学习笔记，部分引用内容来自本人购买的书籍和授课老师的课件，转载请注明出处！
+
 # 数学
 
 ## 数列
