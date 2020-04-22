@@ -4,33 +4,39 @@
 # [概率论：全概率](./index.html)
 
 
-## 运算规则
+## 条件概率
 
-**条件概率**
+### 联合概率
+
+$A$和$B$两个事件共同发生的概率
+
+$$P(AB) = P(BA)$$
+
+### 条件概率
+
+$B$在$A$发生的条件下发生的概率
 
 $$P(B|A)=\dfrac{P(AB)}{P(A)}$$
+
+$A$在$B$发生的条件下发生的概率
 
 $$P(A|B)=\dfrac{P(AB)}{P(B)}$$
 
 ![](./images/condition.png)
 
-**联合概率**
-
-$$P(AB)$$
-
-**乘法公式**
+### 乘法公式
 
 $$P(AB) = P(B|A) ⋅ P(A)$$
 
 $$P(AB) = P(A|B) ⋅ P(B)$$
 
-**全概率公式**
+## 全概率公式
 
 ![](./images/total.png)
 
-$$P(A) = \sum\limits_{i=1}^{n}P(B_i)P(A|B_i)$$
+$$P(A) = \sum\limits_{i=1}^{n}P(A|B_i) ⋅ P(B_i)$$
 
-**贝叶斯（Bayes ）公式**
+## 贝叶斯（Bayes ）公式
 
 $$P(B|A) = \dfrac{P(AB)}{P(A)} = \dfrac{
     P(A|B) ⋅ P(B)
