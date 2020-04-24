@@ -236,7 +236,7 @@ $$V_1⊕V_2$$
 
 若$V=V_1⊕V_2$，则称$V_1$与$V_2$是互补的，两者互称为对方的**补空间**。称$V_1⊕V_2$为$V$的**直和分解**。
 
-#### 例
+#### 例1
 
 $V_1 = \left\{
     \left[\begin{array}{c}
@@ -413,3 +413,91 @@ $$
     \\  4  & 7
     \end{array}\right]
 \end{array}\right]$
+
+#### 例2
+
+$R^{n×n}$的两个子空间，$S_1 = \{ A \bold{\ |\ } A^T=A \}$，$S_2 = \{ A \bold{\ |\ } A^T=-A \}$
+
+（1）证明$R^{n×n}=S_1⊕S_2$
+（2）当$n=3$时，求$S_1$的一组基及$dim(S_2)$
+
+**证明**
+
+（1）
+
+对于矩阵$A$，若$A∈S_1$，$A∈S_2$则
+
+$
+    \begin{cases}
+        A^T=A
+    \\  A^T=-A
+    \end{cases}
+    { \ \ \ ⇒ \ \ \ }
+    A = -A
+    { \ \ \ ⇒ \ \ \ }
+    A = 0_{n×n}
+$
+
+即$S_1∩S_2 = \{0\}$（保证了直和）
+
+<span class='hint'>$dim(S_1) = 1 + 2 + \dots + (n-1) + n$</span>
+<span class='hint'>$dim(S_2) = 1 + 2 + \dots + (n-1)$</span>
+<span class='hint'>$dim(S_1 + S_2) = dim(S_1) + dim(S_2) = n(n-1) + n = n^2 = dim(R^{n×n})$</span>
+
+对任意矩阵$A$，令$B=\dfrac{A+A^T}{2}$，$C=\dfrac{A-A^T}{2}$，则
+
+$$\begin{matrix}
+    A=B+C & (B∈S_1,C∈S_2)
+\end{matrix}$$
+
+因此$R^{n×n} ⊆ S_1+S_2$，反之亦然$R^{n×n} ⊇ S_1+S_2$（保证了相等）。
+
+即得$R^{n×n}=S_1⊕S_2$
+
+（2）
+
+若$A∈S_1$则
+
+$A = \begin{array}{c}
+    a_{11}
+    \left[\begin{array}{c}
+        1 & 0 & 0
+    \\  0 & 0 & 0
+    \\  0 & 0 & 0
+    \end{array}\right]+
+    a_{22}
+    \left[\begin{array}{c}
+        0 & 0 & 0
+    \\  0 & 1 & 0
+    \\  0 & 0 & 0
+    \end{array}\right]+
+    a_{33}
+    \left[\begin{array}{c}
+        0 & 0 & 0
+    \\  0 & 0 & 0
+    \\  0 & 0 & 1
+    \end{array}\right]
+    \\ + \\
+    a_{12}
+    \left[\begin{array}{c}
+        0 & 1 & 0
+    \\  1 & 0 & 0
+    \\  0 & 0 & 0
+    \end{array}\right]+
+    a_{13}
+    \left[\begin{array}{c}
+        0 & 0 & 1
+    \\  0 & 0 & 0
+    \\  1 & 0 & 0
+    \end{array}\right]+
+    a_{23}
+    \left[\begin{array}{c}
+        0 & 0 & 0
+    \\  0 & 0 & 1
+    \\  0 & 1 & 0
+    \end{array}\right]
+\end{array}$
+
+明显$dim(S_1) = 6$
+
+则$dim(S_2) = dim(R^{3×3}) - dim(S_1) = 9 - 6 = 3$
