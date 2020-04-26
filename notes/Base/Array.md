@@ -2,3 +2,5 @@
 <script src='../../style/index.js'></script>
 
 # [数列](../index.html)
+
+待补充
