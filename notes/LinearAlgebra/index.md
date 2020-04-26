@@ -19,8 +19,10 @@
 
 ## [矩阵分解](./MatrixDecomposition.html)
 
-## [线性空间](./LinerSpace.html)
+## [线性空间](./LinerSpace/index.html)
 
-### [线性子空间](./LinerSubspace.html)
+### [线性子空间](./LinerSpace/Sub.html)
 
-### [赋范线性空间](./NormedLinearSpace.html)
+### [赋范线性空间](./LinerSpace/Normed.html)
+
+### [内积空间](./LinerSpace/Inner.html)

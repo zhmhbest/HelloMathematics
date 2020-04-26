@@ -1,7 +1,7 @@
-<link rel='stylesheet' href='../../style/index.css'>
-<script src='../../style/index.js'></script>
+<link rel='stylesheet' href='../../../style/index.css'>
+<script src='../../../style/index.js'></script>
 
-# [线性空间](./index.html)
+# [线性空间](../index.html)
 
 [TOC]
 
