@@ -4,15 +4,15 @@
 
 # 数学
 
-## 数列
+## 数学基础
 
-## 函数
+### [数列](./Base/Array.html)
 
-### [极限](./Function/Limit.html)
+### [极限](./Base/Limit.html)
 
-### [导数](./Function/Derivative.html)
+### [导数](./Base/Derivative.html)
 
-### [微积分](./Function/Calculus.html)
+### [微积分](./Base/Calculus.html)
 
 ## [概率论](./Probability/index.html)
 
