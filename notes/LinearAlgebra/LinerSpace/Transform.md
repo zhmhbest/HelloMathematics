@@ -277,6 +277,145 @@ $
 - $T_1T_2$的表示矩阵为$AB$
 - 若$T_1$可逆，则$T_1^{-1}$的表示矩阵为$A^{-1}$
 
+#### 例
+
+在$R^{2×2}$上的变换$T(X)=
+    X
+    \left[\begin{array}{c}
+        1 & 1 \\ 1 & -1
+    \end{array}\right]
+$，$S(X)=
+    X
+    \left[\begin{array}{c}
+        1 & 0 \\ -2 & 0
+    \end{array}\right]
+$
+
+（1）$T+S$，$TS$在基$ e = \left[\begin{array}{c}
+    \left[\begin{array}{c}
+        1 & 0 \\ 0 & 0
+    \end{array}\right]
+    &
+    \left[\begin{array}{c}
+        0 & 1 \\ 0 & 0
+    \end{array}\right]
+    &
+    \left[\begin{array}{c}
+        0 & 0 \\ 1 & 0
+    \end{array}\right]
+    &
+    \left[\begin{array}{c}
+        0 & 0 \\ 0 & 1
+    \end{array}\right]
+\end{array}\right]$下的矩阵；
+（2）$T,S$是否可逆，若可逆，求其其逆变换。
+
+**解**
+
+（1）
+
+<span class='hint'>$T(e) =
+    e
+    \left[\begin{array}{c}
+        1 & 1 \\ 1 & -1
+    \end{array}\right] 
+    = 
+    \left[\begin{array}{c}
+        \left[\begin{array}{c}
+            1 & 1 \\ 0 & 0
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            1 & -1 \\ 0 & 0
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            0 & 0 \\ 1 & 1
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            0 & 0 \\ 1 & -1
+        \end{array}\right]
+    \end{array}\right]
+$</span>
+
+$T(e) = 
+    e
+    \left[\begin{array}{c}
+        1 & 1  & 0 & 0
+    \\  1 & -1 & 0 & 0
+    \\  0 & 0  & 1 & 1
+    \\  0 & 0  & 1 & -1
+    \end{array}\right]
+    \xrightarrow[]{记为}
+    eA
+$
+
+<span class='hint'>$S(e) = 
+    e
+    \left[\begin{array}{c}
+        1 & 0 \\ -2 & 0
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        \left[\begin{array}{c}
+            1 & 0 \\ 0 & 0
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            -2 & 0 \\ 0 & 0
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            0 & 0 \\ 1 & 0
+        \end{array}\right]
+        &
+        \left[\begin{array}{c}
+            0 & 0 \\ -2 & 0
+        \end{array}\right]
+    \end{array}\right]
+$</span>
+
+$S(e) = 
+    e
+    \left[\begin{array}{c}
+        1 & -2 & 0 & 0
+    \\  0 & 0  & 0 & 0
+    \\  0 & 0  & 1 & -2
+    \\  0 & 0  & 0 & 0
+    \end{array}\right]
+    \xrightarrow[]{记为}
+    eB
+$
+
+则$T+S$的表示矩阵为$A+B$，$TS$的表示矩阵为$AB$（计算略）。
+
+（2）明显$r(B)≠4$，$S$不可逆；计算得$r(A)=4$，接下来求$T^{-1}$（$T^{-1}$也是一个线性变换）
+
+$$X = T^{-1}\big(T(X)\big) 
+    = 
+    T^{-1} \left(
+        X
+        \left[\begin{array}{c}
+            1 & 1 \\ 1 & -1
+        \end{array}\right]
+    \right)
+    =
+    T^{-1}(X)
+    \left[\begin{array}{c}
+        1 & 1 \\ 1 & -1
+    \end{array}\right]
+$$
+
+综上
+
+$$T^{-1}(X) =
+    X
+    \left[\begin{array}{c}
+        1 & 1 \\ 1 & -1
+    \end{array}\right]^{-1}
+$$
+
 ### 基过度
 
 $T$在基$α,β$下的表示矩阵为$A,B$，且$β=αP$则
@@ -293,38 +432,6 @@ $
 $
 
 $$B = P^{-1}AP$$
-
-#### 例
-
-在$R^{2×2}$上的变换$T(X)=X
-    \left[\begin{array}{c}
-        1 & 1 \\ 1 & -1
-    \end{array}\right]
-$，$S(X)=X
-    \left[\begin{array}{c}
-        1 & 0 \\ -2 & 0
-    \end{array}\right]
-$
-
-（1）$T+S$，$TS$在基$
-    \left[\begin{array}{c}
-        1 & 0 \\ 0 & 0
-    \end{array}\right],
-    \left[\begin{array}{c}
-        0 & 1 \\ 0 & 0
-    \end{array}\right],
-    \left[\begin{array}{c}
-        0 & 0 \\ 1 & 0
-    \end{array}\right],
-    \left[\begin{array}{c}
-        0 & 0 \\ 0 & 1
-    \end{array}\right]
-$下的矩阵；
-（2）$T,S$是否可逆，若可逆，求其其逆变换。
-
-**解**
-
-易得$T,S$在给定基下的变换表示矩阵分别为
 
 <!-- 
 ## 单射
