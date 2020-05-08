@@ -32,3 +32,5 @@
 ## [矩阵标准形](./StandardType/index.html)
 
 ### [矩阵最小多项式](./StandardType/LeastPolynomial.html)
+
+## [矩阵函数](./MatrixFunction.html)
