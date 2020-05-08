@@ -1,7 +1,7 @@
-<link rel='stylesheet' href='../../style/index.css'>
-<script src='../../style/index.js'></script>
+<link rel='stylesheet' href='../../../style/index.css'>
+<script src='../../../style/index.js'></script>
 
-# [矩阵标准形](./index.html)
+# [矩阵标准形](../index.html)
 
 [TOC]
 
@@ -309,32 +309,90 @@ $$|λE - A| = (λ-3)^2(λ+3)^2 = d_1 ⋅ d_2 ⋅ d_3 ⋅ d_4$$
 
 ### $n$次方问题
 
-#### 例
+#### 例1
 
 $n$阶方阵，$A^2=0$，$r(A)=r$，求$A$的Jordan标准形
 
 **解**
 
-由$A^2=0$可知Jordan块只能是一阶或二阶（三阶Jordan块的平方不为0）。
+由$A^2=0$可知，$A$的特征值都是$0$。
 
 - $J_1 = 
     \left[\begin{array}{c}
         0
     \end{array}\right]
-$
+$，$(J_1)^2=0$
 - $J_2 = 
     \left[\begin{array}{c}
         0 & 1
     \\  0 & 0
     \end{array}\right]
-$
+$，$(J_2)^2=0$
 - $J_3 = 
     \left[\begin{array}{c}
         0 & 1 & 0
     \\  0 & 0 & 1
     \\  0 & 0 & 0
     \end{array}\right]
-$
+$，$(J_3)^2≠0$
 
-由$r(A)=r$可知，Jordan标准形由$r$个二阶块，$n-r$个一阶块组成。
+故Jordan块只能是一阶或二阶。
+
+明显，$J_1$的存在不增加Jordan阵的秩，由$r(A)=r$可知，Jordan标准形由$r$个二阶块，$n-r$个一阶块组成。
+
+#### 例2
+
+$n$阶方阵，$A^3=0$，$r(A)=r_1$，$r(A^2)=r_2$，求$A$的Jordan标准形
+
+由$A^3=0$可知，$A$的特征值都是$0$。
+
+- $J_1 = 
+    \left[\begin{array}{c}
+        0
+    \end{array}\right]
+$，$(J_1)^2=0$，$(J_1)^3=0$
+- $J_2 = 
+    \left[\begin{array}{c}
+        0 & 1
+    \\  0 & 0
+    \end{array}\right]
+$，$(J_2)^2=0$，$(J_2)^3=0$
+- $J_3 = 
+    \left[\begin{array}{c}
+        0 & 1 & 0
+    \\  0 & 0 & 1
+    \\  0 & 0 & 0
+    \end{array}\right]
+$，$(J_3)^2≠0$，$(J_3)^3=0$
+- $J_4 = 
+    \left[\begin{array}{c}
+        0 & 1 & 0 & 0
+    \\  0 & 0 & 1 & 0
+    \\  0 & 0 & 0 & 1
+    \\  0 & 0 & 0 & 0
+    \end{array}\right]
+$，$(J_4)^3≠0$
+
+故Jordan块只能是一阶、二阶或三阶块。
+
+明显
+
+- 每个$i$阶块产生$i-1$的秩。
+- $A^2$仅有三阶块不为$0$
+
+设有$x$个1阶块，$y$个2阶块，$z$个3阶块。
+
+$$
+    \begin{cases}
+            x+y+z = n
+        \\  y+2z = r_1
+        \\  z = r_2
+    \end{cases} 
+    { \ \ \ ⇒ \ \ \ }
+    \begin{cases}
+            x = n - r_1 + r_2
+        \\  y = r_1 - 2r_2
+        \\  z = r_2
+    \end{cases} 
+$$
 
