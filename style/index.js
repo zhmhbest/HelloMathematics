@@ -3,10 +3,10 @@
         // 创建一个回到首页标志。
         var ele = document.createElement('a');
         document.body.appendChild(ele);
-        ele.innerHTML = '👆';
+        ele.innerHTML = '🎈';
         //ele.style['font-size'] = '180%';
         ele.style['position'] = 'fixed';
-        ele.style['right'] = '2%';
+        ele.style['right'] = '1.5%';
         ele.style['bottom'] = '45px';
         ele.style['display'] = 'none';
         // ele.href = 'javascript: window.scrollTo(0,0)';

@@ -55,7 +55,7 @@ html body h4~blockquote {
 /* 【标题样式】 */
 
 /* ★ ☆ ☼ ☀ ◉ ✜ ✠ ✚ ▣ ☽ ☾ ☂ ✲ ❈ ✿ ✲ ❈ */
-/* 👈 🎈 🌞 🌙 ⭐ 💡 📌 📎 */
+/* 👆 👈 🎈 🌞 🌙 ⭐ 💡 📌 📎 🏷 */
 /* 0 2% 4% 6% */
 
 html body h1 {
@@ -85,7 +85,7 @@ html body h2>a {
     color:inherit;
 }
 html body h2>a:after {
-    content:"🎈";
+    content:"📌";
     font-size: 50%;
 }
 html body h2 {
@@ -106,7 +106,7 @@ html body h3>a {
     color:inherit;
 }
 html body h3>a:after {
-    content:"🎈";
+    content:"📌";
     font-size: 50%;
 }
 html body h3 {
@@ -138,8 +138,8 @@ html body h5 {
     color: #FFFFFF;
 }
 html body h5:before {
-    content:"📌";
-    font-size: 80%;
+    content:"✿";
+    font-size: 100%;
     margin-right: 2px;
 }
 
