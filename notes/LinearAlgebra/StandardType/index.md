@@ -60,7 +60,7 @@ $$
 
 则称为矩阵$A(λ)$的**Smith标准型**，$d_k(λ)$称为$A(λ)$的第$k$个**不变因子**。
 
-### $k$阶行列式因式
+### 行列式因式
 
 - $D_1(λ)$：所有1阶子式行列式的最大公因子。
 - $D_2(λ)$：所有2阶子式行列式的最大公因子。
@@ -114,22 +114,68 @@ $
 ### 特殊矩阵
 
 $
+\begin{array}{l}
+    A \\\\ \\\\ \\\\ \\
+\end{array}
+\begin{array}{l}
+    =
     \left[\begin{array}{c}
         λ-a & c_1
     \\  & λ-a & c_2
     \\  && \ddots & \ddots
     \\  &&& λ-a  & c_{n-1}
     \\  &&&& λ-a
-    \end{array}\right]
-$的Smith标准型为$
+    \end{array}\right]_{n×n}
+    \\\\
+    =
+    λE-
+    \left[\begin{array}{c}
+        a & -c_1
+    \\  & a & -c_2
+    \\  && \ddots & \ddots
+    \\  &&& a & -c_{n-1}
+    \\  &&&& a
+    \end{array}\right]_{n×n}
+\end{array}
+$
+
+矩阵$A$性质如下：
+
+- **Smith标准型**：$
     \left[\begin{array}{c}
        1
     \\  & 1
     \\  && 1
     \\  &&& \ddots
     \\  &&&& (λ-a)^n
-    \end{array}\right]
+    \end{array}\right]_{n×n}
 $
+- **初等因子**：$(λ-a)^n$
+
+特别当$c_i = -1$时，$a$以$λ_i$替换，有
+
+$$
+    \left[\begin{array}{c}
+        λ-λ_i & -1
+    \\  & λ-λ_i & -1
+    \\  && \ddots & \ddots
+    \\  &&& λ-λ_i  & -1
+    \\  &&&& λ-λ_i
+    \end{array}\right]
+    =
+    λE-
+    \left[\begin{array}{c}
+        λ_i & 1
+    \\  & λ_i & 1
+    \\  && \ddots & \ddots
+    \\  &&& λ_i & 1
+    \\  &&&& λ_i
+    \end{array}\right]
+    \xrightarrow[]{记作}
+    λE-J_i
+$$
+
+当知道初等因子$(λ-λ_i)^n$时，易得到矩阵$J_i$。
 
 ### 派生$λ$矩阵
 
@@ -195,7 +241,7 @@ Jordan矩阵的初等因子即所有Jordan块的初等因子的全体。
 
 **对角阵**即所有Jordan块都为一阶的Jordan矩阵，故对角阵是特殊的Jordan阵。
 
-<span class='highlight'>求矩阵$A$的Jordan标准形，即求$λE-A$的初等因子，再将初等因子转化为Jordan块。</span>
+<span class='highlight'>求矩阵$A$的Jordan标准形，即求$A$的派生$λ$阵$(λE-A)$的Smith标准型的，不变因式的，全部初等因子，[再通过初等因子求Jordan块](#特殊矩阵)，最终将Jordan块组合为Jordan矩阵。</span>
 
 ### 变换法
 

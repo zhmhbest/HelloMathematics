@@ -4,3 +4,126 @@
 # [矩阵函数](./index.html)
 
 [TOC]
+
+## 定义
+
+>$$f(x) = \sum_{k=0}^{∞} c_k x^k$$
+
+### 幂级数定义法
+
+设$A∈C^{n×n}$，$\{ c_k \}$是复数列，则称
+
+$$
+    f(A)
+    = \sum_{k=0}^{∞} c_k A^k
+    = c_0E + c_1A + c_2A^2 + \cdots
+$$
+
+为方阵$A$的**幂级数**（明显还是一个矩阵）。
+
+<span class='highlight'>其缺点在于定义为无穷个矩阵相加，难于计算。若能再将无穷个矩阵相加合理归纳，则可解决此问题。</span>
+
+设幂级数$f(x)$的收敛半径是$r$
+
+- 当$ρ(A)<r$时，$f(A)$绝对收敛
+- 当$ρ(A)>r$时，$f(A)$发散
+- 当$ρ(A)=r$时，$f(A)$无定论
+
+#### 例1
+
+>$\dfrac{1}{1-x} = 1 + x + x^2 + \cdots, \ \ \ |x|<1$
+
+$(E-A)^{-1} = E + x + x^2 + \cdots, \ \ \ ρ(A)<1$
+
+#### 例2
+
+>$\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots, \ \ \ ∀x$
+
+$n$阶方阵满足$A^2 = A$，求$cos A$。
+
+**解**
+
+$
+    \begin{array}{l}
+        \cos A \\\\ \\\\ \\\\ \\\\
+    \end{array}
+    \begin{array}{l}
+            = E - \dfrac{1}{2!}A^2 + \dfrac{1}{4!}A^4 - \dfrac{1}{6!}A^6 + \cdots
+    \\\\    = E - \dfrac{1}{2!}A + \dfrac{1}{4!}A - \dfrac{1}{6!}A + \cdots
+    \\\\    = E + A(-\dfrac{1}{2!} + \dfrac{1}{4!} - \dfrac{1}{6!} + \cdots)
+    \\\\    = E + A(\cos 1 - 1)
+    \end{array}
+$
+
+### Jordan定义法
+
+设$n$阶方阵$A$的Jordan矩阵为$J = 
+    \left[\begin{array}{c}
+        J_1
+    \\  & J_2
+    \\  && \ddots
+    \\  &&& J_s
+    \end{array}\right]
+$，$s≤n$，$J_i$为Jordan块，明显有$P^{-1}AP = J$，则$A = PJP^{-1}$
+
+$
+    \begin{array}{l}
+        f(A) \\ \\\\ \\\\ \\\\
+    \end{array}\begin{array}{l}
+            = c_0E + c_1A + c_2A^2 + \cdots
+    \\\\    = c_0\underline{PEP^{-1}} + c_1\underline{PJP^{-1}} + c_2\underline{PJ^2P^{-1}} + \cdots
+    \\\\    = P({ c_0E + c_1J + c_2J^2 + \cdots })P^{-1}
+    \\\\    = Pf(J)P^{-1}
+    \end{array}
+$
+
+&nbsp;
+
+$$f(A) = Pf(J)P^{-1}$$
+
+即$f(A)$与$f(J)$相似。
+
+$
+\begin{array}{l}
+    f(J) \\\\ \\\\ \\\\
+\end{array}
+\begin{array}{l}
+    =
+    \left[\begin{array}{c}
+        f(J_1)
+    \\  & f(J_2)
+    \\  && \ddots
+    \\  &&& f(J_s)
+    \end{array}\right]
+    \\\\
+    =
+    \left[\begin{array}{c}
+        a_0E + a_1J_1 + a_2J_1^2 + \cdots
+    \\  & a_0E + a_1J_2 + a_2J_2^2 + \cdots
+    \\  && \cdots
+    \\  &&& a_0E + a_1J_s + a_2J_s^2 + \cdots
+    \end{array}\right]
+\end{array}
+$
+
+其中$f(J_i) =
+    \left[\begin{array}{c}
+        f(λ_i) & \dfrac{f'(λ_i)}{1!} & \cdots & \dfrac{f^{k_i-1}(λ_i)}{(k_i-1)!}
+    \\         & f(λ_i)              & \ddots & \vdots
+    \\         &                     & \ddots & \dfrac{f'(λ_i)}{1!}
+    \\  &&& f(λ_i)
+    \end{array}\right]
+$
+
+#### 例
+
+$A = 
+    \left[\begin{array}{c}
+        -4 & 2  & 10
+    \\  -4 & 3  & 7
+    \\  -3 & 1  & 7
+    \end{array}\right]
+$，求$\cos A$
+
+**解**
+
