@@ -29,7 +29,7 @@
 
 ### [线性变换](./LinerSpace/Transform.html)
 
-## [矩阵标准形](./StandardType/index.html)
+## [矩阵标准型](./StandardType/index.html)
 
 ### [矩阵最小多项式](./StandardType/LeastPolynomial.html)
 

@@ -133,7 +133,7 @@ $，$P^{-1}AP=J$，求$\cos A$
 
 **解**
 
-Jordan标准形仅由一个Jordan块组成
+Jordan标准型仅由一个Jordan块组成
 
 - $λ_i = 2$
 
@@ -153,7 +153,16 @@ $
 
 $\cos A = P \cos J P^{-1}$
 
-## 求$f(A)$的Jordan标准形
+## 求$f(A)$的Jordan标准型
 
-即求$f(J_A)$的Jordan标准形
+即求$f(J_A)$的Jordan标准型
 
+#### 例
+
+$A = 
+    \left[\begin{array}{c}
+        3  & 1  & -1
+    \\  -2 & 0  & 2
+    \\  -1 & -1 & 3
+    \end{array}\right]
+$，求$\sin(\dfrac{\pi}{4}A)$，$e^A$的Jordan标准型

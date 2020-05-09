@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='../../../style/index.css'>
 <script src='../../../style/index.js'></script>
 
-# [矩阵标准形](../index.html)
+# [矩阵标准型](../index.html)
 
 [TOC]
 
@@ -194,7 +194,7 @@ $$λE - A$$
 \end{array}\right]
 $的全部初等因式是$B(λ)$的全部初等因式与$C(λ)$的全部初等因式的并集。
 
-## *Jordan*标准形
+## *Jordan*标准型
 
 $n$阶矩阵$A$可以与不同的矩阵相似，我们希望在与$A$相似的全体矩阵中，找到一个比较简单的矩阵，作为这一类矩阵的代表，从而简化这一类矩阵的讨论。
 
@@ -243,7 +243,7 @@ Jordan矩阵的初等因子即所有Jordan块的初等因子的全体。
 
 **对角阵**即所有Jordan块都为一阶的Jordan矩阵，故对角阵是特殊的Jordan阵。
 
-<span class='highlight'>求矩阵$A$的Jordan标准形，即求$A$的派生$λ$阵$(λE-A)$的Smith标准型的，不变因式的，全部初等因子，[再通过初等因子求Jordan块](#特殊矩阵)，最终将Jordan块组合为Jordan矩阵。</span>
+<span class='highlight'>求矩阵$A$的Jordan标准型，即求$A$的派生$λ$阵$(λE-A)$的Smith标准型的，不变因式的，全部初等因子，[再通过初等因子求Jordan块](#特殊矩阵)，最终将Jordan块组合为Jordan矩阵。</span>
 
 ### 变换法
 
@@ -258,7 +258,7 @@ $
     \\  \vdots & \vdots & \ddots & \vdots
     \\  1 & 1 & \cdots & 1
     \end{array}\right]_{n×n}
-$的Jordan标准形为$
+$的Jordan标准型为$
     \left[\begin{array}{c}
         0 & 0 & \cdots & 0
     \\  0 & 0 & \cdots & 0
@@ -277,7 +277,7 @@ $
     \\  3  & -2 & 0
     \\  -4 & 2  & -2
     \end{array}\right]
-$的Jordan标准形。
+$的Jordan标准型。
 
 **解**
 
@@ -313,7 +313,7 @@ $D_3(λ) = |λE-A| = (λ-1)^2(λ-2)$
 - $d_2(λ) = \dfrac{D_2(λ)} {D_1(λ)} = 1$
 - $d_3(λ) = \dfrac{D_3(λ)} {D_2(λ)} = (λ-1)^2(λ-2)$
 
-因此$λE-A$的初等因子为$(λ-1)^2, λ-2$，的$A$的Jordan标准形
+因此$λE-A$的初等因子为$(λ-1)^2, λ-2$，的$A$的Jordan标准型
 
 $$
     \left[\begin{array}{c}
@@ -334,7 +334,7 @@ $$
     \\  2  & 2  & -1 & 0
     \\  1  & -4 & 3  & 3
     \end{array}\right]
-$的Jordan标准形。
+$的Jordan标准型。
 
 **解**
 
@@ -344,14 +344,14 @@ $$|λE - A| = (λ-3)^2(λ+3)^2 = d_1 ⋅ d_2 ⋅ d_3 ⋅ d_4$$
 
 则有以下情况
 
-| 情况 | Smith标准形 | 初等因子 | Jordan标准形 |
+| 情况 | Smith标准型 | 初等因子 | Jordan标准型 |
 | :-: | -: | :-: | :-: |
 | ① | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ-3)(λ+3) \\&&& (λ-3)(λ+3) \end{array}\right]}$ | $\scriptsize{\begin{matrix} λ-3 \\ λ-3 \\ λ+3 \\ λ+3 \end{matrix}}$ | $\scriptsize{\left[\begin{array}{c} 3 \\& 3 \\&& -3 \\&&& -3 \end{array}\right]}$
 | ② | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ-3) \\&&& (λ-3)(λ+3)^2 \end{array}\right]}$    | $\scriptsize{\begin{matrix} λ-3 \\ λ-3 \\ (λ+3)^2 \end{matrix}}$    | $\scriptsize{\left[\begin{array}{c} 3 \\& 3 \\&& -3 & 1 \\&&& -3 \end{array}\right]}$
 | ③ | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ+3) \\&&& (λ-3)^2(λ+3) \end{array}\right]}$    | $\scriptsize{\begin{matrix} λ+3 \\ λ+3 \\ (λ-3)^2 \end{matrix}}$    | $\scriptsize{\left[\begin{array}{c} -3 \\& -3 \\&& 3 & 1 \\&&& 3 \end{array}\right]}$
 | ④ | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& 1 \\&&& (λ-3)^2(λ+3)^2 \end{array}\right]}$      | $\scriptsize{(λ-3)^2(λ+3)^2}$                                       | $\scriptsize{\left[\begin{array}{c} -3 & 1 \\& -3 \\&& 3 & 1 \\&&& 3 \end{array}\right]}$
 
-记$A$的Jordan标准形为$J$，因为$A ∼ J$，所以$λE-A$与$λE-J$等价，即$r(λE-A) = r(λE-J)$
+记$A$的Jordan标准型为$J$，因为$A ∼ J$，所以$λE-A$与$λE-J$等价，即$r(λE-A) = r(λE-J)$
 
 取$λ = 3, -3$，从上述情况中，看是否满足$r(λE-A) = r(λE-J)$。
 
@@ -359,7 +359,7 @@ $$|λE - A| = (λ-3)^2(λ+3)^2 = d_1 ⋅ d_2 ⋅ d_3 ⋅ d_4$$
 
 #### 例1
 
-$n$阶方阵，$A^2=0$，$r(A)=r$，求$A$的Jordan标准形
+$n$阶方阵，$A^2=0$，$r(A)=r$，求$A$的Jordan标准型
 
 **解**
 
@@ -386,11 +386,11 @@ $，$(J_3)^2≠0$
 
 故Jordan块只能是一阶或二阶。
 
-明显，$J_1$的存在不增加Jordan阵的秩，由$r(A)=r$可知，Jordan标准形由$r$个二阶块，$n-r$个一阶块组成。
+明显，$J_1$的存在不增加Jordan阵的秩，由$r(A)=r$可知，Jordan标准型由$r$个二阶块，$n-r$个一阶块组成。
 
 #### 例2
 
-$n$阶方阵，$A^3=0$，$r(A)=r_1$，$r(A^2)=r_2$，求$A$的Jordan标准形
+$n$阶方阵，$A^3=0$，$r(A)=r_1$，$r(A^2)=r_2$，求$A$的Jordan标准型
 
 由$A^3=0$可知，$A$的特征值都是$0$。
 
