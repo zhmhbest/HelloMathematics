@@ -79,9 +79,9 @@ $
 
 &nbsp;
 
-<span class='highlight'>$$f(A) = Pf(J)P^{-1}$$</span>
+$$f(A) = Pf(J)P^{-1}$$
 
-即$f(A)$与$f(J)$相似。
+<span class='highlight'>即$f(A)$与$f(J)$相似，该定义方法适合解决那些与$f(A)$相似的问题，规避掉求$P$的计算量。</span>
 
 $
 \begin{array}{l}
@@ -115,7 +115,7 @@ $
     \end{array}\right]
 $，记住此结论即可。</span>
 
-#### 例
+#### 例1
 
 $A =
     \left[\begin{array}{c}
@@ -153,11 +153,9 @@ $
 
 $\cos A = P \cos J P^{-1}$
 
-## 求$f(A)$的Jordan标准型
+#### 例2
 
-即求$f(J_A)$的Jordan标准型
-
-#### 例
+<span class='hint'>求$f(A)$的Jordan标准型，即求$f(J_A)$的Jordan标准型。</span>
 
 $A = 
     \left[\begin{array}{c}
@@ -165,4 +163,105 @@ $A =
     \\  -2 & 0  & 2
     \\  -1 & -1 & 3
     \end{array}\right]
-$，求$\sin(\dfrac{\pi}{4}A)$，$e^A$的Jordan标准型
+$，求$\sin(\dfrac{π}{4}A)$，$e^A$的Jordan标准型
+
+**解**
+
+$A$的Jordan标准型为（计算略）
+
+$J = 
+    \left[\begin{array}{c}
+        2 & 0 & 0
+    \\  0 & 2 & 1
+    \\  0 & 0 & 2
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        \left[\begin{array}{c}
+            2
+        \end{array}\right]
+        \\ &
+        \left[\begin{array}{c}
+            2 & 1
+        \\  0 & 2
+        \end{array}\right]
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        J_1
+    \\& J_2
+    \end{array}\right]
+$
+
+则
+
+$\sin(\dfrac{π}{4}J)
+    =
+    \left[\begin{array}{c}
+        \sin(\frac{π}{4}J_1)
+    \\& \sin(\frac{π}{4}J_2)
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        \sin(\frac{π}{2})
+    \\&
+        \left[\begin{array}{c}
+            \sin(\frac{π}{2}) & \frac{π}{2}\cos(\frac{π}{2})
+        \\                    & \sin(\frac{π}{2})
+        \end{array}\right]
+    \end{array}\right]
+    =
+        \left[\begin{array}{c}
+            1 &
+        \\    & 1 & 0
+        \\    &   & 1
+        \end{array}\right]
+$
+
+$\sin(\dfrac{π}{4}J)$本身就是对角阵，所以就是$\sin(\dfrac{π}{4}A)$的Jordan标准型就是$
+    \left[\begin{array}{c}
+        1 &
+    \\    & 1 & 0
+    \\    &   & 1
+    \end{array}\right]
+$
+
+$e^J = 
+    \left[\begin{array}{c}
+        e^{J_1}
+    \\& e^{J_2}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        e^2
+    \\&
+        \left[\begin{array}{c}
+            e^2 & e^2
+        \\      & e^2
+        \end{array}\right]
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        e^2 &
+    \\      & e^2 & e^2
+    \\      &     & e^2
+    \end{array}\right]
+$
+
+接下来求$e^J$的Jordan标准型。
+
+$|λE - e^J| = (λ-e^2)^3$
+
+则存在以下三个情形。
+
+
+| Stuation | Smith | Jordan: $J_{e^J}$ |
+| :-: | -: | :- |
+| ① | $\left[\begin{array}{c} 1 & \\& 1 \\&& (λ-e^2)^3     \end{array}\right]$ | $\left[\begin{array}{c} e^2 & 1 & \\& e^2 & 1 \\&& e^2 \end{array}\right]$
+| ② | $\left[\begin{array}{c} 1 & \\& λ-e^2 \\&& (λ-e^2)^2 \end{array}\right]$ | $\left[\begin{array}{c} e^2 & \\& e^2 & 1 \\&& e^2 \end{array}\right]$
+| ③ | $\left[\begin{array}{c} λ-e^2 & \\& λ-e^2 \\&& λ-e^2 \end{array}\right]$ | $\left[\begin{array}{c} e^2 & \\& e^2 \\&& e^2 \end{array}\right]$
+
+取$λ=e^2,-e^2$得到满足$r(λE-e^J) = r(λE-J_{e^J})$的情况，计算得正确情况为②。
+
+即$e^J$的Jordan标准型为$\left[\begin{array}{c} e^2 & \\& e^2 & 1 \\&& e^2 \end{array}\right]$
+
