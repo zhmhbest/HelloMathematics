@@ -1,7 +1,7 @@
-<link rel='stylesheet' href='../../style/index.css'>
-<script src='../../style/index.js'></script>
+<link rel='stylesheet' href='../../../style/index.css'>
+<script src='../../../style/index.js'></script>
 
-# [矩阵函数](./index.html)
+# [矩阵函数](../index.html)
 
 [TOC]
 
@@ -57,7 +57,7 @@ $
 
 ### Jordan定义法
 
-设$n$阶方阵$A$的Jordan矩阵为$J = 
+设$n$阶方阵$A$的Jordan矩阵为$J =
     \left[\begin{array}{c}
         J_1
     \\  & J_2
@@ -79,7 +79,7 @@ $
 
 &nbsp;
 
-$$f(A) = Pf(J)P^{-1}$$
+<span class='highlight'>$$f(A) = Pf(J)P^{-1}$$</span>
 
 即$f(A)$与$f(J)$相似。
 
@@ -106,24 +106,54 @@ $
 \end{array}
 $
 
-其中$f(J_i) =
+<span class='highlight'>其中$f(J_i) =
     \left[\begin{array}{c}
         f(λ_i) & \dfrac{f'(λ_i)}{1!} & \cdots & \dfrac{f^{k_i-1}(λ_i)}{(k_i-1)!}
     \\         & f(λ_i)              & \ddots & \vdots
     \\         &                     & \ddots & \dfrac{f'(λ_i)}{1!}
     \\  &&& f(λ_i)
     \end{array}\right]
-$
+$，记住此结论即可。</span>
 
 #### 例
 
-$A = 
+$A =
     \left[\begin{array}{c}
         -4 & 2  & 10
     \\  -4 & 3  & 7
     \\  -3 & 1  & 7
     \end{array}\right]
-$，求$\cos A$
+$的Jordan矩阵$J=
+    \left[\begin{array}{c}
+        2 & 1  & 0
+    \\  0 & 2  & 1
+    \\  0 & 0  & 2
+    \end{array}\right]
+$，$P^{-1}AP=J$，求$\cos A$
 
 **解**
+
+Jordan标准形仅由一个Jordan块组成
+
+- $λ_i = 2$
+
+$\cos J = \cos J_1 =
+    \left[\begin{array}{c}
+        f(λ_i) & f'(λ_i) & \dfrac{f''(λ_i)}{2!}
+    \\  0      & f(λ_i)  & f'(λ_i)
+    \\  0      & 0       & f(λ_i)
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        \cos 2 & -\sin 2 & -\dfrac{\cos 2}{2}
+    \\  0      & \cos 2  &  -\sin 2
+    \\  0      & 0       & \cos 2
+    \end{array}\right]
+$
+
+$\cos A = P \cos J P^{-1}$
+
+## 求$f(A)$的Jordan标准形
+
+即求$f(J_A)$的Jordan标准形
 
