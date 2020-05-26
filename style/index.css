@@ -18,8 +18,16 @@
 .mark {
     border-style: dotted;
     border-width: 1px;
-    border-color: #FF8000;
+    border-color: rgb(255, 128, 0);
     background-color: #444;
+}
+
+div.mark {
+    padding: 5px;
+}
+
+span.mark {
+    padding: 1px;
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
