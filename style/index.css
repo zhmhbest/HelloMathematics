@@ -10,7 +10,16 @@
 }
 
 .highlight {
-    color: #08BEC9;
+    color: #99FFFF;
+    /* 99FFFF */
+    /* 08BEC9 */
+}
+
+.mark {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #FF8000;
+    background-color: #444;
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/

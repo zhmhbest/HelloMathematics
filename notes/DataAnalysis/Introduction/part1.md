@@ -43,15 +43,21 @@ block1->block2->block3->block4->block5
 
 由$f(x^*) - f(x) = f'(x)(x^*-x) + \dfrac{f''(ξ)}{2}(x^*-x)^2$，得
 
-<span class='highlight'>$$ε[f(x)] ≈ |f'(x)|ε(x)|$$</span>
+<div class='mark'>
+
+$$ε[f(x)] ≈ |f'(x)|ε(x)|$$
+</div>
 
 推理得
 
-<span class='highlight'>$$ε[f(x_1,\cdots,x_n)] ≈ \sum_{k=1}^{n} \left| \dfrac{∂f}{∂x_k} \right| ε(x_k)$$</span>
+<div class='mark'>
+
+$$ε[f(x_1,\cdots,x_n)] ≈ \sum_{k=1}^{n} \left| \dfrac{∂f}{∂x_k} \right| ε(x_k)$$
+</div>
 
 ### 运算性质
 
-<div class='highlight'>
+<div class='mark'>
 
 - $ε(x_1±x_2) = ε(x_1) + ε(x_2)$，（这里等式右边就是只有加号）
 - $ε(x_1 ⋅ x_2) ≈ |x_1|ε(x_2) + |x_2|ε(x_1)$
@@ -99,7 +105,7 @@ block1->block2->block3->block4->block5
 
 ## 有效数字
 
-<span class='highlight'>如果$x$的**绝对误差限**$e$是它的某一数位的半个单位（比如四舍五入这种情况），并且从$x$左起第一个非零数字到该数位共有$n$位，则称这$n$个数字为$x$的有效数字</span>。即$x$近似$x^*$时有$n$位有效数字。此外，我们认为精确值的有效数字有无穷多位。
+<span class='mark'>如果$x$的**绝对误差限**$e$是它的某一数位的半个单位（比如四舍五入这种情况），并且从$x$左起第一个非零数字到该数位共有$n$位，则称这$n$个数字为$x$的有效数字</span>。即$x$近似$x^*$时有$n$位有效数字。此外，我们认为精确值的有效数字有无穷多位。
 
 ### 标准浮点数
 
@@ -113,7 +119,11 @@ $$x=±0.a_1a_2{\dots}a_k×10^m$$
 >[当且仅当等价于充要条件](https://www.zhihu.com/question/28594040/answer/125495014)
 
 $x$作为$x^*$的近似值，具有$n$位有效数字，当且仅当
+
+<div class='mark'>
+
 $$|x^*-x| = e ≤ \frac{1}{2}×10^{m-n}$$
+</div>
 
 - $m$：近似值$x$写成**标准浮点数**时的指数位置取值。
 - $n$：近似值$x$的有效数字位数。
@@ -190,7 +200,7 @@ $e = 0.00006418 = 0.6418 × 10^{-4} ≤ \dfrac{1}{2}×10^{m-n} =\dfrac{1}{2}×10
 
 ## 数值稳定性
 
-即计算过程中，舍入误差不增长。
+<span class='mark'>即计算过程中，舍入误差不增长。</span>
 
 **数值计算若干原则**
 
