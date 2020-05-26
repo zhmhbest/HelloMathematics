@@ -34,5 +34,14 @@
                 ele.style['font-size'] = '180%';
             }
         }
+
+        // 去除空表头
+        var theads = document.querySelectorAll('table thead');
+        for(var i=0; i<theads.length; i++) {
+            var thead = theads[i];
+            if(0 === thead.innerText.trim().length) {
+                thead.remove();
+            }
+        }  
     };
 })();
