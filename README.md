@@ -1,4 +1,4 @@
-# Mathematics
+# HelloMathematics
 
 - [View on Github](https://zhmhbest.github.io/HelloMathematics/notes/?)
 - [View on Gitee](http://zhmhbest.gitee.io/hellomathematics/notes/?)

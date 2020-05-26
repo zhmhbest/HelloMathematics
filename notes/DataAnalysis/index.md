@@ -1,4 +1,5 @@
 <link rel='stylesheet' href='../../style/index.css'>
+<script src='../../style/index.js'></script>
 
 # [数值分析](../index.html)
 
