@@ -10,7 +10,9 @@
         ele.style['bottom'] = '45px';
         ele.style['display'] = 'none';
         // ele.href = 'javascript: window.scrollTo(0,0)';
-        ele.href = '#' + document.getElementsByTagName('h1')[0].id;
+        var tag_h1 =  document.getElementsByTagName('h1')[0];
+        ele.href = '#' + tag_h1.id;
+        document.title = tag_h1.innerText;
 
         // 滚动事件
         window.onscroll = function(e) {
@@ -42,6 +44,6 @@
             if(0 === thead.innerText.trim().length) {
                 thead.remove();
             }
-        }  
+        }
     };
 })();
