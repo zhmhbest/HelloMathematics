@@ -23,11 +23,16 @@
 
 ### [函数空间](./Introduction/part2.html#函数空间)
 
-## 第二章：解线性方程组
+## [第二章：解线性方程组迭代法](./IterativeMethodOFLinearEquations.html)
 
-### [直接解法](./02-DirectSolutionOFLinearEquations.html)
 
-### [迭代法](./02-IterativeMethodOFLinearEquations.html)
+
+
+
+
+
+
+
 
 ## [第三章：解非线性方程组](./03-SolutionOFNon-linearEquation.html)
 
