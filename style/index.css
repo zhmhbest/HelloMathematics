@@ -144,6 +144,9 @@ html body h3:before {
 }
 
 
+html body h4>a {
+    color:inherit;
+}
 html body h4 {
     margin-left: 6%;
     margin-top: 10px;
@@ -156,6 +159,9 @@ html body h4:before {
 }
 
 
+html body h5>a {
+    color:inherit;
+}
 html body h5 {
     color: #FFFFFF;
 }

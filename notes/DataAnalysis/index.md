@@ -23,21 +23,22 @@
 
 ### [函数空间](./Introduction/part2.html#函数空间)
 
-## [第二章：解线性方程组迭代法](./IterativeMethodOFLinearEquations.html)
+## [第二章：线性方程组迭代法](./IterativeMethod.html)
 
+### [迭代法思想](./IterativeMethod.html#迭代法思想)
 
+### [迭代改善算法](./IterativeMethod.html#迭代改善算法)
 
+#### [雅可比迭代（Jacobi）](./IterativeMethod.html#雅可比迭代jacobi)
+#### [高斯-赛德尔迭代（Gauss-Seide）](./IterativeMethod.html#高斯-赛德尔迭代gauss-seide)
+#### [逐次超松弛迭代（SOR）](./IterativeMethod.html#逐次超松弛迭代sor)
 
+### [迭代法的收敛性](./IterativeMethod.html#迭代法的收敛性)
 
+## [第三章：非线性方程组](./Non-linearEquation.html)
 
-
-
-
-
-## [第三章：解非线性方程组](./03-SolutionOFNon-linearEquation.html)
-
-## [第四章：插值逼近](./04-Interpolation.html)
+<!-- ## [第四章：插值逼近](./04-Interpolation.html)
 
 ## [第五章：数值微积分](./05-Calculus.html)
 
-## [第六章：常微分方程的数值解法](./06-DifferentialEquation.html)
+## [第六章：常微分方程的数值解法](./06-DifferentialEquation.html) -->

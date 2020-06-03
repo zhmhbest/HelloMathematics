@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [解非线性方程组](./index.html)
+# [第三章：非线性方程组](./index.html)
 
 [TOC]
 
