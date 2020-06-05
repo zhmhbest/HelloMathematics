@@ -91,6 +91,42 @@ $$
 
 属性条件独立性假设。
 
+#### Example
+
+@import "data\naivebayes_eg1.csv"
+
+$P(Ca^{+}=低,Mg^+=高,Na^+=高,Cl^=低 {\ \big|\ } Type=冰川水) × P(冰川水)$
+$   
+    \begin{array}{l}
+    \\  =
+    \\  & P(Ca^+=低 {\ \big|\ } Type=冰川水) & × 
+    \\  & P(Mg^+=高 {\ \big|\ } Type=冰川水) & × 
+    \\  & P(Na^+=高 {\ \big|\ } Type=冰川水) & × 
+    \\  & P(Cl^-=低 {\ \big|\ } Type=冰川水) & ×
+    \\  & P(冰川水)
+    \\\\    = \left(
+        \dfrac{1}{2} × \dfrac{3}{4} × \dfrac{2}{4} × \dfrac{2}{6}
+    \right) × \dfrac{4}{8} = \dfrac{1}{32}
+    \end{array}
+$
+
+$P(Ca^{+}=低,Mg^+=高,Na^+=高,Cl^=低 {\ \big|\ } Type=湖泊水) × P(湖泊水)$
+$   
+    \begin{array}{l}
+    \\  =
+    \\  & P(Ca^+=低 {\ \big|\ } Type=湖泊水) & × 
+    \\  & P(Mg^+=高 {\ \big|\ } Type=湖泊水) & × 
+    \\  & P(Na^+=高 {\ \big|\ } Type=湖泊水) & × 
+    \\  & P(Cl^-=低 {\ \big|\ } Type=湖泊水) & ×
+    \\  & P(湖泊水)
+    \\\\    = \left(
+        \dfrac{1}{2} × \dfrac{1}{4} × \dfrac{2}{4} × \dfrac{4}{6}
+    \right) × \dfrac{4}{8} = \dfrac{1}{48}
+    \end{array}
+$
+
+故$(Ca^{+}=低,Mg^+=高,Na^+=高,Cl^=低)$为冰川水。
+
 ### 朴素贝叶斯分类器表达式
 
 $$h_{nb} = 
