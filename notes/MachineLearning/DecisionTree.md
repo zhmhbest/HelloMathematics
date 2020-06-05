@@ -72,25 +72,44 @@ $$\mathrm{Gini}(D) = \sum_{k=1}^{n} \sum_{k'≠k} p_kp_{k'} = 1 - \sum_{k=1}^{n}
 
 - $n$：样本种类数
 
-基尼值反映了从数据集中随机抽取两个样本，其类别标记不一致的概率。基尼值越小，数据集纯度越高。
+基尼值反映了从数据集中随机抽取两个样本，其类别标记不一致的概率（不纯性的度量）。基尼值越小，数据集纯度越高。
 
 #### 基尼指数
 
 $$\mathrm{GiniIndex}(D, a) = \sum_{v=1}^{V} \dfrac{|D^{v}|}{|D|} \mathrm{Gini}(D^v)$$
 
+#### Eaxmple
+
+@import "./data/gini_eg1.csv"
+
+**计算$\mathrm{GiniIndex}(Outlook)$**
+
+@import "./data/gini_eg1_Outlook.csv"
+
+- $\mathrm{Gini}(Outlook=Sunny) = 1 - (\dfrac{2}{5})^2 - (\dfrac{3}{5})^2 = 0.48$
+- $\mathrm{Gini}(Outlook=OverCast) = 1 - (\dfrac{4}{4})^2 - (\dfrac{0}{4})^2 = 0$
+- $\mathrm{Gini}(Outlook=Rain) = 1 - (\dfrac{3}{5})^2 - (\dfrac{2}{5})^2 = 0.48$
+
+$\mathrm{GiniIndex}(Outlook) = 
+    \dfrac{5}{14}\mathrm{Gini}(Outlook=Sunny) + 
+    \dfrac{4}{14}\mathrm{Gini}(Outlook=OverCast) + 
+    \dfrac{5}{14}\mathrm{Gini}(Outlook=Rain) 
+    = \dfrac{12}{35} ≈ 0.343
+$
+
 ## 算法
 
 ### ID3
 
-每次划分选取信息增益最高的属性为划分标准。
+每次划分选取**信息增益**最高的属性为划分标准。
 
 ### C4.5
 
-先从候选属性中找出信息增益高于平均水平的属性，再从中选择增益率最高的。
+先从候选属性中找出**信息增益**高于平均水平的属性，再从中选择**增益率**最高的。
 
 ### CART
 
-优先选择基尼指数小的属性。
+优先选择**基尼指数**小的属性。
 
 ## 剪枝
 
