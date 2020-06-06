@@ -19,13 +19,15 @@
 
 ## [线性模型](./LinearModel.html)
 
-## [决策树](./DecisionTree.html)
-
 ## [神经网络](./NeuralNetwork.html)
 
 ## [支持向量机](./SVM.html)
 
+## [决策树](./DecisionTree.html)
+
 ## [贝叶斯分类器](./Bayesian.html)
+
+## [关联分析](./Relation.html)
 
 <!--
 ## 聚类
