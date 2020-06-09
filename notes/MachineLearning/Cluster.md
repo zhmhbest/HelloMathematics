@@ -9,11 +9,9 @@
 
 >[Sklearn-Clustering](https://scikit-learn.org/stable/modules/clustering.html)
 
-### 聚类
-
 将数据分组成簇，使得簇内相似度尽可能高，簇间相似度尽可能低的无监督学习方法。
 
-### 聚类算法
+### 常见聚类算法
 
 <!-- 【参考资料】
 《各种聚类算法介绍和比较》
@@ -27,6 +25,7 @@
   - DBSCAN
   - OPTICS（Ordering points to identify the clustering structure）
 - **Hierarchical methods**
+  - Ward（凝聚法层次聚类）
   - BIRCH（Balanced Iterative Reducing and Clustering Using Hierarchies）
   - Chameleon
   - Agglomerative
@@ -90,3 +89,18 @@ $$
 **迭代过程**
 
 ![](images/cluster_kmeans.png)
+
+## Ward Hierarchical Clustering
+
+### 思想
+
+凝聚的层次聚类采用自底向上策略，首先将每个样本作为一个簇，然后合并这些原子簇形成越来越大的簇，以减少簇的数目，直到所有的样本都在一个簇中，或某个终结条件被满足。
+
+### 距离判定
+
+||||
+| - | - | - |
+| **单链接（Single Linkage）**   | 最小距离 | 两个簇的最近样本决定 |
+| **全链接（Complete Linkage）** | 最大距离 | 两个簇的最远样本决定 |
+| **均链接（Average Linkage）**  | 平均距离 | 两个簇所有样本共同决定 |
+
