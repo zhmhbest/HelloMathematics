@@ -18,20 +18,22 @@
 $$
     \mathrm{Support}(X) = P(X) 
         = \frac{
-            \mathrm{Num}(X)
+            \mathrm{Count}(X)
         }{
-            \mathrm{Num}(Samples)
+            \mathrm{Count}(Samples)
         }
 $$
 
 $$
     \mathrm{Support}(X,Y) = P(XY) 
         = \frac{
-            \mathrm{Num}(XY)
+            \mathrm{Count}(XY)
         }{
-            \mathrm{Num}(Samples)
+            \mathrm{Count}(Samples)
         }
 $$
+
+- $\mathrm{Count}(x)$：表示统计$x$的数量
 
 #### 置信度
 

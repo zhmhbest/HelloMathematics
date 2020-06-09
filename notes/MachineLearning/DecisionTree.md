@@ -17,24 +17,40 @@
 
 $$\mathrm{Information}(x) = \log \dfrac{1}{p(x)} = -\log p(x)$$
 
-$p(x)$表示某一事件其子情况发生的概率。$p(x)$越大，信息量越小。
+$p(x)$表示某一事件$X$其子情况$x$发生的概率。$p(x)$越大，信息量越小。
 
 #### 信息熵
 
 $$\mathrm{Entropy}(X) = -\sum_{x∈X} p(x) ⋅ \log p(x)$$
 
-$X$指某一事件，$x$遍历了其所有子情况，$p(x)$指某一子情况发生的概率。该值表达了事件$X$的不确定性，熵越大，不确定性越大。
+$X$指某一事件，$x$遍历了其所有子情况，$p(x)$指某一子情况发生的概率。该值表达了事件$X$的不确定性，<span class='highlight'>熵越大，不确定性越大</span>。
 
-信息熵亦是度量样本纯度地指标，该值越小，样本纯度越高，即样本中尽可能属于同一类别。
+<span class='highlight'>信息熵亦是度量样本纯度地指标，该值越小，样本纯度越高，即样本中尽可能属于同一类别。</span>
+
+<div class='hint'>
+
+交叉熵：$\mathrm{CrossEntropy}(p, q) = \sum\limits_{x} p(x) ⋅ \log \dfrac{1}{q(x)}$
+
+- $p$：真实分布
+- $q$：非真实分
+
+该式用于度量两个概率分布间的差异性信息。
+</div>
 
 #### 条件熵
 
-$$\mathrm{Entropy}(Y|X)
-\begin{array}{l}
-\\
-\\  = \sum\limits_{x∈X} p(x) ⋅ \mathrm{Entropy}(Y|X=x) 
-\\  = -\sum\limits_{x∈X} p(x) \sum\limits_{y∈Y} p(y|x) ⋅ \log p(y|x)
-\end{array}$$
+$$
+    \mathrm{Entropy}(Y ⇐ X) = 
+    \mathrm{Entropy}(Y {\ \bold\vert\ } X)
+    \begin{array}{l}
+    \\
+    \\  = \sum\limits_{x∈X} p(x) ⋅ \mathrm{Entropy}(Y {\ \bold\vert\ } X=x) 
+    \\  = -\sum\limits_{x∈X} p(x) \sum\limits_{y∈Y}
+                p(y {\ \bold\vert\ } x)
+                ⋅ 
+                \log p(y {\ \bold\vert\ } x)
+    \end{array}
+$$
 
 已知事件$X$的情况下求事件$Y$的不确定性。
 
@@ -45,24 +61,33 @@ $$\mathrm{Entropy}(Y|X)
 $$\mathrm{Gain}(D, a) 
 \begin{array}{l}
 \\
-\\  = \mathrm{Entropy}(D) - \mathrm{Entropy}(D|a)
-\\  = \mathrm{Entropy}(D) - \sum\limits_{v=1}^{V} \dfrac{|D^v|}{|D|} \mathrm{Entropy}(D^v)
+\\  = \mathrm{Entropy}(D) - \mathrm{Entropy}(D {\ \bold\vert\ } a)
+\\  = \mathrm{Entropy}(D) - \sum\limits_{v=1}^{a.V} \dfrac{|D^v|}{|D|} \mathrm{Entropy}(D^v)
 \end{array}
 $$
 
-- 属性$a$有$V$个可能的取值
+- $D$：数据集
+- $a$：某一离散属性
+- $a.V$：属性可取的值数量
 - $D^v$包含了$D$中所有属性$a$上取值为$a^v$的样本。
 
-信息增益越大，即使用该属性进行划分时，对纯度的提升越大。信息增益准则对可取值数目较多的属性有所偏好。
+<span class='highlight'>信息增益越大，即使用该属性进行划分时，对纯度的提升越大。信息增益准则对可取值数目较多的属性有所偏好。</span>
 
 #### 增益率
 
 $$\mathrm{GainRatio}(D, a) = \dfrac{\mathrm{Gain}(D, a)}{\mathrm{IV}(a)}$$
 
-- 属性$a$有$V$个可能的取值
-- $IV$：属性的固有值（Intrinsic Value），$IV(a) = -\sum\limits_{v=1}^{V} \dfrac{|D^v|}{|D|} \log_2 \dfrac{|D^v|}{|D|}$
+- $IV$：属性的固有值（Intrinsic Value）
 
-增益率准则对可取值数目较少的属性有所偏好。
+$$
+    IV(a) = 
+        -\sum\limits_{v=1}^{a.V}
+            \dfrac{|D^v|}{|D|}
+            \log
+            \dfrac{|D^v|}{|D|}
+$$
+
+<span class='highlight'>增益率准则对可取值数目较少的属性有所偏好。</span>
 
 ### 基尼
 
@@ -72,7 +97,7 @@ $$\mathrm{Gini}(D) = \sum_{k=1}^{n} \sum_{k'≠k} p_kp_{k'} = 1 - \sum_{k=1}^{n}
 
 - $n$：样本种类数
 
-基尼值反映了从数据集中随机抽取两个样本，其类别标记不一致的概率（不纯性的度量）。基尼值越小，数据集纯度越高。
+<span class='highlight'>基尼值反映了从数据集中随机抽取两个样本，其类别标记不一致的概率（不纯性的度量）。基尼值越小，数据集纯度越高。</span>
 
 #### 基尼指数
 
