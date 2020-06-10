@@ -104,3 +104,26 @@ $$
 | **全链接（Complete Linkage）** | 最大距离 | 两个簇的最远样本决定 |
 | **均链接（Average Linkage）**  | 平均距离 | 两个簇所有样本共同决定 |
 
+#### Example
+
+@import "./data/hierarchical_eg1.csv"
+
+使用Single Linkage进行聚合
+
+***Step1***：聚合**MI**和**TO**
+
+@import "./data/hierarchical_eg1_step1.csv"
+
+***Step2***：聚合**NA**和**RM**
+
+@import "./data/hierarchical_eg1_step2.csv"
+
+***Step3***：聚合**BA**和**NA/RM**
+
+@import "./data/hierarchical_eg1_step3.csv"
+
+***Step4***：聚合**BA/NA/RM**和**FI**
+
+@import "./data/hierarchical_eg1_step4.csv"
+
+![](images/cluster_hierarchical_eg.png)
