@@ -101,7 +101,7 @@ $$\mathrm{Gini}(D) = \sum_{k=1}^{n} \sum_{k'≠k} p_kp_{k'} = 1 - \sum_{k=1}^{n}
 
 #### 基尼指数
 
-$$\mathrm{GiniIndex}(D, a) = \sum_{v=1}^{V} \dfrac{|D^{v}|}{|D|} \mathrm{Gini}(D^v)$$
+$$\mathrm{GiniIndex}(D, a) = \sum_{v=1}^{a.V} \dfrac{|D^{v}|}{|D|} \mathrm{Gini}(D^v)$$
 
 #### Eaxmple
 
