@@ -89,6 +89,50 @@ $$
 
 <span class='highlight'>增益率准则对可取值数目较少的属性有所偏好。</span>
 
+#### Example
+
+@import "./data/gain_eg1.csv"
+
+@import "./data/gain_eg1_result.csv"
+
+- $\mathrm{Entropy}(D) = -\left(
+        \dfrac{8}{17}\log \dfrac{8}{17} + 
+        \dfrac{9}{17}\log \dfrac{9}{17}
+    \right) = 0.998$
+
+**计算$\mathrm{Gain}(D, 色泽)$**
+
+@import "./data/gain_eg1_color.csv"
+
+- $\mathrm{Entropy}(色泽=青绿) = -\left(
+        \dfrac{3}{6}\log \dfrac{3}{6} + 
+        \dfrac{3}{6}\log \dfrac{3}{6}
+    \right) = 1$
+- $\mathrm{Entropy}(色泽=乌黑) = -\left(
+        \dfrac{4}{6}\log \dfrac{4}{6} + 
+        \dfrac{2}{6}\log \dfrac{2}{6}
+    \right) = 0.918$
+- $\mathrm{Entropy}(色泽=浅白) = -\left(
+        \dfrac{1}{5}\log \dfrac{1}{5} + 
+        \dfrac{4}{5}\log \dfrac{4}{5}
+    \right) = 0.722$
+
+$$
+\begin{array}{l}
+    \mathrm{Gain}(D, 色泽) \\\\ \\\\ \\\\
+\end{array}
+\begin{array}{l}
+        = \mathrm{Entropy}(D) - 
+            \sum\limits_{v=1}^{3} \dfrac{|D^v|}{|D|} \mathrm{Entropy}(D^v)
+\\\\    = 0.998 - \left(
+            \dfrac{6}{17} × 1 + 
+            \dfrac{6}{17} × 0.918
+            \dfrac{5}{17} × 0.722
+        \right)
+\\\\    = 0.109
+\end{array}
+$$
+
 ### 基尼
 
 #### 基尼值
@@ -103,6 +147,8 @@ $$\mathrm{Gini}(D) = \sum_{k=1}^{n} \sum_{k'≠k} p_kp_{k'} = 1 - \sum_{k=1}^{n}
 
 $$\mathrm{GiniIndex}(D, a) = \sum_{v=1}^{a.V} \dfrac{|D^{v}|}{|D|} \mathrm{Gini}(D^v)$$
 
+<span class='highlight'>选择基尼指数最小的属性作为最优划分属性。</span>
+
 #### Eaxmple
 
 @import "./data/gini_eg1.csv"
@@ -115,12 +161,17 @@ $$\mathrm{GiniIndex}(D, a) = \sum_{v=1}^{a.V} \dfrac{|D^{v}|}{|D|} \mathrm{Gini}
 - $\mathrm{Gini}(Outlook=OverCast) = 1 - (\dfrac{4}{4})^2 - (\dfrac{0}{4})^2 = 0$
 - $\mathrm{Gini}(Outlook=Rain) = 1 - (\dfrac{3}{5})^2 - (\dfrac{2}{5})^2 = 0.48$
 
-$\mathrm{GiniIndex}(Outlook) = 
-    \dfrac{5}{14}\mathrm{Gini}(Outlook=Sunny) + 
-    \dfrac{4}{14}\mathrm{Gini}(Outlook=OverCast) + 
-    \dfrac{5}{14}\mathrm{Gini}(Outlook=Rain) 
-    = \dfrac{12}{35} ≈ 0.343
-$
+$$
+\begin{array}{l}
+    \mathrm{GiniIndex}(Outlook) =  \\ \\\\ \\\\ \\\\ \\\\
+\end{array}
+\begin{array}{l}
+        \dfrac{5}{14}\mathrm{Gini}(Outlook=Sunny) + 
+\\\\    \dfrac{4}{14}\mathrm{Gini}(Outlook=OverCast) + 
+\\\\    \dfrac{5}{14}\mathrm{Gini}(Outlook=Rain)
+\\\\    = \dfrac{12}{35} ≈ 0.343
+\end{array}
+$$
 
 ## 算法
 
