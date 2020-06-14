@@ -9,7 +9,6 @@
 
 - **Value-based**：Learnin a Critic
   - Q-Learning
-  - Sarsa
   - DQN（Deep Q Network）
 - **Policy-based**：Learnin an Actor
   - PG（Policy Gradients）
@@ -20,9 +19,10 @@
 
 ### 基本要素
 
-- $State$
-- $Action$
-- $Reward$
+- $Agent$：智能体
+- $State$：环境状态
+- $Action$：在当前环境状态下智能体所能执行的决策
+- $Reward$：执行决策后获得的奖励，奖励可以为负
 
 ### 探索—利用困境（Explore-Exploit dilemma）
 
@@ -37,6 +37,8 @@ $$\mathrm{times}(try) = \mathrm{times}(use) + \mathrm{times}(explore)$$
 若初始$\epsilon$非常大，则通常让$\epsilon=\dfrac{1}{\sqrt{\mathrm{times}(try)}}$，即使$\epsilon$随着探索次数的增加而减小。
 
 ## Q-Learning
+
+>[Flappy Bird](https://enhuiz.github.io/flappybird-ql/)
 
 ### Q-Table
 
@@ -69,4 +71,14 @@ $$
 
 ## DQN
 
+Q-Learning使用表格来存储$Q(s,a)$，但该方法在很多现实问题上是不可行的（状态过多将会导致表格的“维度爆炸”）。
+
+### 价值函数近似（Value Function Approximation）
+
+该方法就是为了解决状态空间过大的问题，用一个函数来近似表示$Q(s, a)$
+
+$$Q(s, a) = f(s, a, w)$$
+
 ## Policy Gradients
+
+>待补充
