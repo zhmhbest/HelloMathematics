@@ -43,6 +43,16 @@
 
 ## [插值逼近](./Interpolation.html)
 
+### [Lagrange](./Interpolation.html#拉格朗日lagrange插值)
+
+### [Newton](./Interpolation.html#牛顿newton插值)
+
+### [Hermite](./Interpolation.html#埃尔米特hermite插值)
+
+### [分段插值](./Interpolation.html#分段插值)
+
+### [三次样条插值](./Interpolation.html#三次样条插值)
+
 <!--
 ## [第五章：数值微积分](./05-Calculus.html)
 
