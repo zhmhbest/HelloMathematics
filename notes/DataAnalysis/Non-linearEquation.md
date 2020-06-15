@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [第三章：非线性方程组](./index.html)
+# [数值分析：非线性方程组](./index.html)
 
 [TOC]
 
@@ -105,7 +105,7 @@ $$
 - 若原迭代是$p$阶收敛的，则Steffensen是$p+1$阶收敛的。
 </div>
 
-## 牛顿迭代法
+## 牛顿迭代
 
 ### 构造思路
 

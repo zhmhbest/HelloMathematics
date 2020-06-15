@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [插值逼近](./index.html)
+# [数值分析：插值逼近](./index.html)
 
 [TOC]
 

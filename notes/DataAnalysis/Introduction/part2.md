@@ -1,7 +1,7 @@
 <link rel='stylesheet' href='../../../style/index.css'>
 <script src='../../../style/index.js'></script>
 
-# [绪论：Part2](../index.html)
+# [数值分析：绪论2](../index.html)
 
 [TOC]
 

@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [第二章：线性方程组迭代法](./index.html)
+# [数值分析：线性方程组迭代法](./index.html)
 
 [TOC]
 

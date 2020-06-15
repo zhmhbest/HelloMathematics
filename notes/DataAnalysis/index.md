@@ -3,7 +3,7 @@
 
 # [数值分析](../index.html)
 
-## 第一章：绪论
+## 绪论
 
 ### [分析流程](./Introduction/part1.html#分析流程)
 
@@ -23,7 +23,7 @@
 
 ### [函数空间](./Introduction/part2.html#函数空间)
 
-## [第二章：线性方程组迭代法](./IterativeMethod.html)
+## [线性方程组迭代法](./IterativeMethod.html)
 
 ### [迭代法思想](./IterativeMethod.html#迭代法思想)
 
@@ -35,10 +35,15 @@
 
 ### [迭代法的收敛性](./IterativeMethod.html#迭代法的收敛性)
 
-## [第三章：非线性方程组](./Non-linearEquation.html)
+## [非线性方程组](./Non-linearEquation.html)
 
-<!-- ## [第四章：插值逼近](./04-Interpolation.html)
+### [不动点迭代](./Non-linearEquation.html#不动点迭代)
 
+### [牛顿迭代](./Non-linearEquation.html#牛顿迭代)
+
+## [插值逼近](./Interpolation.html)
+
+<!--
 ## [第五章：数值微积分](./05-Calculus.html)
 
 ## [第六章：常微分方程的数值解法](./06-DifferentialEquation.html) -->
