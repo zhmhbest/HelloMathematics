@@ -314,6 +314,20 @@ $A=
     \end{array}\right]_{n×n}
 $
 
+### 希尔伯特（Hilbert ）矩阵
+
+$A=
+    \left[\begin{array}{c}
+            1           & \frac{1}{2} & \frac{1}{3} & \cdots & \frac{1}{n}
+    \\\\    \frac{1}{2} & \frac{1}{3} & \frac{1}{4} & \cdots & \frac{1}{n+1}
+    \\\\    \frac{1}{3} & \frac{1}{4} & \frac{1}{5} & \cdots & \frac{1}{n+2}
+    \\\\    \vdots      & \vdots      & \vdots      & \ddots & \vdots
+    \\\\    \frac{1}{n} & \frac{1}{n+1} & \frac{1}{n+2} & \cdots & \frac{1}{2n-1}
+    \end{array}\right]_{n×n}
+$
+
+- $a_{ij} = \dfrac{1}{i+j-1}$
+
 ### 行阶梯矩阵
 
 $eg:
