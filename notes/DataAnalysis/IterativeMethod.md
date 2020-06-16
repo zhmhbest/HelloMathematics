@@ -245,6 +245,151 @@ $$x_i^{(k+1)} =
 $$
 </div>
 
+#### 例
+
+分别用**雅可比迭代法**及**高斯-赛德尔迭代法**解下列方程组
+
+$\begin{cases}
+    5x_1+2x_2+x_3=−12
+\\  −x_1+4x_2+2x_3=20
+\\  2x_1−3x_2+10x_3=3
+\end{cases}$，取$x^{(0)} = \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right]$
+
+**问**
+
+- 两种迭代法是否收敛
+- 若收敛，迭代多少次可保证$\| x^{(k)} - x^∗ \|_{\infty} < 10^{-4} = \varepsilon$
+
+**解**
+
+>事前估计：$k > \dfrac{
+    \ln \dfrac{ε(1-q)}{\|x^{(1)}-x^{(0)}\|}
+}{
+    \ln q
+}$
+
+
+$A = 
+    \left[\begin{array}{c}
+        5  & 2  & 1
+    \\  −1 & 4  & 2
+    \\  2  & −3 & 10
+    \end{array}\right]
+    =
+    L + D + U
+    =
+    \left[\begin{array}{c}
+    \\  −1
+    \\  2 & −3
+    \end{array}\right]
+    +
+    \left[\begin{array}{c}
+        5
+    \\  & 4
+    \\  && 10
+    \end{array}\right]
+    +
+    \left[\begin{array}{c}
+        & 2 & 1
+    \\  && 2
+    \\  &
+    \end{array}\right]
+$
+
+**Jacobi**
+
+$\begin{cases}
+    B_{Jacobi} = I - D^{-1}A =
+        \left[\begin{array}{c}
+            0    & −2/5 & −1/5
+        \\  1/4  & 0    & −1/2
+        \\  −1/5 & 3/10 & 0
+        \end{array}\right]
+\\
+\\  f_{Jacobi} = D^{-1}b = \left[\begin{array}{c}
+            -\dfrac{12}{5}
+        &   5
+        &   \dfrac{3}{10}
+    \end{array}\right]^T
+\\
+\\  \|B_{Jacobi}\|_{\infty} = \dfrac{3}{4} < 1
+\end{cases}$
+
+$x^{(1)} = B_{Jacobi}x^{(0)} + f_{Jacobi} = 
+    \left[\begin{array}{c}
+            -\dfrac{12}{5}
+        &   5
+        &   \dfrac{3}{10}
+    \end{array}\right]^T
+$
+
+$\|x^{(1)}-x^{(0)}\|_{\infty} = 5$
+
+$k > 
+    \dfrac{
+        \ln \dfrac{ε(1-q)}{\|x^{(1)}-x^{(0)}\|}
+    }{
+        \ln q
+    }
+    = 
+    \dfrac{
+        \ln \dfrac{10^{-4}(1-\frac{3}{4})}{5}
+    }{
+        \ln \frac{3}{4}
+    }
+    ≈
+    42.43
+$
+
+故根据事前估计，Jacobi约需要迭代43次
+
+**Gauss-Seide**
+
+$\begin{cases}
+    B_{GS} = -(D+L)^{-1}U =
+        \left[\begin{array}{c}
+            0 & −2/5  & −1/5
+        \\  0 & −1/10 & −11/20
+        \\  0 & 1/20  & −1/8
+        \end{array}\right]
+\\
+\\  f_{GS} = (D+L)^{-1}b = \left[\begin{array}{c}
+            -\dfrac{12}{5}
+        &   \dfrac{22}{5}
+        &   \dfrac{21}{10}
+    \end{array}\right]^T
+\\
+\\  \|B_{GS}\|_{\infty} = \dfrac{13}{20} = 0.65 < 1
+\end{cases}$
+
+$x^{(1)} = B_{GS}x^{(0)} + f_{GS} = 
+    \left[\begin{array}{c}
+            -\dfrac{12}{5}
+        &   \dfrac{22}{5}
+        &   \dfrac{21}{10}
+    \end{array}\right]^T
+$
+
+$\|x^{(1)}-x^{(0)}\|_{\infty} = \dfrac{22}{5} = 4.4$
+
+$k > 
+    \dfrac{
+        \ln \dfrac{ε(1-q)}{\|x^{(1)}-x^{(0)}\|}
+    }{
+        \ln q
+    }
+    = 
+    \dfrac{
+        \ln \dfrac{10^{-4}(1-0.65)}{4.4}
+    }{
+        \ln 0.65
+    }
+    ≈
+    27.26
+$
+
+故根据事前估计，Gauss-Seide约需要迭代28次
+
 ### 逐次超松弛迭代（SOR）
 
 $①$
@@ -339,7 +484,11 @@ $$\|B\| = q < 1 { \ \ \ ⇒ \ \ \ } \lim\limits_{k→∞} A_k = A$$
 - $\|x^*-x^{(k)}\| ≤ \frac{q}{1-q} ⋅ \|x^{(k)}-x^{(k-1)}\|$
 - $\|x^*-x^{(k)}\| ≤ \frac{q^k}{1-q} ⋅ \|x^{(1)}-x^{(0)}\|$
 
-### 事后估计
+### 误差估计
+
+>$q$表示迭代矩阵的某种算子范数
+
+**事后估计**
 
 <div class='mark'>
 
@@ -350,7 +499,7 @@ $$\|x^{(k)}-x^{(k-1)}\| ≤ \dfrac{1-q}{q}ε$$
 时，有$\|x^{(k)}-x^{(k-1)}\| < ε$，即可停止迭代。
 </div>
 
-### 事前估计
+**事前估计**
 
 若有
 
