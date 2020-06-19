@@ -35,7 +35,7 @@
 
 ### [迭代法的收敛性](./IterativeMethod.html#迭代法的收敛性)
 
-## [非线性方程组](./Non-linearEquation.html)
+## [非线性方程组迭代法](./Non-linearEquation.html)
 
 ### [不动点迭代](./Non-linearEquation.html#不动点迭代)
 
