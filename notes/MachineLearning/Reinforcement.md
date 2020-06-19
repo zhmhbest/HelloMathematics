@@ -9,10 +9,10 @@
 
 ### 常见强化学习算法
 
-- **Value-based**：Learnin a Critic
+- **Value-based**：Learning a Critic
   - Q-Learning
   - DQN（Deep Q Network）
-- **Policy-based**：Learnin an Actor
+- **Policy-based**：Learning an Actor
   - PG（Policy Gradients）
 - **Module-based**
   - Module based RL
