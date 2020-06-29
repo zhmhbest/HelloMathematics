@@ -205,7 +205,16 @@ html body {
 
 /* 【粗体 颜色】 */
 html body strong {
-    color: #eee;
+    /* color: #eee;*/
+    color: inherit;
+    font-weight: bold;
+
+    /* 亮度 */
+    filter: brightness(135%);
+    -webkit-filter: brightness(135%);
+    /* 饱和度 */
+    /* -webkit-filter: saturate(180%);
+    filter: saturate(180%); */
 }
 
 /* 【代码 颜色】 */

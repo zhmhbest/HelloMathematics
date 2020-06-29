@@ -21,6 +21,19 @@ $$φ(x_k)=f(x_k)=y_k, \,\,\, k=0,1,2,\cdots,n$$
 
 ## 拉格朗日（Lagrange）插值
 
+### 线性插值
+
+邻近的两点连成一条直线，即两点式$\dfrac{L-f(x_1)}{x-x_1} = \dfrac{f(x_2)-f(x_1)}{x_2-x_1}$
+
+$$\begin{array}{l}
+    L_2(x) \\ \\\\ \\\\ \\\\
+\end{array}
+\begin{array}{l}
+        = \dfrac{x-x_1}{x_2-x_1}\Big[f(x_2) - f(x_1)\Big] + f(x_1)
+\\\\    = \dfrac{x-x_1}{x_2-x_1}f(x_2) + (1-\dfrac{x-x_1}{x_2-x_1})f(x_1)
+\\\\    = \dfrac{x-x_2}{x_1-x_2}f(x_1) + \dfrac{x-x_1}{x_2-x_1}f(x_2)
+\end{array}$$
+
 ### 构造思路
 
 假设已知$(x_1,y_1)$、$(x_2,y_2)$、$(x_3,y_3)$，构造插值函数
@@ -38,7 +51,7 @@ $$\begin{matrix}
 
 ![](./images/Interpolation_Lagrange_eg1.gif)
 
-上面讨论中的$f_i(x)$、$y_i$也就是接下来公式中的$l_i(x)$、$f(x_i)$。<span class='highlight'>该方法的缺陷是每增加一个节点，都要重新确定基，即重新计算$l_i(x)$。</span>
+上面讨论中的$f_i(x)$、$y_i$也就是接下来公式中的$l_i(x)$、$f(x_i)$。<span class='highlight'>该方法的缺陷是，当精度不够需要增加节点时，要重新确定基，即重新计算$l_i(x)$，而增加节点前的计算结果将毫无作用。</span>
 
 ### 插值多项式
 
@@ -156,12 +169,10 @@ $$
 $$
 
 - $c_k = f[x_0, \dots, x_k]$，其中$f[\dots]$表示[差商](./Introduction/part2.html#差商)
-- $ω_{0}(x) = 1$
-- $ω_{k}(x) = \prod\limits_{i=0}^{k-1} (x-x_i)$
-- <span class='hint'>$ω_{k+1}(x) = \prod\limits_{i=0}^{k} (x-x_i) = (x - x_k)ω_{k}(x)$</span>
+- $ω_{0}(x) = 1$，$ω_{k}(x) = \prod\limits_{i=0}^{k-1} (x-x_i)$，<span class='hint'>$ω_{k+1}(x) = \prod\limits_{i=0}^{k} (x-x_i) = (x - x_k)ω_{k}(x)$</span>
 </div>
 
-**牛顿插值多项式**与**拉格朗日插值多项式**是等价的。
+<span class='highlight'>**牛顿插值多项式**与**拉格朗日插值多项式**是等价的。</span>
 
 ### 插值余项
 
