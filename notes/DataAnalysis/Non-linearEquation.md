@@ -184,7 +184,7 @@ $$x_{k+1} = x_k - \dfrac{f(x_k)}{f'(x_k)}, \,\,\, k=0,1,\cdots$$
 
 切线渐进
 
-![](./images/NewtonRaphson_method.png)
+![](./images/Non-linearEquation_NewtonRaphson_method.png)
 
 ### 收敛性
 
