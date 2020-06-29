@@ -53,7 +53,6 @@
 
 ### [三次样条插值](./Interpolation.html#三次样条插值)
 
-<!--
-## [第五章：数值微积分](./05-Calculus.html)
+## [数值微积分（待修正）](./Calculus.html)
 
-## [第六章：常微分方程的数值解法](./06-DifferentialEquation.html) -->
+## [常微分方程的数值解法（待修正）](./DifferentialEquation.html)

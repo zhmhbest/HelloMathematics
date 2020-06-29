@@ -2,7 +2,7 @@
 <script src='../../style/index.js'></script>
 
 
-# [数值积分与微分](./index.html)
+# [数值分析：数值积分与微分](./index.html)
 
 [TOC]
 
