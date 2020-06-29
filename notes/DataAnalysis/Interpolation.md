@@ -21,11 +21,34 @@ $$φ(x_k)=f(x_k)=y_k, \,\,\, k=0,1,2,\cdots,n$$
 
 ## 拉格朗日（Lagrange）插值
 
+### 构造思路
+
+假设已知$(x_1,y_1)$、$(x_2,y_2)$、$(x_3,y_3)$，构造插值函数
+
+$$\begin{matrix}
+    L_3(x) = y_1f_1(x) + y_2f_2(x) + y_3f_3(x)
+\end{matrix}$$
+
+![](./images/Interpolation_Lagrange_eg1.png)
+
+其中，$f_i(x_j) = \begin{cases}
+    1 & i=j
+\\  0 & i≠j
+\end{cases}$，<span class='highlight'>即选取一组线性无关的基然后确定坐标</span>。
+
+![](./images/Interpolation_Lagrange_eg1.gif)
+
+上面讨论中的$f_i(x)$、$y_i$也就是接下来公式中的$l_i(x)$、$f(x_i)$。<span class='highlight'>该方法的缺陷是每增加一个节点，都要重新确定基，即重新计算$l_i(x)$。</span>
+
 ### 插值多项式
 
 <div class='mark'>
 
-构造插值多项式$L_n(x) = \sum\limits_{i=0}^{n} l_i(x)f(x_i)$，其中插值基函数$l_i(x) = \prod\limits_{^{j=0}_{j≠i}}^{n} \dfrac{x-x_j}{x_i-x_j}$
+已知$n$个坐标${\big(x_1, f(x_1)\big)},{\big(x_2, f(x_2)\big)},\cdots,{\big(x_n, f(x_n)\big)}$构造构造插值多项式
+
+$$L_n(x) = \sum\limits_{i=0}^{n} l_i(x)f(x_i)$$
+
+- <span class='highlight'>$l_i(x) = \prod\limits_{^{j=0}_{j≠i}}^{n} \dfrac{x-x_j}{x_i-x_j}$</span>
 
 $$L_n(x) = 
 \sum\limits_{i=0}^{n} \left[
@@ -33,7 +56,8 @@ $$L_n(x) =
     f(x_i)
 \right]$$
 
-记$ω_{n+1}(x) = \prod\limits_{i=0}^{n} (x-x_i)$，则$ω_{n+1}(x_i) = \prod\limits_{^{j=0}_{j≠i}}^{n} (x_i-x_j)$，得
+- 记$ω_{n+1}(x) = \prod\limits_{i=0}^{n} (x-x_i)$
+- 则$ω_{n+1}(x_i) = \prod\limits_{^{j=0}_{j≠i}}^{n} (x_i-x_j)$
 
 $$L_n(x) = 
 \sum\limits_{i=0}^{n} 
@@ -47,14 +71,10 @@ $$
 </div>
 
 <!-- 每个插值基函数$l_i(x)$都是$n$次的，$L_n(x)$的次数不会超过$n$。 -->
-**缺陷**
-
-<span class='highlight'>每增加一个节点，都要重新计算$l_i(x)$。</span>
 
 ### 插值余项
 
 <div class='mark'>
-
 
 $$
 \begin{array}{l}
@@ -225,7 +245,7 @@ $N_{2n+1}(x)$即为**Hermite插值多项式**。
 
 在区间两端，插值次数越高，插值结果与原函数偏离越大的现象。
 
-![](./images/runge.png)
+![](./images/Interpolation_Runge.png)
 
 ### 分段线性插值
 
