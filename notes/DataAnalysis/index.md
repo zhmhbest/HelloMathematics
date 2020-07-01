@@ -32,7 +32,9 @@
 ### [迭代改善算法](./IterativeMethod.html#迭代改善算法)
 
 #### [雅可比迭代（Jacobi）](./IterativeMethod.html#雅可比迭代jacobi)
+
 #### [高斯-赛德尔迭代（Gauss-Seide）](./IterativeMethod.html#高斯-赛德尔迭代gauss-seide)
+
 #### [逐次超松弛迭代（SOR）](./IterativeMethod.html#逐次超松弛迭代sor)
 
 ### [迭代法的收敛性](./IterativeMethod.html#迭代法的收敛性)
@@ -68,3 +70,9 @@
 ### [差商型求积公式](./Calculus.html#差商型求积公式)
 
 ## [常微分方程的数值解法](./OrdinaryDifferential.html)
+
+### [欧拉（Euler）方法](./OrdinaryDifferential.html#欧拉euler方法)
+
+### [龙格库塔（Runge-Kutta）方法](./OrdinaryDifferential.html#龙格库塔runge-kutta方法)
+
+### [线性多步方法](./OrdinaryDifferential.html#线性多步方法)
