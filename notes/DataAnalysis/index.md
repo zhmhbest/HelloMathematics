@@ -23,6 +23,8 @@
 
 ### [函数空间](./Introduction/part2.html#函数空间)
 
+### [正交多项式](./Introduction/part2.html#正交多项式)
+
 ## [线性方程组迭代法](./IterativeMethod.html)
 
 ### [迭代法思想](./IterativeMethod.html#迭代法思想)
@@ -55,4 +57,14 @@
 
 ## [数值积分](./Calculus.html)
 
-## [常微分方程的数值解法（待修正）](./DifferentialEquation.html)
+### [插值型求积公式](./Calculus.html#插值型求积公式)
+
+### [牛顿科特斯求积公式](./Calculus.html#牛顿科特斯newton-cotes求积公式)
+
+### [复化求积公式](./Calculus.html#复化求积公式)
+
+### [高斯型求积公式](./Calculus.html#高斯型求积公式)
+
+### [差商型求积公式](./Calculus.html#差商型求积公式)
+
+## [常微分方程的数值解法](./OrdinaryDifferential.html)

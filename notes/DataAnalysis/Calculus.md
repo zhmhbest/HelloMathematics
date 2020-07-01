@@ -8,38 +8,7 @@
 
 ## 数值积分定义
 
-$$\int_{a}^{b}{f(x)}\,{\rm d}x = F(b) - F(a)$$
-
-大多数定积分问题都不能通过解析法（计算上式）求解，而要用数值方法进行计算。
-
-### 数值求积公式
-
-<div class='mark'>
-
-设$x_0,x_1,\cdots,x_n∈[a,b]$，函数$f(x)$在区间$[a,b]$上可积，对给定权函数$ρ(x)>0$，有
-
-$$\int_{a}^{b} f(x)ρ(x) \,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i) + R(f)$$
-
-- $\{x_i\}$：求积节点
-- $\{A_i\}$：求积系数
-- $R(f)$：误差
-
-**一般形式**
-
-$$\int_{a}^{b}{f(x)}\,{\rm d}x ≈ \sum\limits_{i=0}^{n} A_if(x_i)$$
-
-**代数精度**
-
-若对于$f(x)=x^k, { \ \ \ } k=0,1,2,\dots,m$，求积公式$\int_{a}^{b}{f(x)}\,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i)$都精确成立，但对$f(x)=x^{m+1}$不精确成立，即
-
-$$\begin{cases}
-    \int_{a}^{b}{x^k}\,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i^k)
-\\
-\\  \int_{a}^{b}{x^{m+1}}\,{\rm d}x ≠ \sum\limits_{i=0}^{n} A_if(x_i^{m+1})
-\end{cases}$$
-
-则称该求积公式具有$m$次代数精度。
-</div>
+大多数定积分问题都不能通过解析法，即计算牛顿一莱布尼茨公式$\int_{a}^{b}{f(x)}\,{\rm d}x = F(b) - F(a)$来求解，数值积分方法就是将$f(x)$用简单函数近似替代（比如泰勒展开），利用离散数据求函数的数值积分，从而**避免了寻求原函数的困难**，并为计算机求积分提供了可行性。
 
 ### 近似定积分
 
@@ -64,12 +33,99 @@ $$\int_{a}^{b}{f(x)}\,{\rm d}x =
     -\dfrac{(b-a)^3}{24} f''(η), { \ \ \ } η∈(a,b)
 $$
 
+### 数值求积公式
+
+<div class='mark'>
+
+设$x_0,x_1,\cdots,x_n∈[a,b]$，函数$f(x)$在区间$[a,b]$上可积，对给定权函数$ρ(x)>0$，有
+
+$$\int_{a}^{b} f(x)ρ(x) \,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i) + R(f)$$
+
+- $\{x_i\}$：求积节点
+- $\{A_i\}$：求积系数
+- $R(f)$：误差
+
+**一般形式**
+
+$$\int_{a}^{b}{f(x)}\,{\rm d}x ≈ \sum\limits_{i=0}^{n} A_if(x_i)$$
+
+**代数精度**
+
+若对于$f(x)=x^k, { \ \ \ } k=0,1,2,\dots,m$，即对于次数不超过$m$的多项式，求积公式$\int_{a}^{b}{f(x)}\,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i)$都精确成立，但对$f(x)=x^{m+1}$不精确成立，亦可表示为
+
+$$\begin{cases}
+    \int_{a}^{b}{x^k}\,{\rm d}x = \sum\limits_{i=0}^{n} A_if(x_i^k)
+\\
+\\  \int_{a}^{b}{x^{m+1}}\,{\rm d}x ≠ \sum\limits_{i=0}^{n} A_if(x_i^{m+1})
+\end{cases}$$
+
+则称该求积公式具有$m$次代数精度。
+</div>
+
+#### 例1
+
+确定下式的代数精度
+
+- $\int_{-1}^{1}f(x){\rm d}x ≈ \dfrac{f(-1) + 2f(0) + f(1)}{2}$
+- $\int_{-1}^{1}f(x){\rm d}x ≈ f(-\dfrac{1}{\sqrt{3}}) + f(\dfrac{1}{\sqrt{3}})$
+
+**解**
+
+记
+
+- $I(f) = \int_{-1}^{1}f(x){\rm d}x$
+- $I_1(f) = \dfrac{f(-1) + 2f(0) + f(1)}{2}$
+- $I_2(f) = f(-\dfrac{1}{\sqrt{3}}) + f(\dfrac{1}{\sqrt{3}})$
+
+|$f$|$I(f)$|$I_1(f)$|$I_2(f)$|
+|:-:|:-:|:-:|:-:|
+| $1$  |$\int^{1}_{-1}1{\rm d}x=2$            |$\frac{1+2+1}{2}=2$ |$1+1=2$ |
+| $x$  |$\int^{1}_{-1}x{\rm d}x=0$            |$\frac{-1+0+1}{2}=0$|$\frac{-1+1}{\sqrt{3}}=0$ |
+| $x^2$|$\int^{1}_{-1}x^2{\rm d}x=\frac{2}{3}$|$\frac{1+0+1}{2}=1$ |$\frac{1+1}{3}=\frac{2}{3}$ |
+| $x^3$|$\int^{1}_{-1}x^3{\rm d}x=0$          |**INVALID**         |$\frac{1+1}{3\sqrt{3}}=0$ |
+| $x^4$|$\int^{1}_{-1}x^4{\rm d}x=\frac{2}{5}$|**INVALID**         |$\frac{1+1}{9}=\frac{2}{9}$ |
+
+综上可知，$I_1(f)$为1次代数精度，$I_2(f)$为3次代数精度。
+
+#### 例2
+
+试确定$\int_{0}^{h} f(x){\rm d}x ≈ A_0f(0) + A_1f(h) + A_2f'(0)$的系数$A_0,A_1,A_2$，使该多项式具有尽可能高的代数精度。
+
+**解**
+
+|$f$|$\int_{0}^{h} f(x){\rm d}x$|$A_0f(0) + A_1f(h) + A_2f'(0)$|
+|:-:|:-:|:-:|
+| $1$  |$h$            |$A_0+A_1$ |
+| $x$  |$\frac{h^2}{2}$|$0+A_1h+A_2$ |
+| $x^2$|$\frac{h^3}{3}$|$0+A_1h^2+0$ |
+| $x^3$|<span class='hint'>$\frac{h^4}{4}$</span>|<span class='hint'>$0+A_1h^3+0$</span>|
+
+从而得$\begin{cases}
+    h = A_0+A_1
+\\  \frac{h^2}{2} = A_1h+A_2
+\\  \frac{h^3}{3} = A_1h^2
+\end{cases}$，解得$\begin{cases}
+    A_0 = \frac{2}{3}h
+\\  A_1 = \frac{1}{3}h
+\\  A_2 = \frac{1}{6}h^2
+\end{cases}$
+
+|$f$|$\int_{0}^{h} f(x){\rm d}x$|$A_0f(0) + A_1f(h) + A_2f'(0)$|
+|:-:|:-:|:-:|
+| $x^3$|$\frac{h^4}{4}$|$A_1h^3=\frac{1}{3}h^4$|
+
+故多项式最高可达2次代数精度，此时系数为$\begin{cases}
+    A_0 = \frac{2}{3}h
+\\  A_1 = \frac{1}{3}h
+\\  A_2 = \frac{1}{6}h^2
+\end{cases}$
+
 ## 插值型求积公式
 
 >拉格朗日（Lagrange）插值多项式：
 >$$L_n(x) = \sum\limits_{i=0}^{n} l_i(x)f(x_i)$$
 >- $l_i(x) = \prod\limits_{^{j=0}_{j≠i}}^{n} \dfrac{x-x_j}{x_i-x_j}$
->- $R_n(x) = f(x) - L_n(x) = \dfrac{f^{(n+1)}(ξ_x)}{(n+1)!} ω_{n+1}(x), \,\,\, ξ_x∈(a,b)$
+>- $R_n(x) = f(x) - L_n(x) = \dfrac{f^{(n+1)}(ξ)}{(n+1)!} ω_{n+1}(x), { \ \ \ } ξ∈(a,b)$
 
 <div class='mark'>
 
@@ -77,11 +133,10 @@ $$
 
 $$\int_{a}^{b}{ f(x)ρ(x) }\,{\rm d}x
     ≈ \int_{a}^{b}{ L_n(x)ρ(x) }\,{\rm d}x
-    = \sum\limits_{i=0}^{n} \left[
-        \left( \int_a^b l_i(x) ρ(x) {\rm d}x \right)
-        f(x_i)
-    \right]
+    = \sum\limits_{i=0}^{n} A_i f(x_i)
 $$
+
+- $A_i = \int_a^b l_i(x) ρ(x) {\rm d}x$
 
 其**误差**为
 
@@ -91,7 +146,7 @@ $$R(f)
     { \ \ \ } ξ∈(a,b)
 $$
 
-$n+1$个节点至少有$n$次代数精度；$n+1$个互异节点，最高可达$2n+1$次代数精度。
+$n+1$个互异节点至少有$n$次代数精度，最高可达$2n+1$次代数精度（详见[高斯型求积公式](#高斯型求积公式)）。
 </div>
 
 ## 牛顿科特斯（Newton-Cotes）求积公式
@@ -114,9 +169,13 @@ $$
 $
 - $C_i^{(n)}=\dfrac{1}{b-a}A_i$，称为Cotes系数
 
+<!--
+- $R[f] = \int_a^b f[x,x_1,x_2,\dots,x_n]ω_{n+1}(x){\rm d}x = \dfrac{1}{(n+1)!} \int_{a}^{b}{ f^{(n+1)}(ξ) ω_{n+1}(x)}{\rm d}x$
+-->
+
 <div class='mark'>
 
-<span class='highlight'>当Cotes系数为负数时是数值不稳定的，高阶Newton-Cotes公式（一般$n≥8$）的Cotes系数为负</span>；$n+1$个节点的求积公式至少有$n$次代数精度；当$n$为偶数时，可达$n+1$次代数精度。
+<span class='highlight'>当Cotes系数为负数时是数值不稳定的，当$n≥8$时Cotes系数开始出现负数，即高阶Newton-Cotes公式的稳定性无法得到保证</span>；$n+1$个节点的求积公式至少有$n$次代数精度；当$n$为偶数时，至少有$n+1$次代数精度。
 </div>
 
 ### 梯形公式
@@ -125,10 +184,10 @@ $
 
 <div class='mark'>
 
-$$\int_{a}^{b}{f(x)}\,{\rm d}x = 
-    \dfrac{b-a}{2} [f(a)+f(b)]
-    - \dfrac{(b-a)^3}{12}f''(η) { \ \ \ } η∈(a,b)
-$$
+$$\int_{a}^{b}{f(x)}\,{\rm d}x ≈ \dfrac{b-a}{2} [f(a)+f(b)] = T$$
+
+- $C_{0}^{(1)} = C_{1}^{(1)} = \frac{1}{2}$
+- $R[f] = - \dfrac{(b-a)^3}{12}f''(η) { \ \ \ } η∈(a,b)$
 
 **1次代数精度**。
 </div>
@@ -141,6 +200,7 @@ $$
 
 $$\int_a^b f(x) \,{\rm d}x ≈ \dfrac{b-a}{6}\left[ f(a)+4f(\dfrac{a+b}{2})+f(b) \right] = S$$
 
+- $C_{0}^{(2)} = \frac{1}{6}$；$C_{1}^{(2)} = \frac{4}{6}$；$C_{2}^{(2)} = \frac{1}{6}$
 - $R(f) = -\dfrac{(b-a)^5}{2880}f^{(4)}η { \ \ \ } η∈(a,b)$
 
 **3次代数精度**。
@@ -148,11 +208,22 @@ $$\int_a^b f(x) \,{\rm d}x ≈ \dfrac{b-a}{6}\left[ f(a)+4f(\dfrac{a+b}{2})+f(b)
 
 ### 科特斯（Cotes）公式
 
-当**牛顿科特斯（Newton-Cotes）求积公式**的$n=4$，即5个节点时，为**Cotes公式**，其具有**5次代数精度**。
+当**牛顿科特斯（Newton-Cotes）求积公式**的$n=4$，即5个节点时
+
+$$\int_a^b f(x) {\rm d}x ≈ \dfrac{b-a}{90} \left[
+    7f(x_0) + 32f(x_1) + 12f(x_2) + 32f(x_3) + 7f(x_4)
+\right] = C$$
+
+- $C_{0}^{(4)} = \frac{7}{90}$；$C_{1}^{(4)} = \frac{32}{90}$；$C_{2}^{(4)} = \frac{12}{90}$；$C_{3}^{(4)} = \frac{32}{90}$；$C_{4}^{(4)} = \frac{7}{90}$；
+
+<div class='mark'>
+
+**5次代数精度**。
+</div>
 
 ## 复化求积公式
 
-通过增加求积节点的个数来提高计算精度是不可行的（高阶Newton-Cotes公式不稳定）。
+通过增加求积节点的个数来提高计算精度是不可行的（高阶Newton-Cotes公式稳定性得不到保证）。
 
 将区间分成若干个小区间，每个区间的结果加起来得到整个区间的求积公式。
 
@@ -186,9 +257,10 @@ $$
 - $R(S_n) = -\dfrac{b-a}{2880}h^4 f^{(4)}(η)$
 </div>
 
-<!-- 
 ### 龙贝格（Romberg）求积公式
 
+略
+<!-- 
 对复化梯形公式逐次区间分半和逐次外推就得到龙贝格方法。
 
 - $T_1 = \dfrac{b-a}{2} [f(a) + f(b)]$
@@ -212,188 +284,46 @@ $$T_{m+1}^{k-1} = \dfrac{
 - $C_n = \dfrac{16S_{2n}-S_n}{15}$
 - -->
 
+### 复化Cotes公式
 
-## 正交多项式
-
-<!-- ### 正交多项式等价
-
-若$f_k(x), \,\,\,k=0,1,\cdots,n$为$C[a,b]$上的一组线性无关函数，则可得$C[a,b]$上一组两两正交的函数组$g_k(x), \,\,\,k=0,1,\cdots,n$满足：
-
-1. $g_k(x)$为$f_0(x), f_1(x), \cdots, f_k(x)$的线性组合。
-2. $f_k(x)$为$g_0(x), g_1(x), \cdots, g_k(x)$的线性组合。
-
-$g_0(x), g_1(x), \cdots, g_n(x)$两两正交且满足1.、2.。
-$$e_k(x) = \dfrac{1}{\|g_k\|_2} g_k(x), \,\,\,k=0,1,\cdots,n$$
-称函数组$e_0(x), e_1(x), \cdots, e_n(x)$为**规范正交组**。
-$P_n$上由线性无关函数$1,x,x^2,\cdots,x^n$经过*Schemite*正交化过程得到的多项式$p_0(x), p_1(x), \cdots, p_n(x)$称为$[a,b]$上的**正交多项式**。 -->
-
-### Legendre多项式
-
-<span class='hint'>勒让德多项式</span>
-
-<div class='mark'>
-
-| 区间 | 权函数 | 定义
-| - | - | -
-| $[-1, 1]$ | $ρ(x)=1$ | $P_n(x) = \dfrac{1}{2^nn!} \dfrac{d^n}{dx^n} (x^2-1)^n$
-
-**正交关系**
-
-$$(P_m, P_n)=
-    \begin{cases}
-        0               & m≠n
-    \\  \dfrac{2}{2n+1} & m=n
-    \end{cases}
-$$
-
-**递推关系**
-
-$
-    \begin{cases}
-        (n+1)P_{n+1}(x)=(2n+1)xP_n(x)-nP_{n-1}(x) & n=1,2,3,\cdots
-    \\  P_0(x)=1
-    \\  P_1(x)=x
-    \\  P_2(x)=\dfrac{1}{2}(3x^2-1)
-    \end{cases}
-$
-</div>
-
-### Chebyshev多项式
-
-<span class='hint'>切比雪夫多项式</span>
-
-<div class='mark'>
-
-| 区间 | 权函数 | 定义
-| - | - | -
-| $[-1, 1]$ | $ρ(x)=\dfrac{1}{\sqrt{1-x^2}}$ | $T_n(x)=cos({\rm narccosx})$
-
-**正交关系**
-
-$$(T_m, T_n) = \int_{-1}^{1}
-    \dfrac{ T_m(x) T_n(x) }{ \sqrt{1-x^2} }
-    {\rm d}x
-    = \int_{0}^{π} {\cos}(mθ) ⋅  {\cos}(nθ) {\rm d}θ
-    =
-    \begin{cases}
-        0           & m≠n
-    \\  π           & m=n=0
-    \\ \dfrac{π}{2} & m=n≠0
-    \end{cases}
-$$
-
-**递推关系**
-
-$
-    \begin{cases}
-        T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x) & n=1,2,3,\cdots
-    \\  T_0(x)=1
-    \\  T_1(x)=x
-    \\  T_2(x)=2x^2-1
-    \end{cases}
-$
-</div>
-
-### Laguere多项式
-
-<span class='hint'>拉盖尔多项式</span>
-
-| 区间 | 权函数 | 定义
-| - | - | -
-| $[0, +∞)$ | $ρ(x)=e^{-x}$ | $e^x \dfrac{d^n}{dx^n} (x^ne^{-x})$
-
-**正交关系**
-
-$$(L_m, L_n)
-    =
-    \int_{0}^{+∞} e^{-x}L_m(x)L_n(x) {\rm d}x
-    =
-    \begin{cases}
-        0           & m≠n
-    \\  (n!)^2      & m=n
-    \end{cases}
-$$
-
-**递推关系**
-
-$
-    \begin{cases}
-        L_{n+1}(x) = (2n+1-x)L_n(x)-n^2L_{n-1}(x) & n=1,2,3,\cdots
-    \\  L_0(x)=1
-    \\  L_1(x)=1-x
-    \end{cases}
-$
-
-### Hermite多项式
-
-<span class='hint'>埃尔米特多项式</span>
-
-| 区间 | 权函数 | 定义
-| - | - | -
-| $(-∞, +∞)$ | $ρ(x)=e^{-x^2}$ | $(-1)^n e^{x^2} \dfrac{d^n}{dx^n} (e^{-x^2})$
-
-**正交关系**
-
-$$(H_m, H_n)
-    =
-    \int_{-∞}^{+∞} e^{-x^2}H_m(x)H_n(x) {\rm d}x
-    =
-    \begin{cases}
-        0          & m≠n
-    \\  2^n (n!)\sqrt{π}  & m=n
-    \end{cases}
-$$
-
-**递推关系**
-
-$
-    \begin{cases}
-        H_{n+1}(x) = 2xH_n(x)-2nH_{n-1}(x) & n=1,2,3,\cdots
-    \\  H_0(x)=1
-    \\  H_1(x)=2x
-    \end{cases}
-$
+略
 
 ## 高斯型求积公式
 
-使求积公式具有$2n-1$次代数精度的节点$x_1, x_2, \cdots, x_n$称为**Gauss点**，此时的插值型求积公式称为**Gauss型求积公式**。
+>[正交多项式](./Introduction/part2.html#正交多项式)
 
-$n$个节点，代数精度为$2n-1$；$n+1$个互异节点，最高可达$2n+1$次代数精度。
+使求积公式具有$2n+1$次代数精度的节点$x_0,x_1,x_2,\dots,x_n$（$n+1$个节点）称为**Gauss点**，此时的插值型求积公式称为**Gauss型求积公式**。
 
-### Gauss-Legendre求积公式（标准高斯型求积公式）
+当且仅当$x_0,x_1,x_2,\dots,x_n$是$[a,b]$上以$ρ(x)$为权函数的$n+1$次正交多项式$P_{n+1}(x)$的零点，$x_0,x_1,x_2,\dots,x_n$为**Gauss点**。
+
+- Gauss-Legendre求积公式
+- Gauss-Laguerre求积公式
+- Gauss-Hermite求积公式
 
 <div class='mark'>
 
-在区间$[a,b]$上，权函数$ρ(x)=1$的Gauss型求积公式为：
+特别地，在区间$[-1,1]$上，权函数$ρ(x)=1$，取$P_{n+1}(x) = \dfrac{1}{2^{n+1}(n+1)!}\dfrac{{\rm d}^{n+1}}{{\rm d}x^{n+1}}(x^2-1)^{n+1}$的零点$x_0,x_1,x_2,\dots,x_n$，构造插值型求积公式，即**古典高斯型求积公式**
 
-$$\int_a^b ρ(x)f(x) \,{\rm d}x ≈ 
-    \dfrac{b-a}{2}
-    \sum_{i=1}^{n} \left[
-        A_i 
-        f\left(
-            \dfrac{a+b}{2} + \dfrac{b-a}{2}x_i
-        \right)
-    \right]
+$$\int_{-1}^{1} ρ(x)f(x) \,{\rm d}x ≈
+    \sum_{i=0}^{n} A_if(x_i)
 $$
+
+- $A_i = \int_{-1}^{1} \dfrac{P_{n+1}(x)}{(x-x_i)P'_{n+1}(x_i)} {\rm d}x = \dfrac{2}{(1-x_i^2)[P'_{n+1}(x_i)]^2}$
 
 **3次代数精度**。
+
+$∀x∈[a,b]$，若令$x=\dfrac{a+b}{2}+\dfrac{b-a}{2}t$，则${\rm d}x = \dfrac{b-a}{2}{\rm d}t { \ \ \ } t∈[-1,1]$，得
+
+$$\int_{a}^{b} f(x) {\rm d}x
+    = \dfrac{b-a}{2} \int_{-1}^{1} f \left(
+        \dfrac{a+b}{2} + \dfrac{b-a}{2}t
+    \right) {\rm d}t
+    ≈ \dfrac{b-a}{2} \sum_{i=0}^{n} A_i f \left(
+        \dfrac{a+b}{2} + \dfrac{b-a}{2}t_i
+    \right)
+$$
+
 </div>
-
-### Gauss-Laguerre求积公式
-
-在区间$[0,+∞)$上，权函数$ρ(x)=1$的Gauss型求积公式为：
-
-$$\int_0^{+∞} ρ(x)f(x) \,{\rm d}x ≈ 
-    \sum_{i=1}^{n} 
-        A_i e^{x_i} f(x_i)
-$$
-
-### Gauss-Hermite求积公式
-
-$$\int_{-∞}^{+∞} ρ(x)f(x) \,{\rm d}x ≈ 
-    \sum_{i=1}^{n}
-        A_i e^{x_i^2} f(x_i)
-$$
 
 ## 差商型求积公式
 
