@@ -85,6 +85,31 @@ $$
 
 <!-- 每个插值基函数$l_i(x)$都是$n$次的，$L_n(x)$的次数不会超过$n$。 -->
 
+#### 例
+
+$x_i, i=0,1,2,3,4,5$是互异节点，$l_i(x)$是Lagrange插值基函数，则$\sum_{i=0}^{5} (2x_i^5 + x_i^2 + 1)l_i(x) = $
+
+**解**
+
+$
+\begin{array}{l}
+    \sum\limits_{i=0}^{5} (2x_i^5 + x_i^2 + 1)l_i(x) \\\\ \\\\ \\\\
+\end{array}
+\begin{array}{l}
+        = (2x_0^5 + x_0^2 + 1) \dfrac{
+            (x-x_1)(x-x_2)(x-x_3)(x-x_4)(x-x_5)
+        }{
+            (x_0-x_1)(x_0-x_2)(x_0-x_3)(x_0-x_4)(x_0-x_5)
+        }
+\\\\    + (2x_1^5 + x_1^2 + 1) \dfrac{
+            (x-x_0)(x-x_2)(x-x_3)(x-x_4)(x-x_5)
+        }{
+            (x_0-x_0)(x_0-x_2)(x_0-x_3)(x_0-x_4)(x_0-x_5)
+        }
+\\\\    + \cdots
+\end{array}
+$
+
 ### 插值余项
 
 <div class='mark'>
@@ -126,10 +151,10 @@ $$
         \tilde{R}_n(x)
     }
     =
-    \dfrac{ 
-        f(x) - L_n(x) 
-    }{ 
-        f(x) - \tilde{L}_n(x) 
+    \dfrac{
+        f(x) - L_n(x)
+    }{
+        f(x) - \tilde{L}_n(x)
     }
     ≈
     \dfrac{
