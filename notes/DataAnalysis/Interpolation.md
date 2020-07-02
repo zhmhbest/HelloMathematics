@@ -168,9 +168,6 @@ $$
 $$
 
 - $c_k = f[x_0, \dots, x_k]$，其中$f[\dots]$表示[差商](./Introduction/part2.html#差商)
-  - **一阶差商**：$f[x_0, x_k] = \dfrac{f(x_k)-f(x_0)}{x_k-x_0}$
-  - **二阶差商**：$f[x_0, x_1, x_k] = \dfrac{f[x_1, x_k]-f[x_0, x_1]}{x_k-x_0}$
-  - **$K$阶差商（均差）**：$f[x_0, \cdots, x_k] = \dfrac{f[x_1, \cdots, x_k]-f[x_0, \cdots, x_{k-1}]}{x_k-x_0}$
 - $ω_{0}(x) = 1$，$ω_{k}(x) = \prod\limits_{i=0}^{k-1} (x-x_i)$，<span class='hint'>$ω_{k+1}(x) = \prod\limits_{i=0}^{k} (x-x_i) = (x - x_k)ω_{k}(x)$</span>
 </div>
 

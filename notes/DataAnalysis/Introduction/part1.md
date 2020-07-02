@@ -33,9 +33,9 @@ block1->block2->block3->block4->block5
 ||||
 | - | - | - |
 | **绝对误差**   | $e(x)$   | $$e = \vert{x^*-x}\vert$$ |
-| **绝对误差限** | $ε(x)$   | $$\vert{x^*-x}\vert ≤ ε$$ |
+| **绝对误差限** | $ε(x)$   | $$\vert{x^*-x}\vert ≤ ε(x)$$ |
 | **相对误差**   | $e_r(x)$ | $$e_r = \left\vert{\dfrac{x^*-x}{x}}\right\vert$$ |
-| **相对误差限** | $ε_r(x)$ | $$\left\vert{\dfrac{x^*-x}{x}}\right\vert ≤ ε_r$$ |
+| **相对误差限** | $ε_r(x)$ | $$\left\vert{\dfrac{x^*-x}{x}}\right\vert = e_r(x) ≤ ε_r(x) = \dfrac{ε(x)}{x}$$ |
 
 - 相对误差应为$\left|{\dfrac{x^*-x}{x^*}}\right|$，但在实际计算中，认为$x$是准确的，可将分母替换为$x$。
 
@@ -45,7 +45,7 @@ block1->block2->block3->block4->block5
 
 <div class='mark'>
 
-$$ε[f(x)] ≈ |f'(x)|ε(x)|$$
+<span class='highlight'>$$ε[f(x)] ≈ |f'(x)|ε(x)|$$</span>
 </div>
 
 推理得
@@ -102,6 +102,25 @@ $$ε[f(x_1,\cdots,x_n)] ≈ \sum_{k=1}^{n} \left| \dfrac{∂f}{∂x_k} \right| �
 **结论**
 
 <span class='highlight'>凡是由精确值经过四舍五入得到的近似值，其**绝对误差限**等于该近似值末位的半个单位。</span>
+
+#### 例4
+
+计算球的体积（$V=\dfrac{4}{3}πr^3$）要使相对误差限$ε_r(V)=\dfrac{1}{100}$，问$ε_r(r)$应为多少。
+
+**解**
+
+由题意得
+
+- $ε_r(V) = \dfrac{ε(V)}{V} = \dfrac{1}{100}$
+
+由误差估计式得
+
+- $ε[V(r)] = 4πr^2 \cdot ε(r)$
+
+综上可得
+
+- $\dfrac{1}{100} = \dfrac{ε(V)}{V} = \dfrac{4πr^2ε(r)}{\frac{4}{3}πr^3} = 3\dfrac{ε(r)}{r}$
+- $ε_r(r) = \dfrac{ε(r)}{r} = \dfrac{1}{300}$
 
 ## 有效数字
 
@@ -237,3 +256,29 @@ $\begin{array}{l}
 \end{array}$
 
 明显，随着迭代次数增加，误差越来越大，故计算公式是不稳定的。
+
+#### 例3
+
+计算$(\sqrt{2}-1)^6$的近似值，取$\sqrt{2} = 1.414$，在4位计算机上，试问以下哪种算法误差较小。
+
+①：$\dfrac{1}{(\sqrt{2}+1)^6}$
+
+②：$\dfrac{1}{(3+2\sqrt{2})^3}$
+
+**解**
+
+<div class='hint'>
+
+①：$(\sqrt{2}-1)^6 = \left[ \dfrac{(\sqrt{2}-1)(\sqrt{2}+1)}{\sqrt{2}+1} \right]^6 = \dfrac{1}{(\sqrt{2}+1)^6}$
+
+②：$\dfrac{1}{(\sqrt{2}+1)^6} = \dfrac{1}{\left[(\sqrt{2}+1)^2\right]^3} = \dfrac{1}{(3+2\sqrt{2})^3}$
+</div>
+
+设初始误差$ε=\sqrt{2} - 1.414 < 1$
+
+①：$\dfrac{1}{(C_1 + ε)^6})$
+②：$\dfrac{1}{(C_2 + 2ε)^3}$
+
+可以看出$\dfrac{1}{ε^6} >> \dfrac{1}{8ε^3}$
+
+故②方法更好。
