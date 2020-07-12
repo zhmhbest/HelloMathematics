@@ -125,6 +125,7 @@ $
             2 & 1
         \\  2 & 0
     \end{array}\right]
+    +
     x_4
     \left[\begin{array}{c}
             1 & 0
