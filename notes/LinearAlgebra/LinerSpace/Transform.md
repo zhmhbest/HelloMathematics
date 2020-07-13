@@ -132,7 +132,7 @@ $$
     \end{array}\right]
 $$
 
-求$σ$在标准基$ 
+求$σ$在标准基$(ε_1, ε_2, ε_3) =
     \left[\begin{array}{c}
         1 \\ 0 \\ 0
     \end{array}\right],
@@ -152,7 +152,7 @@ $$
             x_1 \\ x_2 \\ x_3
         \end{array}\right]
     \right)
-    = 
+    =
     \left[\begin{array}{c}
         1 & 0 & 0
     \\  0 & 1 & 0
@@ -163,16 +163,26 @@ $$
     \end{array}\right]
 $$
 
-即求$σ(E_{3×3}) = E_{3×3} A$的矩阵$A$。
+即求$σ(ε_1, ε_2, ε_3) = (ε_1, ε_2, ε_3)A$的矩阵$A$。
 
 $
     \begin{array}{l}
-        σ(E_{3×3}) \\
-    \\ \\ \\ \\
-    \\ \\ \\ \\
+        σ(ε_1, ε_2, ε_3) \\
+        \\ \\ \\ \\
+        \\ \\ \\ \\
+        \\ \\ \\ \\
     \end{array}
     \begin{array}{l}
         = \left[\begin{array}{c}
+            1 & 0 & 0
+        \\  0 & 1 & 0
+        \\  1 & 1 & 0
+        \end{array}\right]
+        \left[\begin{array}{c}
+            ε_1 & ε_2 & ε_3
+        \end{array}\right]
+    \\\\=
+        \left[\begin{array}{c}
             1 & 0 & 0
         \\  0 & 1 & 0
         \\  1 & 1 & 0
@@ -182,14 +192,16 @@ $
         \\  0 & 1 & 0
         \\  0 & 0 & 1
         \end{array}\right]
-        \\\\ =
+    \\\\ =
         \left[\begin{array}{c}
             1 & 0 & 0
         \\  0 & 1 & 0
         \\  1 & 1 & 0
         \end{array}\right]
-        \\\\ =
-        E_{3×3}
+    \\\\ =
+        \left[\begin{array}{c}
+            ε_1 & ε_2 & ε_3
+        \end{array}\right]
         \left[\begin{array}{c}
             1 & 0 & 0
         \\  0 & 1 & 0
@@ -198,7 +210,7 @@ $
     \end{array}
 $
 
-综上可得$A = 
+综上可得$A =
     \left[\begin{array}{c}
         1 & 0 & 0
     \\  0 & 1 & 0
