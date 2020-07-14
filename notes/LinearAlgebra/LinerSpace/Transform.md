@@ -39,7 +39,7 @@ $$N(T) = \{ α \bold{\ |\ } T(α)=0,α∈V \}$$
 
 称核子空间的维数$dim(N(T))$（<span class='hint'>没有结构的</span>）为$T$的**亏度**（或**零度**）。
 
-#### 例
+#### 例1
 
 $T$是$P_4(x)$中的如下线性变换
 
@@ -80,6 +80,74 @@ $\begin{cases}
 故$\left[\begin{array}{c}
     x_1-1 & x^2-3
 \end{array}\right]$即为$N(T)$的基，$dim(N(T))=2$。
+
+#### 例2
+
+已知$R^{2×2}$的线性变换$T(X) = MX - XM$，其中$X∈R^{2×2}, M=\left[\begin{array}{c} 1 & 2 \\ 0 & 3 \end{array}\right]$，求$R[T]$、$N[T]$的基与维数。
+
+**解**
+
+取$R^{2×2}$的一组基
+
+$$
+    \left[\begin{array}{c}
+        E_{11} & E_{12} & E_{21} & E_{22}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+          \left[\begin{array}{c} 1 & 0 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 0 & 1 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 0 & 0 \\ 1 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 0 & 0 \\ 0 & 1 \end{array}\right]
+    \end{array}\right]
+$$
+
+则$R[T] = Span\left[\begin{array}{c} T(E_{11}) & T(E_{12}) & T(E_{21}) & T(E_{22}) \end{array}\right] = $
+
+$$
+    Span\left[\begin{array}{c}
+          \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
+        & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
+    \end{array}\right]
+$$
+
+观察可知$dim(R[T])=2$，即$R[T]=Span\left[\begin{array}{c}
+    \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
+&   \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
+\end{array}\right]$
+
+设$X = \left[\begin{array}{c} x_1 & x_2 \\ x_3 & x_4 \end{array}\right]$则
+
+$$T(X) =
+    \left[\begin{array}{c}
+        2x_3 & 2x_4 - 2x_2 - 2x_1
+    \\  2x_3 & -2x_3
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        0 & 0
+    \\  0 & 0
+    \end{array}\right]
+$$
+
+解得$\begin{cases}
+        x_1 = x_1
+    \\  x_2 = x_2
+    \\  x_3 = 0
+    \\  x_4 = x_2 + x_1
+    \end{cases}$，$X = \left[\begin{array}{c}
+        x_1 & x_2
+    \\  0 & x_1 + x_2
+    \end{array}\right]
+    =
+    x_1 \left[\begin{array}{c} 1 & 0 \\ 0 & 1 \end{array}\right]
+    +
+    x_2 \left[\begin{array}{c} 0 & 1 \\ 0 & 1 \end{array}\right]
+$
+
+即$dim(N[T])=2$，$\left[\begin{array}{c} 1 & 0 \\ 0 & 1 \end{array}\right], \left[\begin{array}{c} 0 & 1 \\ 0 & 1 \end{array}\right]$是$N[T]$的基。
 
 ## 表示矩阵
 
