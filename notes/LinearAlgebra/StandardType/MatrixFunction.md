@@ -33,7 +33,7 @@ $$
 
 >$\dfrac{1}{1-x} = 1 + x + x^2 + \cdots, \ \ \ |x|<1$
 
-$(E-A)^{-1} = E + x + x^2 + \cdots, \ \ \ ρ(A)<1$
+$(E-A)^{-1} = E + A + A^2 + \cdots, \ \ \ ρ(A)<1$
 
 #### 例2
 
@@ -79,41 +79,32 @@ $
 
 &nbsp;
 
+<div class='highlight'>
+
 $$f(A) = Pf(J)P^{-1}$$
 
-<span class='highlight'>即$f(A)$与$f(J)$相似，该定义方法适合解决那些与$f(A)$相似的问题，规避掉求$P$的计算量。</span>
+即$f(A)$与$f(J)$相似，该定义方法适合解决那些与$f(A)$相似的问题，规避掉求$P$的计算量。
 
-$
-\begin{array}{l}
-    f(J) \\\\ \\\\ \\\\
-\end{array}
-\begin{array}{l}
-    =
+
+$f(J) =
     \left[\begin{array}{c}
         f(J_1)
     \\  & f(J_2)
     \\  && \ddots
     \\  &&& f(J_s)
     \end{array}\right]
-    \\\\
-    =
-    \left[\begin{array}{c}
-        a_0E + a_1J_1 + a_2J_1^2 + \cdots
-    \\  & a_0E + a_1J_2 + a_2J_2^2 + \cdots
-    \\  && \cdots
-    \\  &&& a_0E + a_1J_s + a_2J_s^2 + \cdots
-    \end{array}\right]
-\end{array}
 $
 
-<span class='highlight'>其中$f(J_i) =
+- 其中$f(J_i) =
     \left[\begin{array}{c}
-        f(λ_i) & \dfrac{f'(λ_i)}{1!} & \cdots & \dfrac{f^{k_i-1}(λ_i)}{(k_i-1)!}
+        f(λ_i) & \dfrac{f'(λ_i)}{1!} & \cdots & \dfrac{f^{(n_i-1)}(λ_i)}{(k_i-1)!}
     \\         & f(λ_i)              & \ddots & \vdots
     \\         &                     & \ddots & \dfrac{f'(λ_i)}{1!}
     \\  &&& f(λ_i)
     \end{array}\right]
-$，记住此结论即可。</span>
+$，记住此结论即可。
+
+</div>
 
 #### 例1
 
@@ -155,17 +146,17 @@ $\cos A = P \cos J P^{-1}$
 
 #### 例2
 
-<span class='hint'>求$f(A)$的Jordan标准型，即求$f(J_A)$的Jordan标准型。</span>
-
 $A = 
     \left[\begin{array}{c}
         3  & 1  & -1
     \\  -2 & 0  & 2
     \\  -1 & -1 & 3
     \end{array}\right]
-$，求$\sin(\dfrac{π}{4}A)$，$e^A$的Jordan标准型
+$，分别求$\sin(\dfrac{π}{4}A)$和$e^A$的Jordan标准型
 
 **解**
+
+<span class='hint'>求$f(A)$的Jordan标准型，即求$f(J_A)$的Jordan标准型。</span>
 
 $A$的Jordan标准型为（计算略）
 
@@ -221,7 +212,7 @@ $
 $\sin(\dfrac{π}{4}J)$本身就是对角阵，所以就是$\sin(\dfrac{π}{4}A)$的Jordan标准型就是$
     \left[\begin{array}{c}
         1 &
-    \\    & 1 & 0
+    \\    & 1
     \\    &   & 1
     \end{array}\right]
 $
@@ -285,7 +276,7 @@ $$\{  f^{(k_i)}(λ_i) \bold{\ |\ } k_i = 0,1,2,\dots,m_i-1 \ \ \ i=1,2,\dots,s\}
 
 $$g(σ_A) = f(σ_A)$$
 
-则定义$f(A) = g(A)$，实际上$g(x)$就是比最小多项式的次数低$1$次的多项式（证明略）。
+则定义$f(A) = g(A)$，<span class='highlight'>实际上$g(x)$就是比最小多项式的次数低$1$次的多项式（证明略）</span>。
 
 #### 例1
 
@@ -314,9 +305,9 @@ $f(λ) = |λE-A| = (λ-2)^3$
 
 则$A$的最小多项式可能是以下三种情形
 
-- $(λ-2)^3$
-- $(λ-2)^2$
-- $(λ-2)$
+- $m_1(λ) = (λ-2)^3$
+- $m_2(λ) = (λ-2)^2$
+- $m_3(λ) = (λ-2)$
 
 将$A$带入上式，仅有$(A-2E)^3 = 0$，故$A$的最小多项式为
 
@@ -330,9 +321,9 @@ $$m(λ) = (λ-2)^3$$
 $$g(x) = a_0 + a_1x + a_2x^2$$
 
 即 $\begin{cases}
-    a_0 + 2a_1 + 4a_2 = \cos2
-\\         a_1 + 4a_2 = -\sin2
-\\               2a_2 = -\cos2
+    g(2) = a_0 + 2a_1 + 4a_2 = \cos2
+\\  g'(2) = a_1 + 4a_2 = -\sin2
+\\  g''(2) = 2a_2 = -\cos2
 \end{cases}$，解得 $\begin{cases}
     a_0 = -\cos2 + 2\sin2
 \\  a_1 = -\sin2 + 2\cos2
