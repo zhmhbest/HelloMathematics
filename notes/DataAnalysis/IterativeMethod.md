@@ -161,7 +161,7 @@ $
 
 **同步迭代算法**
 
-若$a_{ii}≠0$，记$
+若$a_{ii}≠0$，记$①②
     \begin{cases}
         M = D
     \\  N = L + U
@@ -237,7 +237,7 @@ $$Dx^{(k+1)} = Dx^{(k)} - (Lx^{(k+1)} + Ux^{(k)} - Dx^{(k)} + b)$$
 $$x_i^{(k+1)} = 
     \dfrac{
         b_i - 
-        \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)} - 
+        \sum\limits_{j=1}^{i-1} a_{ij}x_j^{(k+1)} -
         \sum\limits_{j=i+1}^{n} a_{ij}x_j^{(k)}
     }{
         a_{ii}
@@ -262,12 +262,28 @@ $\begin{cases}
 
 **解**
 
->事前估计：$k > \dfrac{
+<div class='hint'>
+
+事前估计：$k > \dfrac{
     \ln \dfrac{ε(1-q)}{\|x^{(1)}-x^{(0)}\|}
 }{
     \ln q
 }$
 
+迭代构造：$
+    \begin{cases}
+        A = D + L + U
+    \\  B = I - M^{-1}A
+        = \begin{cases}
+            -D^{-1}(L+U) & M_{Jacobi} = D
+        \\  -(D+L)^{-1}U & M_{Gauss-Seide} = D + L
+        \end{cases}
+    \\  f = M^{-1}b
+    \end{cases}
+$
+
+严格对角占优阵：$|a_{ii}| > \sum\limits_{^{j=1}_{j≠i}}^{n} |a_{ij}|$
+</div>
 
 $A = 
     \left[\begin{array}{c}
@@ -325,13 +341,13 @@ $
 
 $\|x^{(1)}-x^{(0)}\|_{\infty} = 5$
 
-$k > 
+$k >
     \dfrac{
         \ln \dfrac{ε(1-q)}{\|x^{(1)}-x^{(0)}\|}
     }{
         \ln q
     }
-    = 
+    =
     \dfrac{
         \ln \dfrac{10^{-4}(1-\frac{3}{4})}{5}
     }{
@@ -431,7 +447,6 @@ $$
 | $ω<1$ | $ω=1$ | $ω>1$ |
 | -     | -     | -     |
 | 低松弛迭代 | 高斯-赛德尔迭代 | 超松弛迭代 |
-
 
 ## 迭代法的收敛性
 
