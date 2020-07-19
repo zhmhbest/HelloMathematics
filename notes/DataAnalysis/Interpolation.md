@@ -63,7 +63,7 @@ $$L_n(x) = \sum\limits_{i=0}^{n} l_i(x)f(x_i)$$
 
 - <span class='highlight'>$l_i(x) = \prod\limits_{^{j=0}_{j≠i}}^{n} \dfrac{x-x_j}{x_i-x_j}$</span>
 
-$$L_n(x) = 
+$$L_n(x) =
 \sum\limits_{i=0}^{n} \left[
     ( \prod\limits_{^{j=0}_{j≠i}}^{n} \dfrac{x-x_j}{x_i-x_j})
     f(x_i)
@@ -72,11 +72,11 @@ $$L_n(x) =
 - 记$ω_{n+1}(x) = \prod\limits_{i=0}^{n} (x-x_i)$
 - 则$ω_{n+1}(x_i) = \prod\limits_{^{j=0}_{j≠i}}^{n} (x_i-x_j)$
 
-$$L_n(x) = 
-\sum\limits_{i=0}^{n} 
+$$L_n(x) =
+\sum\limits_{i=0}^{n}
     \dfrac{
         ω_{n+1}(x)
-    }{ 
+    }{
         (x-x_i)ω_{n+1}'(x_i)
     }
     f(x_i)
@@ -132,12 +132,19 @@ $x_i, i=0,1,2,3,4,5$是互异节点，$l_i(x)$是Lagrange插值基函数，则$\
 
 由$|f^{(n+1)}(ξ)| ≤ M_{n+1} = \max\limits_{a≤x≤b} |f^{(n+1)}(x)|$得
 
-$$|R_n(x)| ≤ \dfrac{M_{n+1}}{(n+1)!}|ω_{n+1}(x)|$$
+$$|R_n(x)|
+    ≤ \dfrac{M_{n+1}}{(n+1)!}|ω_{n+1}(x)|
+    = \dfrac{
+        \max\limits_{a≤x≤b} \left|f^{(n+1)}(x)\right|
+    }{(n+1)!} \left|
+        \prod\limits_{i=0}^{n} (x-x_i)
+    \right|
+$$
 
 | $n$ | 名称 | 表达式 |
 | :-: | :-: | :- |
-| $n=1$ | 线性插值误差限 | $\vert{R_1(x)}\vert ≤ \dfrac{M_2}{2}\vert{(x-x_0)(x-x_1)}\vert$ |
-| $n=2$ | 二次插值误差限 | $\vert{R_2(x)}\vert ≤ \dfrac{M_3}{6}\vert{(x-x_0)(x-x_1)(x-x_2)}\vert$ |
+| $n=1$ | 线性插值误差限 | $\vert{R_1(x)}\vert ≤ \frac{1}{2} M_2 \vert{(x-x_0)(x-x_1)}\vert$ |
+| $n=2$ | 二次插值误差限 | $\vert{R_2(x)}\vert ≤ \frac{1}{6} M_3 \vert{(x-x_0)(x-x_1)(x-x_2)}\vert$ |
 
 ### 事后误差估计
 
