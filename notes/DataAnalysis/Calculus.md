@@ -141,10 +141,28 @@ $$
 其**误差**为
 
 $$R(f)
-    = \dfrac{1}{(n+1)!} \int_{a}^{b}{ f^{(n+1)}(ξ) ω_{n+1}(x) ρ(x) }
-    \,{\rm d}x
+    = \dfrac{1}{(n+1)!} \int_{a}^{b} {
+        f^{(n+1)}(ξ)
+        \left( \prod_{i=0}^{n} x-x_i \right)
+        ρ(x)
+    }
+    {\,{\rm d}x}
     { \ \ \ } ξ∈(a,b)
 $$
+
+利用积分中值定理有
+
+$$R(f) = f^{(n+1)}(η)K$$
+
+- $K = \int_{a}^{b} \dfrac{1}{(n+1)!} \prod\limits_{i=0}^{n}(x-x_i) ρ(x) {\,{\rm d}x}$
+
+取$ρ(x)=1$，$f(x)=x^{n+1}$有
+
+$$R(f) = \dfrac{f^{(n+1)}(η)}{(n+1)!} \left[
+    \dfrac{1}{n+2}(b^{n+2} - a^{n+2})
+    -
+    \sum_{i=0}^{n} A_ix_i^{n+1}
+\right]$$
 
 $n+1$个互异节点至少有$n$次代数精度，最高可达$2n+1$次代数精度（详见[高斯型求积公式](#高斯型求积公式)）。
 </div>
@@ -167,7 +185,9 @@ $$
         \prod\limits_{^{j=0}_{j≠i}}^n (t-j)
     }\,{\rm d}t
 $
+  - $\sum_{i=0}^{n} A_i = b-a$
 - $C_i^{(n)}=\dfrac{1}{b-a}A_i$，称为Cotes系数
+  - $\sum_{i=0}^{n} C_i^{(n)} = 1$
 
 <!--
 - $R[f] = \int_a^b f[x,x_1,x_2,\dots,x_n]ω_{n+1}(x){\rm d}x = \dfrac{1}{(n+1)!} \int_{a}^{b}{ f^{(n+1)}(ξ) ω_{n+1}(x)}{\rm d}x$
@@ -175,7 +195,7 @@ $
 
 <div class='mark'>
 
-<span class='highlight'>当Cotes系数为负数时是数值不稳定的，当$n≥8$时Cotes系数开始出现负数，即高阶Newton-Cotes公式的稳定性无法得到保证</span>；$n+1$个节点的求积公式至少有$n$次代数精度；当$n$为偶数时，至少有$n+1$次代数精度。
+<span class='highlight'>当Cotes系数为负数时是数值不稳定的，当$n≥8$时Cotes系数开始出现负数，即高阶Newton-Cotes公式的稳定性无法得到保证（我们一般只取$n=1,2,4$）</span>；$n+1$个节点的求积公式至少有$n$次代数精度；当$n$为偶数时，至少有$n+1$次代数精度。
 </div>
 
 ### 梯形公式
@@ -220,6 +240,53 @@ $$\int_a^b f(x) {\rm d}x ≈ \dfrac{b-a}{90} \left[
 
 **5次代数精度**。
 </div>
+
+#### 例
+
+用Simpson公式求$y(x) = \int_0^1 (1-3xt)y(t) {\,{\rm d}t} +(1-3x)$
+
+**解**
+
+记$f(t) = (1-3xt)y(t)$，由Simpson公式得
+
+$$\int_0^1 (1-3xt)y(t) {\,{\rm d}t}
+    ≈ \dfrac{1}{6}\left[ f(0)+4f(\dfrac{1}{2})+f(1) \right]
+    = \dfrac{y(0) + 4(1-\dfrac{3}{2}x)y(\frac{1}{2}) + (1-3x)y(1)}{6}
+$$
+
+因此近似解
+
+$$\tilde{y}(x) = \dfrac{y(0)+4(1-\dfrac{3}{2}x)y(\frac{1}{2})+(1-3x)y(1)}{6} + (1-3x)$$
+
+取$x=0,\frac{1}{2},1$得
+
+$$\begin{cases}
+    \tilde{y}(0) = \frac{1}{6} \left[
+        \tilde{y}(0)
+        + 4\tilde{y}(\frac{1}{2})
+        + \tilde{y}(1)
+    \right] + 1
+\\\\
+    \tilde{y}(\frac{1}{2}) = \frac{1}{6} \left[
+        \tilde{y}(0)
+        + \tilde{y}(\frac{1}{2})
+        - \frac{1}{2}\tilde{y}(1)
+    \right] - \frac{1}{2}
+\\\\
+    \tilde{y}(1) = \frac{1}{6} \left[
+        \tilde{y}(0)
+        - 2\tilde{y}(\frac{1}{2})
+        - 2\tilde{y}(1)
+    \right] - 2
+\end{cases}$$
+
+解得 $\begin{cases}
+    \tilde{y}(0) = \frac{2}{3}
+\\  \tilde{y}(\frac{1}{2}) = -\frac{1}{3}
+\\  \tilde{y}(1) = -\frac{4}{3}
+\end{cases}$，带入$\tilde{y}(x)$得
+
+$$\tilde{y}(x) = \dfrac{2}{3} - 2x$$
 
 ## 复化求积公式
 
