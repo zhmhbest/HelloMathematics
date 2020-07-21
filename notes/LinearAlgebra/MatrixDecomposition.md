@@ -434,14 +434,14 @@ $$A =
     \\  1 & 1  & 1 & 1 & 0
     \\  2 & 1  & 3 & 2 & 1
     \end{array}\right]
-    \xRightarrow[]{}
+    \xrightarrow[]{初等行变换}
     \left[\begin{array}{c}
         1 & 1 & 1  & 1 & 0
     \\  0 & 1 & −1 & 0 & 1
     \\  0 & 0 & 0  & 1 & 0
     \\  0 & 0 & 0  & 0 & 0
     \end{array}\right]
-    \xRightarrow[]{}
+    \xrightarrow[]{初等行变换}
     \left[\begin{array}{c}
         1 & 0 & 2  & 0 & 1
     \\  0 & 1 & −1 & 0 & −1
