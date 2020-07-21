@@ -324,6 +324,44 @@ $$
 - $R(S_n) = -\dfrac{b-a}{2880}h^4 f^{(4)}(η)$
 </div>
 
+#### 例
+
+计算积分$I = \int_{0}^{\frac{\pi}{2}} \sin x \,{\rm d}x$，当使用梯形公式时，应将区间$[0, \frac{\pi}{2}]$分成多少等份，才能使误差不超过$\frac{1}{2}×10^{-3}$，若取同样的求积节点，使用复化辛普森公式时截断误差是多少。
+
+**解**
+
+- $f(x) = \sin x$
+- $f'(x) = \cos x$
+- $f''(x) = -\sin x$
+- $f^{(3)}(x) = -\cos x$
+- $f^{(4)}(x) = \sin x$
+
+$
+    \begin{array}{l}
+        |R(T_n)| \\\\ \\\\ \\\\
+    \end{array}
+    \begin{array}{l}
+            = |-\dfrac{b-a}{12}h^2 f''(η)|
+    \\\\    ≤ \dfrac{\pi}{24} \cdot (\dfrac{\pi}{2n})^2 \cdot 1
+    \\\\    ≤ \dfrac{1}{2}×10^{-3}
+    \end{array}
+$
+
+即$n^2 ≥ \dfrac{\pi^3}{48} × 10^3$，取$n=26$
+
+当$n=26$时，使用复化辛普森公式有
+
+$
+    \begin{array}{l}
+        |R(S_n)| \\\\ \\\\ \\\\
+    \end{array}
+    \begin{array}{l}
+            = |-\dfrac{b-a}{2880}h^4 f^{(4)}(η)|
+    \\\\    ≤ -\dfrac{\pi}{5760} \cdot (\dfrac{\pi}{26})^4 \cdot 1
+    \\\\    ≤ 0.7266303 × 10^{−9}
+    \end{array}
+$
+
 ### 龙贝格（Romberg）求积公式
 
 略
