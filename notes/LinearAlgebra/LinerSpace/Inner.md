@@ -64,7 +64,50 @@ $$
     \end{array}\right]
 $$
 
-上式称为**内积的表示式**，$A$称为$V$在$e$下的**度量矩阵**，且$A$一定是正定矩阵。
+即
+
+$$(α,β) = x^TAy$$
+
+- $A=e^Te$，称为$V$在$e$下的**度量矩阵**，$A$一定是正定矩阵。
+
+上式称为**内积的表示式**。
+
+#### 例
+
+如果内积空间在基$e=(e_1, e_2, e_3)$下的度量矩阵$A = \left[\begin{array}{c}
+    10 & -3 & 4
+\\  -3 & 20 & 1
+\\  4  & 1  & 30
+\end{array}\right]$，求向量$α = 3e_1 + 2e_2 - e_3$的长度$\|α\|$，及它与$β = e_1 + 2e_2$的夹角。
+
+**解**
+
+$α = e \left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right]$，$β = e \left[\begin{array}{c} 1 \\ 2 \\ 0 \end{array}\right]$
+
+$(α, α) =
+  \left[\begin{array}{c} 3 & 2 & -1 \end{array}\right]
+  A
+  \left[\begin{array}{c} 3 \\ 2 \\ -1 \end{array}\right]
+  = 136
+$
+
+$(β, β) =
+  \left[\begin{array}{c} 1 & 2 & 0 \end{array}\right]
+  A
+  \left[\begin{array}{c} 1 \\ 2 \\ 0 \end{array}\right]
+  = 78
+$
+
+$(α, β) =
+  \left[\begin{array}{c} 3 & 2 & -1 \end{array}\right]
+  A
+  \left[\begin{array}{c} 1 \\ 2 \\ 0 \end{array}\right]
+  = 80
+$
+
+$\cosθ = \dfrac{(α,β)}{\|α\|\|β\|} = \dfrac{80}{\sqrt{136}\sqrt{78}}$
+
+$θ = \arccos \dfrac{80}{\sqrt{136}\sqrt{78}}$
 
 ## 标准正交系
 

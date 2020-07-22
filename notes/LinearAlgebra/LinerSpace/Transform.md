@@ -224,7 +224,7 @@ $
 
 即
 
-$$T(α) = αA$$
+<span class='highlight'>$$T(α) = αA$$</span>
 
 则称$A$为$T$在基$α$下的**表示矩阵**（<span class='hint'>也可看做$T(α)$在基$α$下的坐标</span>）。
 
