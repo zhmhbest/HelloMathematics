@@ -241,7 +241,7 @@ $$x = Ay$$
 
 **基的构造**
 
-<span class='highlight'>若$α$是一组基，$A$可逆，则$αA$也是一组基。</span>
+<span class='highlight'>若$α$是一组基，$A$可逆，则$β=αA$也是一组基。</span>
 
 #### 例1
 
