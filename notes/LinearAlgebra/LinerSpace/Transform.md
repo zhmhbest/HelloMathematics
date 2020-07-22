@@ -29,7 +29,7 @@ $$R(T) = \{ T(α) \bold{\ |\ } α∈V \}$$
 
 称值域的维数（<span class='hint'>有结构的</span>）为$T$的**秩**，记为$rank(T)$。
 
-若$α$是$V$的一组基，则$R(T) = Span\{ T(α_1), T(α_2), \dots, T(α_n) \}$。
+<span class='highlight'>若$α$是$V$的一组基，则$R(T) = Span\{ T(α_1), T(α_2), \dots, T(α_n) \}$。</span>
 
 ### 核
 
@@ -38,6 +38,8 @@ $$N(T) = \{ α \bold{\ |\ } T(α)=0,α∈V \}$$
 记作$Ker(T)$或$N(T)$或$T^{-1}(T)$，称为**零空间**或**核子空间**。
 
 称核子空间的维数$dim(N(T))$（<span class='hint'>没有结构的</span>）为$T$的**亏度**（或**零度**）。
+
+<span class='highlight'>设$x∈V$，则$T(x) = 0$，解得表达式，再将自由变量带回$x$，即得$N(T)$的基。</span>
 
 #### 例1
 
@@ -125,6 +127,35 @@ $$
         & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
     \end{array}\right]
 $$
+
+<div class='hint'>
+
+$
+    \left[\begin{array}{c}
+          \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+        & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
+        & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        E_{11} & E_{12} & E_{21} & E_{22}
+    \end{array}\right]
+    \left[\begin{array}{c}
+        0  & 0  & 2  & 0
+    \\  -2 & -2 & 0  & 2
+    \\  0  & 0  & 2  & 0
+    \\  0  & 0  & -2 & 0
+    \end{array}\right]
+    \xrightarrow[]{初等行变换}
+    \left[\begin{array}{c}
+        1 & 1 & 0 & -1
+    \\  0 & 0 & 1 & 0
+    \\  0 & 0 & 0 & 0
+    \\  0 & 0 & 0 & 0
+    \end{array}\right]
+$
+</div>
 
 观察可知$dim(R[T])=2$，即$R[T]=Span\left[\begin{array}{c}
     \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
