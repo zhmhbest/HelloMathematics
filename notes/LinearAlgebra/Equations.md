@@ -62,12 +62,49 @@ $$
 
 $A_{m×n}x=0$
 
-##### 解的情况
+**解的情况**
 
 | 条件 | 解的个数 | 补充说明 |
 | :- | :-: | :- |
 | $r(A)=n$ | 唯一 | 仅有零解
 | $r(A)<n$ | 无穷 | 有非零解
+
+#### 例
+
+求$Ax=0$的通解，其中$A=\left[ \begin{array}{c}
+    2  & -2 & -4
+\\  -1 & 3  & 4
+\\  1  & -2 & -3
+\end{array} \right]$
+
+**解**
+
+$A
+    \xrightarrow[]{\mathrm{swap}(r_1, r_3)}
+    \left[\begin{array}{c}
+        1  & -2 & -3
+    \\  -1 & 3  & 4
+    \\  2  & -2 & -4
+    \end{array}\right]
+    \xrightarrow[r_3-=2r_1]{r_2+=r_1}
+    \left[\begin{array}{c}
+        1  & -2 & -3
+    \\  0  & 1  & 1
+    \\  0  & 2  & 2
+    \end{array}\right]
+    \xrightarrow[]{r_3-=2r_2}
+    \left[\begin{array}{c}
+        1  & -2 & -3
+    \\  0  & 1  & 1
+    \\  0  & 0  & 0
+    \end{array}\right]
+$
+
+故$r(A)=2 < 3=n$
+
+取$x_3$为自由变量，令其等于$1$，得$\left[\begin{array}{c} 1 \\ -1 \\1 \end{array}\right]$为$Ax=0$的一个解。
+
+故其通解为$x = k\left[\begin{array}{c} 1 \\ -1 \\1 \end{array}\right], { \ \ \ }k$为任意非零常数。
 
 ### 非齐次线性方程组
 
@@ -75,7 +112,7 @@ $A_{m×n}x=0$
 
 $A_{m×n}x=b$
 
-##### 解的情况
+**解的情况**
 
 | 条件 | 解的个数 |
 | :- | :-: |
