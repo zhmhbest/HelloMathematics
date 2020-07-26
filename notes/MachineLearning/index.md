@@ -23,7 +23,9 @@
 
 ## [神经网络](./NeuralNetwork.html)
 
-## [卷积网络](./CNN.html)
+### [CNN](./CNN.html)
+
+### [RNN](./RNN.html)
 
 ## [支持向量机](./SVM.html)
 

@@ -29,10 +29,11 @@
 
 以上多层神经网络可以解决异或问题。
 
-### 多层前馈神经网络（Multi-layer Feedforward Neural）
+### 多层感知器（MLP，Multilayer Perceptron）
+
+>多层前馈神经网络（Multi-layer Feedforward Neural）
 
 ![](./images/nn_network.png)
-
 
 ## 误差逆传播（errorBackPropagation）
 

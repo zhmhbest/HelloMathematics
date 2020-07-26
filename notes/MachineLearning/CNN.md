@@ -1,11 +1,11 @@
 <link rel='stylesheet' href='../../style/index.css'>
 <script src='../../style/index.js'></script>
 
-# [CNN](./index.html)
+# [机器学习：CNN](./index.html)
 
 [TOC]
 
-## 初识卷积
+## 初识卷积神经网络
 
 卷积的目的是从输入的图片当中提取特征。
 
