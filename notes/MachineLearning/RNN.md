@@ -61,7 +61,7 @@
 
 ### 闸门
 
-LSTM确实具有删除信息或将信息添加到单元状态的能力，这些信息由称为门的结构精心调节。
+LSTM有删除信息或将信息添加到单元状态的能力，这些信息由称为门的结构精心调节。
 
 ![闸门](./images/rnn_lstm_gate.png)
 
@@ -90,3 +90,17 @@ LSTM的第一步是决定要从单元状态中丢弃哪些信息。
 最后，我们需要决定要输出的内容。
 
 ![输出门](./images/rnn_lstm_focus-o.png)
+
+### LSTM变体
+
+由[Gers & Schmidhuber (2000)](ftp://ftp.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf)提出，可以让**Gate Layers**查看单元状态。
+
+![](./images/rnn_lstm_var_peepholes.png)
+
+使用耦合的**忘记门**和**输入门**。
+
+![](./images/rnn_lstm_var_tied.png)
+
+由[Cho, et al. (2014).](http://arxiv.org/pdf/1406.1078v3.pdf)提出的门控循环单元，将**忘记门**和**输入门**合并为**更新门**，此外还合并了单元状态和隐藏状态。
+
+![](./images/rnn_lstm_var_GRU.png)
