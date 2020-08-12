@@ -38,6 +38,10 @@ span.mark {
     margin: 0;
 }
 
+div.markdown-preview {
+    padding: 2em calc(30% - 457px + 2em) !important;
+}
+
 /* 回到顶部 */
 
 /* body:after {
@@ -263,3 +267,16 @@ html body div.flow svg path {
 html body div.flow svg text {
     fill: #EEE;
 }
+
+/* 【Mermaid】 */
+html body div.mermaid {
+    display: inline-block;
+    background-color: #888;
+}
+
+/* 【Mermaid Path 颜色】 */
+/*
+html body div.mermaid .edgePath .path {
+    stroke: #AAA !important;
+}
+*/

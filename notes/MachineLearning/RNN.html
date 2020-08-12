@@ -7,7 +7,7 @@
       
       
       
-      
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid@8.5.2/dist/mermaid.min.js"></script>
       
       
       
@@ -277,6 +277,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </li>
 <li><a href="#lstm">LSTM</a>
 <ul>
+<li><a href="#%E5%8D%95%E5%85%83%E6%95%B0%E9%87%8Fnum-units">&#x5355;&#x5143;&#x6570;&#x91CF;&#xFF08;num units&#xFF09;</a></li>
 <li><a href="#%E5%8D%95%E5%85%83%E7%8A%B6%E6%80%81">&#x5355;&#x5143;&#x72B6;&#x6001;</a></li>
 <li><a href="#%E9%97%B8%E9%97%A8">&#x95F8;&#x95E8;</a>
 <ul>
@@ -298,17 +299,17 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="%E5%88%9D%E8%AF%86%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">&#x521D;&#x8BC6;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</h2>
 
 <p>&#x4EBA;&#x7C7B;&#x4E0D;&#x4F1A;&#x6BCF;&#x79D2;&#x90FD;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x601D;&#x8003;&#xFF01;</p>
-<p><img src="./iamges/../images/rnn_network.png" alt="&#x7279;&#x6B8A;&#x7F51;&#x7EDC;"></p>
 <p>&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x4F1A;&#x8BB0;&#x5FC6;&#x4E4B;&#x524D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5229;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x4FE1;&#x606F;&#x5F71;&#x54CD;&#x540E;&#x9762;&#x7ED3;&#x70B9;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x9690;&#x85CF;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x7ED3;&#x70B9;&#x662F;&#x6709;&#x8FDE;&#x63A5;&#x7684;&#x3002;</p>
 <div style="text-align: center">
 <p><img src="./images/rnn_rolled.png" alt="&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5177;&#x6709;&#x5FAA;&#x73AF;"><br>
 <span class="highlight"><em>&#x9690;&#x85CF;&#x5C42;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x4E0D;&#x4EC5;&#x5305;&#x62EC;&#x8F93;&#x5165;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#xFF0C;<br>
 &#x8FD8;&#x5305;&#x62EC;&#x4E0A;&#x4E00;&#x65F6;&#x523B;&#x9690;&#x85CF;&#x5C42;&#x7684;&#x8F93;&#x51FA;</em></span></p>
 </div>
+<p>&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;RNN&#x7684;&#x9690;&#x85CF;&#x5C42;&#x5E76;&#x4E0D;&#x548C;&#x4F20;&#x7EDF;&#x7684;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5728;&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;A&#x5373;&#x4E3A;RNN&#x7684;&#x9690;&#x85CF;&#x5C42;&#x3002;</p>
 <h3 class="mume-header" id="%E9%9A%90%E8%97%8F%E5%B1%82%E5%B1%95%E5%BC%80">&#x9690;&#x85CF;&#x5C42;&#x5C55;&#x5F00;</h3>
 
 <p><img src="./images/rnn_unrolled.png" alt="&#x5C55;&#x5F00;&#x7684;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;"></p>
-<p>&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x9690;&#x85CF;&#x5C42;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x540C;&#x4E00;&#x7F51;&#x7EDC;&#x7684;&#x591A;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x6BCF;&#x4E2A;&#x526F;&#x672C;&#x90FD;&#x5C06;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x540E;&#x7EE7;&#x8005;&#x3002;</p>
+<p>&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x9690;&#x85CF;&#x5C42;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x540C;&#x4E00;&#x7F51;&#x7EDC;&#x7684;&#x591A;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x6BCF;&#x4E2A;&#x526F;&#x672C;&#x90FD;&#x5C06;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x540E;&#x7EE7;&#x8005;&#x3002;&#x5728;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x903B;&#x8F91;&#x4E2D;&#xFF0C;&#x4E0A;&#x56FE;&#x5176;&#x5B9E;&#x53EA;&#x6709;&#x5DE6;&#x4FA7;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x5C55;&#x5F00;&#x53EF;&#x7406;&#x89E3;&#x4E3A;&#x5728;&#x4E0D;&#x540C;&#x65F6;&#x95F4;&#xFF08;<strong>time step</strong>&#xFF09;&#x4E0B;&#x540C;&#x4E00;&#x9690;&#x5C42;&#xFF08;<strong>cell</strong>&#xFF09;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x660E;&#x663E;&#x5B83;&#x4EEC;&#x662F;&#x53C2;&#x6570;&#x5171;&#x4EAB;&#x7684;&#x3002;</p>
 <h3 class="mume-header" id="%E5%BE%AA%E7%8E%AF%E4%BD%93">&#x5FAA;&#x73AF;&#x4F53;</h3>
 
 <p>&#x5FAA;&#x73AF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x540C;&#x4E00;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x5728;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x4E0A;&#x88AB;&#x590D;&#x5236;&#x591A;&#x6B21;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x4E2A;&#x88AB;&#x590D;&#x5236;&#x591A;&#x6B21;&#x7684;&#x7ED3;&#x6784;&#x88AB;&#x79F0;&#x4E4B;&#x4E3A;<strong>&#x5FAA;&#x73AF;&#x4F53;</strong>&#x3002;</p>
@@ -326,18 +327,73 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="lstm">LSTM</h2>
 
 <blockquote>
-<p><img src="./images/rnn_lstm_notation.png" alt="LSTM"></p>
+<p><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding-LSTMs</a></p>
+</blockquote>
+<blockquote>
 <ul>
-<li>PointwiseOperation&#xFF1A;&#x8F93;&#x51FA;&#x4ECB;&#x4E8E;&#x96F6;&#x548C;&#x4E00;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x63CF;&#x8FF0;&#x5141;&#x8BB8;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x591A;&#x5C11;&#x901A;&#x8FC7;&#x3002;</li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C3;</mi></mrow><annotation encoding="application/x-tex">&#x3C3;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">&#x3C3;</span></span></span></span>&#xFF1A;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;<em>Sigmoid</em></li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">tanh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">h</span></span></span></span>&#xFF1A;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;<em>Tanh</em></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>&#x3C3;</mi></mrow><annotation encoding="application/x-tex">&#x3C3;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">&#x3C3;</span></span></span></span>&#xFF1A;&#x6FC0;&#x6D3B;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">d</mi></mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>&#x2212;</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\mathrm{Sigmoid}(x) = \frac{1}{1 + e^{-x}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">S</span><span class="mord mathrm">i</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">i</span><span class="mord mathrm">d</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2484389999999999em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">tanh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">h</span></span></span></span>&#xFF1A;&#x6FC0;&#x6D3B;&#x51FD;&#x6570; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">h</mi></mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>&#x2212;</mo><msup><mi>e</mi><mrow><mo>&#x2212;</mo><mi>x</mi></mrow></msup></mrow><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>&#x2212;</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\mathrm{Tanh}(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">T</span><span class="mord mathrm">a</span><span class="mord mathrm">n</span><span class="mord mathrm">h</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.3906960000000002em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.987365em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5935428571428571em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7385428571428572em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span><span class="mbin mtight">&#x2212;</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8476642857142858em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">&#x2212;</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2297;</mo></mrow><annotation encoding="application/x-tex">&#x2297;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#x2297;</span></span></span></span>&#xFF1A;&#x8F93;&#x5165;&#x90E8;&#x5206;&#x76F8;&#x4E58;</li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2295;</mo></mrow><annotation encoding="application/x-tex">&#x2295;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#x2295;</span></span></span></span>&#xFF1A;&#x8F93;&#x5165;&#x90E8;&#x5206;&#x76F8;&#x52A0;<br>
-&#xA0;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&#x2295;</mo></mrow><annotation encoding="application/x-tex">&#x2295;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">&#x2295;</span></span></span></span>&#xFF1A;&#x8F93;&#x5165;&#x90E8;&#x5206;&#x76F8;&#x52A0;</li>
 </ul>
 </blockquote>
 <p>&#x957F;&#x77ED;&#x671F;&#x8BB0;&#x5FC6;&#x7F51;&#x7EDC;&#xFF08;LSTM&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;RNN&#xFF0C;&#x80FD;&#x591F;&#x5B66;&#x4E60;&#x957F;&#x671F;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;</p>
 <p><img src="./images/rnn_lstm_chain.png" alt="LSTM"></p>
+<div class="mermaid">graph LR
+h1_t-1[&quot;h_(t-1)&quot;]
+x1_t[&quot;X_(t)&quot;]
+c1_t-1[&quot;C_(t-1)&quot;]
+stake11((&quot;&#xB7;&quot;))
+input11[input1]
+input12[input2]
+
+h1_t-1--&gt;stake11
+x1_t--&gt;stake11
+c1_t-1--&gt;input12
+stake11--&gt;input11
+
+subgraph Cell
+    f1_t[&quot;f_(t)&quot;]
+    i1_t[&quot;i_(t)&quot;]
+    cc1_t[&quot;C~_(t)&quot;]
+    o1_t[&quot;o_(t)&quot;]
+    c1_t[&quot;C_(t)&quot;]
+    h1_t[&quot;h_(t)&quot;]
+
+    input11--Sigmod--&gt;f1_t
+    input11--Sigmod--&gt;i1_t
+    input11--Tanh--&gt;cc1_t
+    input11--Sigmod--&gt;o1_t
+
+    mul11((&quot;&#xD7;&quot;))
+    mul12((&quot;&#xD7;&quot;))
+    mul13((&quot;&#xD7;&quot;))
+    add11((&quot;+&quot;))
+
+    input12--&gt;mul11
+    f1_t--&gt;mul11
+    i1_t--&gt;mul12
+    cc1_t--&gt;mul12
+    mul11--&gt;add11
+    mul12--&gt;add11
+    add11--&gt;c1_t
+
+    c1_t--Tanh--&gt;mul13
+    o1_t--&gt;mul13
+    mul13--&gt;h1_t
+end
+
+h1_t--&gt;output11[&quot;output1&quot;]
+c1_t--&gt;output12[&quot;output2&quot;]
+
+</div><p>&#xA0;</p>
+<div class="mermaid">graph TB
+g1((&quot;&#xB7;&quot;))---note1[&quot;&#x5C5E;&#x6027;&#x5408;&#x5E76;&quot;]
+g2((&quot;+&quot;))---note2[&quot;&#x77E9;&#x9635;&#x52A0;&#x6CD5;&quot;]
+g3((&quot;&#xD7;&quot;))---note3[&quot;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&quot;]
+</div><h3 class="mume-header" id="%E5%8D%95%E5%85%83%E6%95%B0%E9%87%8Fnum-units">&#x5355;&#x5143;&#x6570;&#x91CF;&#xFF08;num units&#xFF09;</h3>
+
+<p>&#x5373;&#x6307;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span>&#x7684;&#x7EF4;&#x6570;&#x3002;</p>
 <h3 class="mume-header" id="%E5%8D%95%E5%85%83%E7%8A%B6%E6%80%81">&#x5355;&#x5143;&#x72B6;&#x6001;</h3>
 
 <p>&#x5355;&#x5143;&#x72B6;&#x6001;&#x6709;&#x70B9;&#x50CF;&#x4F20;&#x9001;&#x5E26;&#x3002;&#x5B83;&#x6CBF;&#x6574;&#x4E2A;&#x94FE;&#x6761;&#x4E00;&#x76F4;&#x6CBF;&#x76F4;&#x7EBF;&#x79FB;&#x52A8;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E9B;&#x8F83;&#x5C0F;&#x7684;&#x7EBF;&#x6027;&#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x3002;&#x4FE1;&#x606F;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x52A0;&#x6539;&#x53D8;&#x5730;&#x6D41;&#x52A8;&#x3002;</p>
@@ -350,7 +406,6 @@ pre[data-line] .line-highlight[data-end]:after {
 <em>&#x95E8;&#x72B6;&#x7ED3;&#x6784;</em></p>
 </div>
 <p>&#x95F8;&#x95E8;&#x662F;&#x4E00;&#x79CD;&#x9009;&#x62E9;&#x6027;&#x5730;&#x8BA9;&#x4FE1;&#x606F;&#x901A;&#x8FC7;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5176;&#x6709;&#x4EE5;&#x4E0B;&#x4E09;&#x79CD;&#x95E8;&#x3002;</p>
-<p><img src="./images/rnn_lstm_gate2.png" alt="&#x95F8;&#x95E8;"></p>
 <h4 class="mume-header" id="%E5%BF%98%E8%AE%B0%E9%97%A8">&#x5FD8;&#x8BB0;&#x95E8;</h4>
 
 <p>LSTM&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x51B3;&#x5B9A;&#x8981;&#x4ECE;&#x5355;&#x5143;&#x72B6;&#x6001;&#x4E2D;&#x4E22;&#x5F03;&#x54EA;&#x4E9B;&#x4FE1;&#x606F;&#x3002;</p>
@@ -381,7 +436,40 @@ pre[data-line] .line-highlight[data-end]:after {
       
     
     
-    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "default"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
     
     
     

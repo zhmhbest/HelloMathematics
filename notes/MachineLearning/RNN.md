@@ -10,8 +10,6 @@
 
 人类不会每秒都从头开始思考！
 
-![特殊网络](./iamges/../images/rnn_network.png)
-
 循环神经网络会记忆之前的信息，并利用之前的信息影响后面结点的输出。也就是说，循环神经网络的隐藏层之间的结点是有连接的。
 
 <div style='text-align: center'>
@@ -21,18 +19,19 @@
 还包括上一时刻隐藏层的输出*</span>
 </div>
 
+需要特别注意的是，RNN的隐藏层并不和传统的前馈神经网络具有相同的含义，在上图中，A即为RNN的隐藏层。
+
 ### 隐藏层展开
 
 ![展开的递归神经网络](./images/rnn_unrolled.png)
 
-循环神经网络的隐藏层可以看作是同一网络的多个副本，每个副本都将消息传递给后继者。
+循环神经网络的隐藏层可以看作是同一网络的多个副本，每个副本都将消息传递给后继者。在神经网络逻辑中，上图其实只有左侧部分，其展开可理解为在不同时间（**time step**）下同一隐层（**cell**）的状态，明显它们是参数共享的。
 
 ### 循环体
 
 循环神经网络可以看作是同一神经网络结构在时间序列上被复制多次的结果，这个被复制多次的结构被称之为**循环体**。
 
 如何设计循环体的网络结构是循环神经网络解决实际问题的关键。
-
 
 <div style='text-align: center'>
 
@@ -52,18 +51,79 @@
 
 ## LSTM
 
->![LSTM](./images/rnn_lstm_notation.png)
->
->- PointwiseOperation：输出介于零和一之间的数字，描述允许每个组件中的多少通过。
->- $σ$：激活函数*Sigmoid*
->- $tanh$：激活函数*Tanh*
+>[Understanding-LSTMs](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+>- $σ$：激活函数 $\mathrm{Sigmoid}(x) = \frac{1}{1 + e^{-x}}$
+>- $tanh$：激活函数 $\mathrm{Tanh}(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}$
 >- $⊗$：输入部分相乘
 >- $⊕$：输入部分相加
->&nbsp;
 
 长短期记忆网络（LSTM）是一种特殊的RNN，能够学习长期依赖关系。
 
 ![LSTM](./images/rnn_lstm_chain.png)
+
+```mermaid
+graph LR
+h1_t-1["h_(t-1)"]
+x1_t["X_(t)"]
+c1_t-1["C_(t-1)"]
+stake11(("·"))
+input11[input1]
+input12[input2]
+
+h1_t-1-->stake11
+x1_t-->stake11
+c1_t-1-->input12
+stake11-->input11
+
+subgraph Cell
+    f1_t["f_(t)"]
+    i1_t["i_(t)"]
+    cc1_t["C~_(t)"]
+    o1_t["o_(t)"]
+    c1_t["C_(t)"]
+    h1_t["h_(t)"]
+
+    input11--Sigmod-->f1_t
+    input11--Sigmod-->i1_t
+    input11--Tanh-->cc1_t
+    input11--Sigmod-->o1_t
+
+    mul11(("×"))
+    mul12(("×"))
+    mul13(("×"))
+    add11(("+"))
+
+    input12-->mul11
+    f1_t-->mul11
+    i1_t-->mul12
+    cc1_t-->mul12
+    mul11-->add11
+    mul12-->add11
+    add11-->c1_t
+
+    c1_t--Tanh-->mul13
+    o1_t-->mul13
+    mul13-->h1_t
+end
+
+h1_t-->output11["output1"]
+c1_t-->output12["output2"]
+
+```
+
+&nbsp;
+
+```mermaid
+graph TB
+g1(("·"))---note1["属性合并"]
+g2(("+"))---note2["矩阵加法"]
+g3(("×"))---note3["矩阵乘法"]
+```
+
+### 单元数量（num units）
+
+即指$h(t)$的维数。
 
 ### 单元状态
 
@@ -82,8 +142,6 @@ LSTM有删除信息或将信息添加到单元状态的能力，这些信息由�
 </div>
 
 闸门是一种选择性地让信息通过的方式。其有以下三种门。
-
-![闸门](./images/rnn_lstm_gate2.png)
 
 #### 忘记门
 
