@@ -37,6 +37,12 @@ $$ReLU\left(\left(\sum\limits_{i=1}^{deep} area_i \bullet filter_i\right) + bias
 - $Output.H = \dfrac{H-L+2P}{S+1}$
 - $Output.D = N$
 
+#### 扩展卷积
+
+<!-- https://www.cnblogs.com/yangperasd/p/7071657.html -->
+
+![](images/cnn_dilation_rate.gif)
+
 ### 池化层（Pooling）
 
 池化层不会改变矩阵的深度，但是可以缩小矩阵的大小。
