@@ -230,7 +230,7 @@ $$V_1⊕V_2$$
 - $V_1+V_2$为直和
 - <span class='highlight'>$V_1∩V_2=\{0\}$</span>
 - $α_1 + α_2 = 0 { \ \ \ ⇒ \ \ \ } α_1 = α_2=0$
-- $dim(V_1 + V_2) = dim(V_1) + dim(V_2)$
+- <span class='highlight'>$dim(V_1 + V_2) = dim(V_1) + dim(V_2)$</span>
 - $V_1+V_2$的基由$V_1$的基与$V_2$的基合并而成
 
 **直和分解**
@@ -244,12 +244,12 @@ $V_1 = \left\{
         x_1 & x_2
     \\  x_3 & x_4
     \end{array}\right]
-    \Big|
+    \Big|\,
     2x_1 + 3x_2 - x_3 = 0,
     x_1 + 2x_2 + x_3 - x_4 = 0
 \right\}$
 
-$V_1 = \left\{
+$V_2 = \left\{
     \left[\begin{array}{c}
         2   & -1
     \\  a+2 & 1
@@ -316,10 +316,10 @@ $$
     \end{array}\right]
 \end{array}\right]$
 
-为直和即$α$为何值时$V_1∩V_2=\{0\}$
+为直和即$a$为何值时$V_1∩V_2=\{0\}$
 
-$$α
-    = x_1
+$$γ=
+    x_1
     \left[\begin{array}{c}
         1 & 0
     \\  2 & 3
@@ -390,8 +390,8 @@ $
 当$a≠-1$时，$r(A)=4$，是直和
 当$a=-1$时，$r(A)=2$，（选取$x_3,x_4$为自由变量）
 
-$$α
-    = x_3
+$$γ=
+    x_3
     \left[\begin{array}{c}
         2 & -1
     \\  1 & 1
