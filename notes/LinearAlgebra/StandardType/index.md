@@ -209,7 +209,7 @@ $n$阶矩阵$A$可以与不同的矩阵相似，我们希望在与$A$相似的�
 
 #### Jordan块
 
-$$J(λ_i, n_i) = 
+$$J(λ_i, n_i) =
     \left[\begin{array}{c}
         λ_i & 1
     \\  & λ_i & 1
@@ -223,7 +223,7 @@ $J(λ_i, n_i)$称为**Jordan块**。其中$λ_i$为常数，故$J(λ_i, n_i)$是
 
 **Jordan块的初等因子**，即Jordan块的派生$λ$矩阵[$λE-J(λ_i, n_i)$](#特殊矩阵)的Smith标准型的初等因子，为<span class='highlight'>$(λ-λ_i)^{n_i}$</span>
 
-$$J(λ, n)^m = 
+$$J(λ, n)^m =
     \left[\begin{array}{c}
         λ^m    & C_{m}^{1} λ^{m-1} & C_{m}^{2} λ^{m-2} & \cdots & C_{m}^{n-1} λ^{m-(n-1)}
     \\         & λ^m               & C_{m}^{1} λ^{m-1} & \ddots & \vdots
@@ -350,7 +350,7 @@ $$|λE - A| = (λ-3)^2(λ+3)^2 = d_1 ⋅ d_2 ⋅ d_3 ⋅ d_4$$
 | ① | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ-3)(λ+3) \\&&& (λ-3)(λ+3) \end{array}\right]}$ | $\scriptsize{\begin{matrix} λ-3 \\ λ-3 \\ λ+3 \\ λ+3 \end{matrix}}$ | $\scriptsize{\left[\begin{array}{c} 3 \\& 3 \\&& -3 \\&&& -3 \end{array}\right]}$
 | ② | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ-3) \\&&& (λ-3)(λ+3)^2 \end{array}\right]}$    | $\scriptsize{\begin{matrix} λ-3 \\ λ-3 \\ (λ+3)^2 \end{matrix}}$    | $\scriptsize{\left[\begin{array}{c} 3 \\& 3 \\&& -3 & 1 \\&&& -3 \end{array}\right]}$
 | ③ | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& (λ+3) \\&&& (λ-3)^2(λ+3) \end{array}\right]}$    | $\scriptsize{\begin{matrix} λ+3 \\ λ+3 \\ (λ-3)^2 \end{matrix}}$    | $\scriptsize{\left[\begin{array}{c} -3 \\& -3 \\&& 3 & 1 \\&&& 3 \end{array}\right]}$
-| ④ | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& 1 \\&&& (λ-3)^2(λ+3)^2 \end{array}\right]}$      | $\scriptsize{(λ-3)^2(λ+3)^2}$                                       | $\scriptsize{\left[\begin{array}{c} -3 & 1 \\& -3 \\&& 3 & 1 \\&&& 3 \end{array}\right]}$
+| ④ | $\scriptsize{\left[\begin{array}{c} 1 \\& 1 \\&& 1 \\&&& (λ-3)^2(λ+3)^2 \end{array}\right]}$      | $\scriptsize{\begin{matrix} (λ+3)^2 \\ (λ-3)^2 \end{matrix}}$       | $\scriptsize{\left[\begin{array}{c} -3 & 1 \\& -3 \\&& 3 & 1 \\&&& 3 \end{array}\right]}$
 
 记$A$的Jordan标准型为$J$，因为$A ∼ J$，所以$λE-A$与$λE-J$等价
 
@@ -368,18 +368,18 @@ $n$阶方阵，$A^2=0$，$r(A)=r$，求$A$的Jordan标准型
 
 由$A^2=0$可知，$A$的特征值都是$0$。
 
-- $J_1 = 
+- $J_1 =
     \left[\begin{array}{c}
         0
     \end{array}\right]
 $，$(J_1)^2=0$
-- $J_2 = 
+- $J_2 =
     \left[\begin{array}{c}
         0 & 1
     \\  0 & 0
     \end{array}\right]
 $，$(J_2)^2=0$
-- $J_3 = 
+- $J_3 =
     \left[\begin{array}{c}
         0 & 1 & 0
     \\  0 & 0 & 1
@@ -397,25 +397,25 @@ $n$阶方阵，$A^3=0$，$r(A)=r_1$，$r(A^2)=r_2$，求$A$的Jordan标准型
 
 由$A^3=0$可知，$A$的特征值都是$0$。
 
-- $J_1 = 
+- $J_1 =
     \left[\begin{array}{c}
         0
     \end{array}\right]
 $，$(J_1)^2=0$，$(J_1)^3=0$
-- $J_2 = 
+- $J_2 =
     \left[\begin{array}{c}
         0 & 1
     \\  0 & 0
     \end{array}\right]
 $，$(J_2)^2=0$，$(J_2)^3=0$
-- $J_3 = 
+- $J_3 =
     \left[\begin{array}{c}
         0 & 1 & 0
     \\  0 & 0 & 1
     \\  0 & 0 & 0
     \end{array}\right]
 $，$(J_3)^2≠0$，$(J_3)^3=0$
-- $J_4 = 
+- $J_4 =
     \left[\begin{array}{c}
         0 & 1 & 0 & 0
     \\  0 & 0 & 1 & 0
@@ -438,12 +438,12 @@ $$
             x+y+z = n
         \\  y+2z = r_1
         \\  z = r_2
-    \end{cases} 
+    \end{cases}
     { \ \ \ ⇒ \ \ \ }
     \begin{cases}
             x = n - r_1 + r_2
         \\  y = r_1 - 2r_2
         \\  z = r_2
-    \end{cases} 
+    \end{cases}
 $$
 
