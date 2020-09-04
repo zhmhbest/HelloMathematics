@@ -62,8 +62,8 @@ $$
 \end{array}
 \begin{array}{l}
         = Span \{ T(1),T(x),T(x^2),T(x^3),T(x^4) \}
-\\\\    = Span \{ 1, 6x+1, 12x^2+1 \}
 \\\\    = Span \{ 0+1, 0+1, 2+1, 6x+1, 12x^2+1 \}
+\\\\    = Span \{ 1, 6x+1, 12x^2+1 \}
 \\\\    = Span \{ 1, x, x^2 \}
 \end{array}
 $$
@@ -120,12 +120,12 @@ $$
 则$R[T] = Span\left[\begin{array}{c} T(E_{11}) & T(E_{12}) & T(E_{21}) & T(E_{22}) \end{array}\right] = $
 
 $$
-    Span\left[\begin{array}{c}
+    Span\left(\begin{array}{c}
           \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
         & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
         & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
         & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
-    \end{array}\right]
+    \end{array}\right)
 $$
 
 <div class='hint'>
