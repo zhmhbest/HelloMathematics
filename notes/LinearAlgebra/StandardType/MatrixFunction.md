@@ -97,12 +97,13 @@ $
 
 - 其中$f(J_i) =
     \left[\begin{array}{c}
-        f(λ_i) & \dfrac{f'(λ_i)}{1!} & \cdots & \dfrac{f^{(n_i-1)}(λ_i)}{(k_i-1)!}
-    \\         & f(λ_i)              & \ddots & \vdots
-    \\         &                     & \ddots & \dfrac{f'(λ_i)}{1!}
-    \\  &&& f(λ_i)
-    \end{array}\right]
-$，记住此结论即可。
+        f(λ_i) & \dfrac{f'(λ_i)}{1!} & \dfrac{f''(λ_i)}{2!} & \cdots & \dfrac{f^{(n_i-1)}(λ_i)}{(n_i-1)!}
+    \\\\       & \ddots              & \ddots               & \ddots & \vdots
+    \\\\       &                     & \ddots               & \ddots & \dfrac{f''(λ_i)}{2!}
+    \\\\       &                     &                      & \ddots & \dfrac{f'(λ_i)}{1!}
+    \\\\ &&&& f(λ_i)
+    \end{array}\right]_{n_i×n_i}
+$（记住此结论即可）
 
 </div>
 
