@@ -33,14 +33,14 @@ $$
 x_B = B^{-1}b - B^{-1}Ix_I
 $$
 
-当资源限制变化为$Δb$，有
+当资源限制变化为$Δb$，得新解$\hat{x}_B$
 
-$$x_B = B^{-1}(b+Δb) - B^{-1}Ix_I$$
+$$\hat{x}_B = B^{-1}(b+Δb) - B^{-1}Ix_I = x_B + B^{-1}Δb$$
 
-记$\hat{x}_B = B^{-1}b + B^{-1}Δb$
+即<span class='highlight'>新的解相当于在原有解的基础上加上$B^{-1}Δb$</span>。
 
 - $\hat{x}_B≥0$：最优**基**不变，$x_I=0$，$x_B = \hat{x}_B$。
-- $\hat{x}_B<0$：最优**基**变化，用对偶单纯形法求新解。
+- $\hat{x}_B<0$：最优**基**变化，需要代入新$b$，继续用**对偶单纯形法**求新解。
 
 #### 例
 
@@ -52,6 +52,14 @@ $
 \\  x_j≥0, j=1,2,3,4,5
 \end{cases}
 $
+
+|   |   |   |   |   |   |   |   |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|       | $c_j$ | -5     | -12   | -4    | 0     | M      |
+| $C_B$ | $X_B$ | $x_1$  | $x_2$ | $x_3$ | $x_4$ | $x_5$  | $b$
+| 0     | $x_4$ | 1      | 2     | 1     | 1     | 0      | 5
+| $M$   | $x_5$ | 2      | -1    | 3     | 0     | 1      | 2
+|       | $σ_j$ |-5-2$M$ |-12+$M$|-4-3$M$| 0     | 0      |
 
 计算结果为
 
@@ -67,18 +75,21 @@ $
 
 **注**：使用单纯形法求解后$\left[\begin{array}{c} B & I \end{array}\right]$转化为$\left[\begin{array}{c} I & B^{-1} \end{array}\right]$。
 
-<!-- $(B|I|b) =
-    \left[\begin{array}{c}
-        1 & 2  & 1 & \vdots & 1 & 0 & \vdots & 5
-    \\  2 & -1 & 3 & \vdots & 0 & 1 & \vdots & 2
-    \end{array}\right]
-$ -->
+<div class='hint'>
 
 $(\ \ I \ \ \bold| \ \ B^{-1} \ \ \bold| \ \ b \ \ ) =
     \left[\begin{array}{c}
         0 & 1 & -\frac{1}{5} & \vdots & \frac{2}{5} & -\frac{1}{5} & \vdots & \frac{8}{5}
     \\  1 & 0 & \frac{7}{5}  & \vdots & \frac{1}{5} & \frac{2}{5}  & \vdots & \frac{9}{5}
     \end{array}\right]
+$
+</div>
+
+即$B^{-1} = \left[\begin{array}{c}
+    \frac{2}{5} & -\frac{1}{5}
+\\
+\\  \frac{1}{5} & \frac{2}{5}
+\end{array}\right]
 $
 
 **问**
