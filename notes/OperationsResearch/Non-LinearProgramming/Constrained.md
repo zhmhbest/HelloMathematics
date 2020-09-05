@@ -117,11 +117,17 @@ $
 \\  ∞ & x∉R
 \end{cases}$
 
-再构造函数$φ(x) = f(x) + \sum\limits_{j=1}^{l} ψ[g_j(x)]$，这样一来，就把有约束问题的求解化成了求解无约束问题
+再构造函数
+
+$$φ(x) = f(x) + \sum\limits_{j=1}^{l} ψ[g_j(x)]$$
+
+这样一来，就把有约束问题的求解化成了求解无约束问题
 
 $$\min \ φ(x)$$
 
-上述$ψ(t)$在$t=0$处不连续，没有导数。故重新构造$ψ(t) = \begin{cases}
+上述$ψ(t)$在$t=0$处不连续，没有导数。
+
+故重新构造$ψ(t) = \begin{cases}
     0   & t≥0
 \\  t^2 & t<0
 \end{cases}$，则有$\sum\limits_{j=1}^{l} ψ[g_j(x)] \begin{cases}
@@ -131,9 +137,9 @@ $$\min \ φ(x)$$
 
 取$M>0$（$M$充分大），重新构造$φ(x)$为$P(x,M) = f(x) + M\sum\limits_{j=1}^{l} ψ[g_j(x)]$，即
 
-$$P(x,M) = f(x) + M\sum\limits_{j=1}^{l} [ \min (0,g_j(x)) ]^2$$
+<span class='highlight'>$$P(x,M) = f(x) + M\sum\limits_{j=1}^{l} [ \min (0,g_j(x)) ]^2$$</span>
 
-$\min P(x, M)$得解$x(M)$即为原问题的极小解或近似极小解。函数$P(x, M)$称为**惩罚函数**，$M\sum\limits_{j=1}^{l} ψ[g_j(x)]$称为**惩罚项**，$M$称为**惩罚因子**。
+$\min P(x, M)$的解$x(M)$即为原问题的极小解或近似极小解。函数$P(x, M)$称为**惩罚函数**，$M\sum\limits_{j=1}^{l} ψ[g_j(x)]$称为**惩罚项**，$M$称为**惩罚因子**。
 
 ![](./images/PenaltyFactor.png)
 
@@ -158,7 +164,7 @@ $
     \end{cases}
 $构造，从外侧趋近，即外点法。
 
-构造$P(x,M) = x_1 + x_2 + M\left\{ 
+构造$P(x,M) = (x_1 + x_2) + M\left\{ 
     [ \min (0, (-x_1^2 + x_2)) ]^2 +
     [ \min (0, x_1) ]^2
 \right\}$
@@ -171,7 +177,15 @@ $构造，从外侧趋近，即外点法。
     (-x_1^2 + x_2)
 \right\}$
 
-令$\dfrac{∂P}{∂x_1} = \dfrac{∂P}{∂x_2} = 0$，得$\min P(x, M)$得解
+令$\begin{cases}
+    \dfrac{∂P}{∂x_1} = 0
+\\
+\\  \dfrac{∂P}{∂x_2} = 0
+\end{cases}$，得$\begin{cases}
+    x_1 = \dfrac{-1}{2(1+M)}
+\\
+\\  x_2 = \dfrac{1}{4(1+M)^2} - \dfrac{1}{2M}
+\end{cases}$，即有$\min P(x, M)$的解
 
 $$x(M) = \left[\begin{matrix}
         \dfrac{-1}{2(1+M)}
@@ -195,10 +209,10 @@ $
 
 当越接近边界时，惩罚越大。
 
-$$\begin{matrix}
+<span class='highlight'>$$\begin{matrix}
         \bar{P}(x, r_k) = f(x) + r_k\sum\limits_{j=1}^{l} \dfrac{1}{g_j(x)}
     &   r_k>0
-\end{matrix}$$
+\end{matrix}$$</span>
 
 或
 
@@ -219,7 +233,7 @@ $
     \end{cases}
 $
 
-构造障碍函数$\bar{P}(x, r_k) = 
+构造障碍函数$\bar{P}(x, r) = 
     \dfrac{1}{3}(x_1+1)^3 + x_2 +
     \dfrac{r}{x_1-1} + 
     \dfrac{r}{x_2}
@@ -228,14 +242,15 @@ $
 - $\dfrac{∂\bar{P}}{∂x_1} = (x_1+1)^2 - \dfrac{r}{ (x_1-1)^2 }$
 - $\dfrac{∂\bar{P}}{∂x_2} = 1 - \dfrac{r}{ {x_2}^2 }$
 
-令$\dfrac{∂\bar{P}}{∂x_1}=0$、$\dfrac{∂\bar{P}}{∂x_2}=0$，得
-
-$$
-    \begin{cases}
-        x_1(r) = \sqrt{1 + \sqrt{r}}
-    \\  x_2(r) = \sqrt{r}
-    \end{cases}
-$$
+令$\begin{cases}
+    \dfrac{∂P}{∂x_1} = 0
+\\
+\\  \dfrac{∂P}{∂x_2} = 0
+\end{cases}$，得$\begin{cases}
+    x_1(r) = \sqrt{1 + \sqrt{r}}
+\\
+\\   x_2(r) = \sqrt{r}
+\end{cases}$
 
 综上$x_{min} = \lim\limits_{r→0} \left[\begin{matrix}
     \sqrt{1 + \sqrt{r}} \\ \sqrt{r}
