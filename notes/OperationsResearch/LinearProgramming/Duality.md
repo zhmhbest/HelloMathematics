@@ -31,6 +31,22 @@ $
 
 ### 非标准型
 
+$$
+\begin{array}{r c l}
+\hline
+    原问题 & → & 对偶问题
+\\  \hline
+\\  x ≥ 0  & → & A^Ty ≥ c
+\\  x ≤ 0  & → & A^Ty ≤ c
+\\  x±     & → & A^Ty = c
+\\  \hline
+\\  Ax ≤ b & → & y≥0
+\\  Ax ≥ b & → & y≤0
+\\  Ax = b & → & y±
+\\  \hline
+\end{array}
+$$
+
 #### 例
 
 已知
