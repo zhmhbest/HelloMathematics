@@ -164,7 +164,7 @@ $$A = \left[\begin{array}{c}
     }{
         1 - \dfrac{1}{4}
     }
-    = \dfrac{1}{3} ( 1 - \dfrac{1}{4^{n-1}} ) < \dfrac{1}{3} < 1
+    = \dfrac{1}{3} ( 1 - \dfrac{1}{4^{n-1}} ) < \dfrac{1}{3} < \dfrac{1}{2}
 $
 - $S_5(n-1) = \dfrac{1}{5} + (\dfrac{1}{5})^2 + (\dfrac{1}{5})^3 + \cdots + (\dfrac{1}{5})^{n-1} = 
     \dfrac{
@@ -172,9 +172,9 @@ $
     }{
         1 - \dfrac{1}{5}
     }
-    = \dfrac{1}{4} ( 1 - \dfrac{1}{5^{n-1}} ) < \dfrac{1}{4} < 1
+    = \dfrac{1}{4} ( 1 - \dfrac{1}{5^{n-1}} ) < \dfrac{1}{4} < \dfrac{1}{2}
 $
-- $S_i(n-1) = \dfrac{1}{i-1} ( 1 - \dfrac{1}{i^{n-1}} ) < \dfrac{1}{i-1} < 1$
+- $S_i(n-1) = \dfrac{1}{i-1} ( 1 - \dfrac{1}{i^{n-1}} ) < \dfrac{1}{i-1} < \dfrac{1}{2}, { \ \ \ } i≥4$
 
 故可以画出圆盘图如下图所示
 
