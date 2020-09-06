@@ -245,6 +245,14 @@ html body table th {
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+/* 【公式 Katex】 */
+html body span.katex span.hline {
+    background-color: #AAA;
+}
+html body span.katex span.vertical-separator {
+    background-color: #AAA;
+}
+
 /* 【流程图 Flowchart】 */
 
 /* 【流程图 Start End Inputoutput Operation Subroutine 颜色】 */
