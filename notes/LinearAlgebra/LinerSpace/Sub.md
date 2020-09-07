@@ -113,6 +113,8 @@ $
 
 设$V_1$，$V_2$是线性空间$V$的子空间，$V_1∩V_2$（<span class='hint'>$V_1∩V_2$没有结构</span>）也是$V$的子空间（$V_1∪V_2$不是子空间），称这个子空间为$V_1$与$V_2$的**交空间**。
 
+<span class='highlight'>对于任意$γ∈V_1(α)∩V_2(β)$，$x,y∈P$，应有$γ=αx=βy$</span>。
+
 **和空间**
 
 设$V_1$，$V_2$是线性空间$V$的子空间
@@ -120,6 +122,8 @@ $
 $$V_1 + V_2 = \{ α_1+α_2 \bold{\ |\ } α_1∈V_1, α_2∈V_2 \}$$
 
 也是$V$的子空间，称这个子空间为$V_1$与$V_2$的**和空间**。
+
+<span class='highlight'>实际运算时，应将$V_1$和$V_2$的向量拼在一起即为$V_1$与$V_2$的和空间。</span>
 
 #### 例
 
@@ -134,9 +138,11 @@ $V_1 = Span(α_1, α_2)$
 $V_2 = Span(β_1, β_2)$
 
 （1）求$V_1+V_2$的维数及基。
-（2）求$V_2∩V_2$的维数及基。
+（2）求$V_1∩V_2$的维数及基。
 
 **解**
+
+（1）
 
 $V_1+V_2 = Span(α_1, α_2, β_1, β_2)$
 
@@ -158,9 +164,26 @@ $
 
 明显$r(α_1, α_2, β_1, β_2)=3$，基为$(α_1, α_2, β_1)$或$(α_1, α_2, β_2)$。
 
-对任意向量$γ$有$γ = a_1α_1 + a_2α_2 = b_1β_1 + b_2β_2$即
+（2）
 
+对于任意$γ∈V_1∩V_2$有$a_1,a_2,b_1,b_2∈P$满足
+
+$γ
+    = \left[\begin{array}{c}
+        α_1 & α_2
+    \end{array}\right]
+    \left[\begin{array}{c}
+        a_1 \\ a_2
+    \end{array}\right]
+    = \left[\begin{array}{c}
+        β_1 & β_2
+    \end{array}\right]
+    \left[\begin{array}{c}
+        b_1 \\ b_2
+    \end{array}\right]
 $
+
+即$
     \left[\begin{array}{c}
         α_1 & α_2 & -β_1 & -β_2
     \end{array}\right]
@@ -170,34 +193,71 @@ $
     = 0
 $
 
+$
+    \left[\begin{array}{c}
+        α_1 & α_2 & -β_1 & -β_2
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        1 & -1 & -2 & -1
+    \\  2 & 1  & 1  & 1
+    \\  1 & 1  & 0  & -3
+    \\  0 & 1  & -1 & -7
+    \end{array}\right]
+    \xrightarrow[]{初等行变换}
+    \left[\begin{array}{c}
+        1 & 0 & 0 & 1
+    \\  0 & 1 & 0 & -4
+    \\  0 & 0 & 1 & 3
+    \\  0 & 0 & 0 & 0
+    \end{array}\right]
+$
+
 解得$
     \left[\begin{array}{c}
         a_1 \\ a_2 \\ b_1 \\ b_2
     \end{array}\right]
-    = k
+    = b_2
     \left[\begin{array}{c}
-        1 \\ -4 \\ 3 \\ -1
+        -1 \\ 4 \\ -3 \\ 1
     \end{array}\right]
-$，则
+$
 
 $
     \begin{matrix}
-        γ \\ \\ \\ \\ \\ \\
+        γ \\\\\\\\\\\\\\\\\\
     \end{matrix}
-    \begin{matrix}
-        = a_1α_1 + a_2α_2 & = & kα_1 - 4kα_2
-    \\  = b_1β_1 + b_2β_2 & = & 3kβ_1 - kβ_2
-    \\  = k
+    \begin{array}{l}
+    =
         \left[\begin{array}{c}
-            5 \\ -2 \\ -3 \\ -4
+            α_1 & α_2
         \end{array}\right]
-    \end{matrix}
+        \left[\begin{array}{c}
+            a_1 \\ a_2
+        \end{array}\right]
+    \\=
+        \left[\begin{array}{c}
+            1 & -1
+        \\  2 & 1
+        \\  1 & 1
+        \\  0 & 1
+        \end{array}\right]
+        \left[\begin{array}{c}
+            -1 \\ 4
+        \end{array}\right]
+        b_2
+    \\=
+        \left[\begin{array}{c}
+            -5 \\ 2 \\ 3 \\ 4
+        \end{array}\right]
+        b_2
+    \end{array}
 $
 
 故$\left[\begin{array}{c}
-        5 \\ -2 \\ -3 \\ -4
+        -5 \\ 2 \\ 3 \\ 4
     \end{array}\right]
-$是$V_2∩V_2$得一个基且$dim(V_2∩V_2)=1$。
+$是$V_2∩V_2$得一组基且$dim(V_1∩V_2)=1$。
 
 ## 维数定理
 

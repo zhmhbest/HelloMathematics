@@ -163,7 +163,7 @@ $$
 
 $\left[\begin{array}{c}
         c_{1i} & c_{2i} & \cdots & c_{ni}
-\end{array}\right]^T$即为向量$γ_i$在基$α$下的坐标。
+\end{array}\right]^T$即为向量$γ$在基$α$下的坐标。
 
 #### 例
 
