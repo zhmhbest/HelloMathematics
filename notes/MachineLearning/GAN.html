@@ -268,11 +268,29 @@ pre[data-line] .line-highlight[data-end]:after {
 <ul>
 <li><a href="#%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9Cindexhtml">&#x751F;&#x6210;&#x5F0F;&#x5BF9;&#x6297;&#x7F51;&#x7EDC;</a>
 <ul>
+<li><a href="#gan">GAN</a>
+<ul>
 <li><a href="#%E7%AE%97%E6%B3%95">&#x7B97;&#x6CD5;</a></li>
 </ul>
 </li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%AE%97%E6%B3%95">&#x76F8;&#x5173;&#x884D;&#x751F;&#x7B97;&#x6CD5;</a>
+<ul>
+<li><a href="#dcgan">DCGAN</a></li>
+<li><a href="#cgan">CGAN</a></li>
+<li><a href="#cyclegan">CycleGAN</a></li>
+<li><a href="#"></a></li>
+<li><a href="#infogan">InfoGAN</a></li>
 </ul>
-<h2 class="mume-header" id="%E7%AE%97%E6%B3%95">&#x7B97;&#x6CD5;</h2>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://arxiv.org/pdf/1406.2661.pdf">Generative Adversarial Nets</a></p>
+</blockquote>
+<h2 class="mume-header" id="gan">GAN</h2>
+
+<h3 class="mume-header" id="%E7%AE%97%E6%B3%95">&#x7B97;&#x6CD5;</h3>
 
 <div class="flow">initialize=&gt;operation: &#x521D;&#x59CB;&#x5316;Generator&#x548C;Discriminator
 
@@ -313,6 +331,37 @@ initialize()-&gt;sub_iteration1()-&gt;sub_iteration2
 </ul>
 </li>
 </ul>
+<h2 class="mume-header" id="%E7%9B%B8%E5%85%B3%E8%A1%8D%E7%94%9F%E7%AE%97%E6%B3%95">&#x76F8;&#x5173;&#x884D;&#x751F;&#x7B97;&#x6CD5;</h2>
+
+<blockquote>
+<p><a href="https://github.com/hindupuravinash/the-gan-zoo">Gan Zoo</a></p>
+</blockquote>
+<h3 class="mume-header" id="dcgan">DCGAN</h3>
+
+<blockquote>
+<p><a href="https://arxiv.org/abs/1511.06434.pdf">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a></p>
+</blockquote>
+<p>&#x5C06;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5E94;&#x7528;&#x5230;&#x4E86;GAN&#x4E2D;&#x3002;&#x901A;&#x8FC7;<strong>&#x53CD;&#x5377;&#x79EF;&#x5C42;</strong>&#x8FDB;&#x884C;&#x653E;&#x5927;&#x64CD;&#x4F5C;&#x3002;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5C06;&#x4F4E;&#x5206;&#x8FA8;&#x7387;&#x56FE;&#x50CF;&#x8F6C;&#x6362;&#x4E3A;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x56FE;&#x50CF;&#x3002;</p>
+<h3 class="mume-header" id="cgan">CGAN</h3>
+
+<blockquote>
+<p><a href="https://arxiv.org/abs/1411.1784">Conditional Generative Adversarial Network</a></p>
+</blockquote>
+<p>&#x539F;&#x59CB;GAN&#x4ECE;&#x968F;&#x673A;&#x566A;&#x58F0;&#x751F;&#x6210;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x53EF;&#x4EE5;&#x5728;&#x72D7;&#x56FE;&#x50CF;&#x4E0A;&#x8BAD;&#x7EC3;&#x5B83;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x5C06;&#x751F;&#x6210;&#x66F4;&#x591A;&#x7684;&#x72D7;&#x56FE;&#x50CF;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x732B;&#x56FE;&#x50CF;&#x4E0A;&#x8BAD;&#x7EC3;&#x5B83;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x5C06;&#x751F;&#x6210;&#x732B;&#x56FE;&#x50CF;&#x3002;&#x4F46;&#x5982;&#x679C;&#x5C1D;&#x8BD5;&#x540C;&#x65F6;&#x5728;&#x72D7;&#x548C;&#x732B;&#x7684;&#x56FE;&#x50CF;&#x4E0A;&#x8BAD;&#x7EC3;&#x5B83;&#xFF0C;&#x5219;&#x4F1A;&#x4EA7;&#x751F;&#x6A21;&#x7CCA;&#x7684;&#x6DF7;&#x8840;&#x513F;&#x3002;CGAN&#x65E8;&#x5728;&#x901A;&#x8FC7;&#x544A;&#x8BC9;&#x751F;&#x6210;&#x5668;&#x4EC5;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x7C7B;&#x522B;&#x7684;&#x56FE;&#x50CF;&#x6765;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#x3002;</p>
+<h3 class="mume-header" id="cyclegan">CycleGAN</h3>
+
+<blockquote>
+<p><a href="https://arxiv.org/abs/1703.10593v6">Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks</a></p>
+</blockquote>
+<p>CycleGAN&#x65E8;&#x5728;&#x89E3;&#x51B3;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;&#x56FE;&#x50CF;&#x5230;&#x56FE;&#x50CF;&#x8F6C;&#x6362;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h3 class="mume-header" id></h3>
+
+<h3 class="mume-header" id="infogan">InfoGAN</h3>
+
+<blockquote>
+<p><a href="https://arxiv.org/abs/1606.03657v1">Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a></p>
+</blockquote>
+<p>&#x666E;&#x901A;&#x7684;GAN&#x5B58;&#x5728;&#x65E0;&#x7EA6;&#x675F;&#x3001;&#x4E0D;&#x53EF;&#x63A7;&#x3001;&#x566A;&#x58F0;&#x4FE1;&#x53F7;&#x5F88;&#x96BE;&#x89E3;&#x91CA;&#x7B49;&#x95EE;&#x9898;&#x3002;InfoGAN&#x8BA9;&#x7F51;&#x7EDC;&#x5B66;&#x5230;&#x4E86;&#x53EF;&#x89E3;&#x91CA;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x7F51;&#x7EDC;&#x8BAD;&#x7EC3;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x5B9A;&#x8F93;&#x5165;&#x751F;&#x6210;&#x5668;&#x7684;&#x9690;&#x542B;&#x7F16;&#x7801;&#x6765;&#x63A7;&#x5236;&#x751F;&#x6210;&#x6570;&#x636E;&#x7684;&#x7279;&#x5F81;&#x3002;</p>
 
       </div>
       

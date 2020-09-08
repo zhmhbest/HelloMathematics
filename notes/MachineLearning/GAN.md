@@ -5,7 +5,11 @@
 
 [TOC]
 
-## 算法
+>[Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf)
+
+## GAN
+
+### 算法
 
 ```flow
 initialize=>operation: 初始化Generator和Discriminator
@@ -37,3 +41,33 @@ $G(x)=\mathrm{Generator}(x)$
   - *Step2*: 更新*Generator*参数$θ_g$以最大化$\tilde{V}$
     - $\tilde{V} = \frac{1}{m}\sum_{i=1}^{m} \log D(G(z_i))$
     - $θ_g ← θ_g + η▽\tilde{V}(θ_g)$
+
+## 相关衍生算法
+
+>[Gan Zoo](https://github.com/hindupuravinash/the-gan-zoo)
+
+### DCGAN
+
+>[Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434.pdf)
+
+将卷积神经网络应用到了GAN中。通过**反卷积层**进行放大操作。帮助我们将低分辨率图像转换为高分辨率图像。
+
+### CGAN
+
+>[Conditional Generative Adversarial Network](https://arxiv.org/abs/1411.1784)
+
+原始GAN从随机噪声生成数据。这意味着可以在狗图像上训练它，并且它将生成更多的狗图像。也可以在猫图像上训练它，在这种情况下，它将生成猫图像。但如果尝试同时在狗和猫的图像上训练它，则会产生模糊的混血儿。CGAN旨在通过告诉生成器仅生成特定类别的图像来解决此问题。
+
+### CycleGAN
+
+>[Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/abs/1703.10593v6)
+
+CycleGAN旨在解决一个称为图像到图像转换的问题。
+
+### 
+
+### InfoGAN
+
+>[Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets](https://arxiv.org/abs/1606.03657v1)
+
+普通的GAN存在无约束、不可控、噪声信号很难解释等问题。InfoGAN让网络学到了可解释的特征，网络训练完成之后，我们可以通过设定输入生成器的隐含编码来控制生成数据的特征。
