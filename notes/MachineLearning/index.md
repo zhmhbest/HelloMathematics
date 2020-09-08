@@ -27,7 +27,7 @@
 
 ## [强化学习](./Reinforcement.html)
 
-## [对抗网络](./GAN.html)
+## [生成式对抗网络](./GAN.html)
 
 <!--
 ## 集成学习
