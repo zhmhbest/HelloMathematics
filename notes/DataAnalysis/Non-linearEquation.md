@@ -1,7 +1,6 @@
 <link rel='stylesheet' href='../../style/index.css'>
 <script src='../../style/index.js'></script>
 
-
 # [数值分析：非线性方程组迭代法](./index.html)
 
 [TOC]
@@ -138,7 +137,7 @@ $$
 \begin{cases}
     y_k = φ(x_k)
 \\  z_k = φ(y_k)
-\\  x_{k+1} = x_k - \dfrac{(y_k - x_k)^2}{z_k - 2y_k + x_k} 
+\\  x_{k+1} = x_k - \dfrac{(y_k - x_k)^2}{z_k - 2y_k + x_k}
     & k=0,1,2,\cdots
 \end{cases}
 $$
@@ -150,14 +149,29 @@ $$x_{k+1} = \psi(x) { \ \ \ } k=0,1,2,\cdots$$
 - $\psi(x) = x - \dfrac{
     (\varphi(x) - x)^2
 }{
-    \varphi(\varphi(x)) - \varphi(x) + x 
-}$ 
+    \varphi(\varphi(x)) - \varphi(x) + x
+}$
 
 说明
 
 - 不论原迭代是否收敛，只要$φ'(x^*)≠1$，则Steffensen方法至少是平方阶收敛的（$p≥2$）。
 - 若原迭代是$p$阶收敛的，则Steffensen是$p+1$阶收敛的。
 </div>
+
+#### 例
+
+求$f(x) = x^3 + 2x - 5=0$的根，用斯蒂芬森迭代法构造。
+
+**解**
+
+取$\varphi(x)=\sqrt[3]{5-2x}$
+
+$\begin{cases}
+    y_k = \sqrt[3]{5-2x_k}
+\\  z_k = \sqrt[3]{5-2y_k}
+\\  x_{k+1} = x_k - \dfrac{(y_k - x_k)^2}{z_k - 2y_k + x_k}
+    & k=0,1,2,\cdots
+\end{cases}$
 
 ## 牛顿迭代
 
