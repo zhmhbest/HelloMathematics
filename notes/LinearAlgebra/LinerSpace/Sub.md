@@ -113,7 +113,8 @@ $
 
 设$V_1$，$V_2$是线性空间$V$的子空间，$V_1∩V_2$（<span class='hint'>$V_1∩V_2$没有结构</span>）也是$V$的子空间（$V_1∪V_2$不是子空间），称这个子空间为$V_1$与$V_2$的**交空间**。
 
-<span class='highlight'>对于任意$γ∈V_1(α)∩V_2(β)$，$x,y∈P$，应有$γ=αx=βy$</span>。
+<span class='highlight'>对于任意$γ∈V_1(α)∩V_2(β)$，$x,y∈P$，应有$γ=αx=βy$，即$
+\left[\begin{array}{c} α & -β \end{array}\right]{\cdot}\left[\begin{array}{c} x \\ y \end{array}\right]$</span>。
 
 **和空间**
 
