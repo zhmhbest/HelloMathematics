@@ -23,15 +23,15 @@
 
 >线性空间$V$的线性变换$T$的值域与核都是$V$的线性子空间。
 
-### 值域
+### 象空间（值域）
 
 $$R(T) = \{ T(α) \bold{\ |\ } α∈V \}$$
 
 称值域的维数（<span class='hint'>有结构的</span>）为$T$的**秩**，记为$rank(T)$。
 
-<span class='highlight'>若$α$是$V$的一组基，则$R(T) = Span\{ T(α_1), T(α_2), \dots, T(α_n) \}$。</span>
+<span class='highlight'>若$α$是$V$的一组基，$T(α)=αA$，则$R(T) = Span\{ T(α_1), T(α_2), \dots, T(α_n) \} = αA$，然后对$A$做初等列变换化为列最简，$A$的极大线性无关列左乘$α$即为$R(T)$的一组基。</span>
 
-### 核
+### 核空间
 
 $$N(T) = \{ α \bold{\ |\ } T(α)=0,α∈V \}$$
 
@@ -39,7 +39,7 @@ $$N(T) = \{ α \bold{\ |\ } T(α)=0,α∈V \}$$
 
 称核子空间的维数$dim(N(T))$（<span class='hint'>没有结构的</span>）为$T$的**亏度**（或**零度**）。
 
-<span class='highlight'>设$x∈V$，则$T(x) = 0$，解得表达式，再将自由变量带回$x$，即得$N(T)$的基。</span>
+<span class='highlight'>若$α$是$V$的一组基，$T(α)=αA$，构造$(β=αx)∈V$，则$T(β) = αAx = 0$，即解$Ax=0$，$x$的解左乘$α$即为$N(T)$的基。</span>
 
 #### 例1
 
@@ -371,7 +371,7 @@ $$
     \end{array}\right]
 $替换为矩阵$X$时同样适用，即
 
-$$T(αX) = T(α)X = αAX$$
+<span class='highlight'>$$T(αX) = T(α)X = αAX$$</span>
 
 ### 坐标关系
 
