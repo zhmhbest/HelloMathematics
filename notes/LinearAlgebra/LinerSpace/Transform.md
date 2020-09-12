@@ -102,10 +102,12 @@ $\begin{cases}
 
 **解**
 
+（1）
+
 取$R^{2×2}$的一组基
 
 $$
-    \left[\begin{array}{c}
+    e = \left[\begin{array}{c}
         E_{11} & E_{12} & E_{21} & E_{22}
     \end{array}\right]
     =
@@ -117,48 +119,58 @@ $$
     \end{array}\right]
 $$
 
-则$R[T] = Span\left[\begin{array}{c} T(E_{11}) & T(E_{12}) & T(E_{21}) & T(E_{22}) \end{array}\right] = $
-
-$$
-    Span\left(\begin{array}{c}
-          \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
-        & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
-        & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
-        & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
-    \end{array}\right)
-$$
-
 &nbsp;
 $
-    \left[\begin{array}{c}
-          \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
-        & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
-        & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
-        & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
-    \end{array}\right]
-    =
-    \left[\begin{array}{c}
-        E_{11} & E_{12} & E_{21} & E_{22}
-    \end{array}\right]
-    \left[\begin{array}{c}
-        0  & 0  & 2  & 0
-    \\  -2 & -2 & 0  & 2
-    \\  0  & 0  & 2  & 0
-    \\  0  & 0  & -2 & 0
-    \end{array}\right]
-    \xrightarrow[]{初等列变换}
-    \left[\begin{array}{c}
-        0 & 0 & 1 & 0
-    \\  0 & 0 & 0 & 1
-    \\  0 & 0 & 1 & 0
-    \\  0 & 0 & -1 & 0
-    \end{array}\right]
+\begin{array}{l}
+    R[T] \\ \\\\ \\\\ \\\\ \\\\ \\\\ \\\\ \\
+\end{array}
+\begin{array}{l}
+        = Span\left(
+            \begin{array}{c} T(E_{11}) & T(E_{12}) & T(E_{21}) & T(E_{22}) \end{array}
+        \right)
+\\\\    = Span\left(
+            \begin{array}{c}
+                \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+                & \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
+                & \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
+                & \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
+            \end{array}
+        \right)
+\\\\    = Span\left(
+            e
+            \left[\begin{array}{c}
+                    0  & 0  & 2  & 0
+                \\  -2 & -2 & 0  & 2
+                \\  0  & 0  & 2  & 0
+                \\  0  & 0  & -2 & 0
+            \end{array}\right]
+        \xrightarrow[]{初等列变换}
+            e
+            \left[\begin{array}{c}
+                0 & 0 & 1 & 0
+            \\  0 & 0 & 0 & 1
+            \\  0 & 0 & 1 & 0
+            \\  0 & 0 & -1 & 0
+            \end{array}\right]
+        \right)
+\\\\    = Span\left(
+            e
+            \left[\begin{array}{c}
+                1  & 0
+            \\  0  & 1
+            \\  1  & 0
+            \\  -1 & 0
+            \end{array}\right]
+        \right)
+\end{array}
 $
 
-观察可知$dim(R[T])=2$，即$R[T]=Span\left[\begin{array}{c}
-    \left[\begin{array}{c} 1 & 0 \\ 1 & -1 \end{array}\right]
+故$dim(R[T])=2$，即$R[T]=Span\left(\begin{array}{c}
+    \left[\begin{array}{c} 1 & 0 \\ 1 & -1 \end{array}\right],
 &   \left[\begin{array}{c} 0 & 1 \\ 0 & 0 \end{array}\right]
-\end{array}\right]$
+\end{array}\right)$
+
+（2）
 
 设$X = \left[\begin{array}{c} x_1 & x_2 \\ x_3 & x_4 \end{array}\right]$则
 
