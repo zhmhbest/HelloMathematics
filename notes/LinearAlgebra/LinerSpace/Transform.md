@@ -128,8 +128,7 @@ $$
     \end{array}\right)
 $$
 
-<div class='hint'>
-
+&nbsp;
 $
     \left[\begin{array}{c}
           \left[\begin{array}{c} 0 & -2 \\ 0 & 0 \end{array}\right]
@@ -155,11 +154,10 @@ $
     \\  0 & 0 & -1 & 0
     \end{array}\right]
 $
-</div>
 
 观察可知$dim(R[T])=2$，即$R[T]=Span\left[\begin{array}{c}
-    \left[\begin{array}{c} 2 & 0 \\ 2 & -2 \end{array}\right]
-&   \left[\begin{array}{c} 0 & 2 \\ 0 & 0 \end{array}\right]
+    \left[\begin{array}{c} 1 & 0 \\ 1 & -1 \end{array}\right]
+&   \left[\begin{array}{c} 0 & 1 \\ 0 & 0 \end{array}\right]
 \end{array}\right]$
 
 设$X = \left[\begin{array}{c} x_1 & x_2 \\ x_3 & x_4 \end{array}\right]$则
