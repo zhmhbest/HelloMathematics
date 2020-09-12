@@ -147,12 +147,12 @@ $
     \\  0  & 0  & 2  & 0
     \\  0  & 0  & -2 & 0
     \end{array}\right]
-    \xrightarrow[]{初等行变换}
+    \xrightarrow[]{初等列变换}
     \left[\begin{array}{c}
-        1 & 1 & 0 & -1
+        0 & 0 & 1 & 0
+    \\  0 & 0 & 0 & 1
     \\  0 & 0 & 1 & 0
-    \\  0 & 0 & 0 & 0
-    \\  0 & 0 & 0 & 0
+    \\  0 & 0 & -1 & 0
     \end{array}\right]
 $
 </div>
