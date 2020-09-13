@@ -53,7 +53,7 @@ $$▽f(x^*) - γ_1▽g_1(x^*) - γ_2▽g_2(x^*) = 0$$
 $$
     \begin{cases}
         ▽f(x^*) - \sum\limits_{j=1}^{l} γ_j^* ▽g_j(x^*) = 0
-    \\  γ_j^*▽g_j(x^*) = 0 & j=1,2,\cdots,l
+    \\  γ_j^*g_j(x^*) = 0 & j=1,2,\cdots,l
     \\  γ_j^* ≥ 0 & j=1,2,\cdots,l
     \end{cases}
 $$
