@@ -328,7 +328,7 @@ $$g(x) = a_0 + a_1x + a_2x^2$$
 \end{cases}$，解得 $\begin{cases}
     a_0 = -\cos2 + 2\sin2
 \\  a_1 = -\sin2 + 2\cos2
-\\  a_2 = \frac{1}{2}\cos2
+\\  a_2 = -\frac{1}{2}\cos2
 \end{cases}$
 
 $\cos A = a_0E + a_1A + a_2A^2$（带入$a_0,a_1,a_2$即得最终结果）
