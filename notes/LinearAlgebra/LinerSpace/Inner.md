@@ -44,27 +44,10 @@ $$\|α+β\|^2 = \|α\|^2 + \|β\|^2$$
 
 在$n$维内积空间$V$中，取基$e$，对于$V$中任意两个向量$α,β$有
 
-- $α = x_1e_1 + x_2e_2 + \cdots + x_ne_n$
-- $β = y_1e_1 + y_2e_2 + \cdots + y_ne_n$
+- $α = ex$
+- $β = ey$
 
-则$(α,β) = α^Tβ = (ex)^T(ey) = x^T(e^Te)y = x^TAy = $
-
-$$
-    \left[\begin{array}{c}
-        x_1 & x_2 & \cdots & x_n
-    \end{array}\right]
-    \left[\begin{array}{c}
-        (e_1,e_1) & (e_1,e_2) & \cdots & (e_1,e_n)
-    \\  (e_2,e_1) & (e_2,e_2) & \cdots & (e_2,e_n)
-    \\  \vdots    & \vdots    & \ddots & \vdots
-    \\  (e_n,e_1) & (e_n,e_2) & \cdots & (e_n,e_n)
-    \end{array}\right]
-    \left[\begin{array}{c}
-        y_1 \\ y_2 \\ \vdots \\ y_n
-    \end{array}\right]
-$$
-
-即
+则$(α,β) = α^Tβ = (ex)^T(ey) = x^T(e^Te)y = x^TAy$即
 
 $$(α,β) = x^TAy$$
 
