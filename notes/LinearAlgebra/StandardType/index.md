@@ -389,7 +389,7 @@ $，$(J_3)^2≠0$
 
 故Jordan块只能是一阶或二阶。
 
-明显，$J_1$的存在不增加Jordan阵的秩，由$r(A)=r$可知，Jordan标准型由$r$个二阶块，$n-r$个一阶块组成。
+明显，$J_1$的存在不增加Jordan阵的秩，由$r(A)=r$可知，Jordan标准型由$r$个二阶块，$n-2r$个一阶块组成。
 
 #### 例2
 
@@ -435,13 +435,13 @@ $，$(J_4)^3≠0$
 
 $$
     \begin{cases}
-            x+y+z = n
+            x+2y+3z = n
         \\  y+2z = r_1
         \\  z = r_2
     \end{cases}
     { \ \ \ ⇒ \ \ \ }
     \begin{cases}
-            x = n - r_1 + r_2
+            x = n - 2r_1 + r_2
         \\  y = r_1 - 2r_2
         \\  z = r_2
     \end{cases}
