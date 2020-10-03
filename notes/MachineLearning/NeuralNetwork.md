@@ -5,11 +5,83 @@
 
 [TOC]
 
+## 相关概念
+
+### 常见名词
+
+- 人工神经网络（Artificial Neural Networks，ANN）
+- 深度神经网络（Deep Neural Networks，DNN）
+- 前馈神经网络（Feedforward Neural Networks，FNN）
+- 误差逆传播（Error Back Propagation）
+
+### MP神经元
+
+![MP](./images/nn_mp.png)
+
+现在人工神经元与MP神经元基本相同，主要区别在于MP神经元的$f$是一个仅能取$0$或$1$的越阶函数。
+
+### 人工神经元（Artificial Neuron）
+
+$$y = f(wx + b)$$
+
+- $f$：激活函数
+- $w$：权重
+- $b$：偏置
+
+### 常见激活函数
+
+- $\mathrm{Sigmoid}(x) = \dfrac{1}{1 + e^{-x}}$
+- $\mathrm{Tanh}(x) = \dfrac{e^{x} - e^{-x}}{e^{x} + e^{-x}}$
+- $\mathrm{ReLU}(x) = \max(x, 0)$
+- $\mathrm{Leaky ReLU}(x) = \begin{cases}
+        x   & x≥0
+    \\  αx  & x<0
+    \end{cases}$
+- $\mathrm{ELU}(x) = \begin{cases}
+        x           & x≥0
+    \\  α(e^x-1)    & x<0
+    \end{cases}$
+- $
+    \mathrm{Softmax}\left(
+        \left[\begin{array}{c}
+            x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{array}\right]
+    \right)
+    = \dfrac{1}{\sum_{i=1}^{n}e^{x_i}} \left[\begin{array}{c}
+        e^{x_1} \\ e^{x_2} \\ \vdots \\ e^{x_n}
+    \end{array}\right]
+$
+
+```py
+from matplotlib import pyplot as plt
+import numpy as np
+
+x = np.linspace(-10, 10)
+y_sigmoid = 1 / (1 + np.exp(-x))
+y_tanh = (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))
+y_relu = np.array([0 if item < 0 else item for item in x])
+alpha_relu = 0.2
+y_leaky_relu = np.array([alpha_relu * item if item < 0 else item for item in x])
+alpha_elu = 0.9
+y_elu = np.array([alpha_elu*(np.exp(item)-1) if item < 0 else item for item in x])
+
+plt.figure(dpi=600)
+
+plt.plot(x, 8+y_sigmoid, label='Sigmoid (+8)')
+plt.plot(x, 6+y_tanh, label='Tanh (+6)')
+plt.plot(x, 4+y_relu, label='Relu (+4)')
+plt.plot(x, 2+y_leaky_relu, label=f'Leaky Relu (+2), α={alpha_relu}')
+plt.plot(x, 0+y_elu, label=f'Elu (+0), α={alpha_elu}')
+
+plt.grid()
+plt.legend()
+plt.show()
+```
+
+![activation](images/nn_activation.png)
+
+
 ## 基本神经网络
-
-### M-P神经元
-
-![](./images/nn_mp.png)
 
 ### 感知机（Perceptron）
 
@@ -54,12 +126,12 @@ $$Δw_{hj} = -η\dfrac{∂E_k}{∂w_{hj}}$$
 
 ```flow
 st=>start: 开始
-init=>operation: 初始化连接权和阈值
+init=>operation: 初始化权重和偏置
 input=>inputoutput: 输入：训练集、学习率
 sub1=>operation: 前向传播：计算输出值、误差
-sub2=>operation: 反向传播：计算梯度顶，更新连接权和阈值
+sub2=>operation: 反向传播：计算梯度顶，更新权重和偏置
 isend=>condition: 满足训练次数 Or 满足正确率
-output=>inputoutput:  输出：连接权和阈值
+output=>inputoutput:  输出：权重和偏置
 ed=>end: 结束
 
 st->init->input
