@@ -31,11 +31,31 @@
 
 ## 性能度量
 
-### 均方误差（Mean squared error）
+### 回归问题
 
-$$MSE(f, y) = \dfrac{ \sum\limits_{i=1}^{m} [f(x_i) - y_i]^2 }{m}$$
+#### 均方误差（Mean squared error）
 
-回归任务最常用的性能度量方法。
+$$\mathrm{MSE}(y, f) = \dfrac{
+    \sum\limits_{i=1}^{m} \Big(y_i-f(x_i) \Big)^2
+}{m}$$
+
+- 优点是便于梯度下降，误差大时下降快，误差小时下降慢，有利于函数收敛。
+- 缺点是受明显偏离正常范围的离群样本的影响较大
+
+#### 平均绝对误差（Mean absolute error）
+
+$$\mathrm{MAE}(y, f) = \dfrac{
+    \sum\limits_{i=1}^{m} \Big| y_i-f(x_i) \Big|
+}{m}$$
+
+- 优点是其克服了MSE的缺点，受偏离正常范围的离群样本影响较小。
+- 缺点是收敛速度比MSE慢，因为当误差大或小时其都保持同等速度下降，而且在某一点处还不可导，计算机求导比较困难。
+
+### 分类问题
+
+#### Cross Entropy
+
+$$\mathrm{CE}(p, q) = -\sum_{x∈X} p(x)\log q(x)$$
 
 ### 错误率与精度
 
