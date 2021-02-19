@@ -42,10 +42,10 @@ from typing import Union, Tuple
 
 
 def get_cnn_filtered_size(
-        input_size: Union[int, Tuple[int]],
-        kernel_size: Union[int, Tuple[int]],
-        stride: Union[int, Tuple[int]] = 1,
-        padding: Union[int, Tuple[int]] = 0
+        input_size: Union[int, Tuple[int, int]],
+        kernel_size: Union[int, Tuple[int, int]],
+        stride: Union[int, Tuple[int, int]] = 1,
+        padding: Union[int, Tuple[int, int]] = 0
 ) -> (int, int):
     """
     :param input_size: 输入尺寸
