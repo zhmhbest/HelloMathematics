@@ -31,11 +31,41 @@ $$ReLU\left(\left(\sum\limits_{i=1}^{deep} area_i \bullet filter_i\right) + bias
 
 #### 输出大小
 
-对于一个输入$Input_{(W, H, D)}$，若过滤器数为$Filter_{(size=L×L, step=S, padding=P, deep=N)}$，则输出$Output_{(W, H, D)}$的属性为：
+对于一个输入$Input_{(W, H, D)}$，若过滤器数$Filter_{(size=L×L, stride=S, padding=P, deep=N)}$，则输出$Output_{(W, H, D)}$的属性为：
 
 - $Output.W = \dfrac{W-L+2P}{S} + 1$
 - $Output.H = \dfrac{H-L+2P}{S} + 1$
 - $Output.D = N$
+
+```py
+from typing import Union, Tuple
+
+
+def get_cnn_filtered_size(
+        input_size: Union[int, Tuple[int]],
+        kernel_size: Union[int, Tuple[int]],
+        stride: Union[int, Tuple[int]] = 1,
+        padding: Union[int, Tuple[int]] = 0
+) -> (int, int):
+    """
+    :param input_size: 输入尺寸
+    :param kernel_size: 过滤器尺寸
+    :param stride: 过滤器步长
+    :param padding: 边缘填充
+    :return: 过滤（卷积或池化）后每层尺寸
+    """
+    if isinstance(input_size, int):
+        input_size = (input_size, input_size)
+    if isinstance(kernel_size, int):
+        kernel_size = (kernel_size, kernel_size)
+    if isinstance(stride, int):
+        stride = (stride, stride)
+    if isinstance(padding, int):
+        padding = (padding, padding)
+
+    calculate = (lambda i: (input_size[i] - kernel_size[i] + 2 * padding[i]) // (stride[i]) + 1)
+    return calculate(0), calculate(1)
+```
 
 #### 扩展卷积
 
