@@ -27,7 +27,7 @@ $$ReLU\left(\left(\sum\limits_{i=1}^{deep} area_i \bullet filter_i\right) + bias
 
 过滤器每层与输入数据每层求内积（<span class='hint'>对应点相乘并求和</span>）加上偏置项就得到输出矩阵上的一个点。
 
-![](images/cnn_filter.pn
+![](images/cnn_filter.png)
 
 #### 输出大小
 
