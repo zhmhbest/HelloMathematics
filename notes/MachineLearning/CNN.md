@@ -27,14 +27,14 @@ $$ReLU\left(\left(\sum\limits_{i=1}^{deep} area_i \bullet filter_i\right) + bias
 
 过滤器每层与输入数据每层求内积（<span class='hint'>对应点相乘并求和</span>）加上偏置项就得到输出矩阵上的一个点。
 
-![](images/cnn_filter.png)
+![](images/cnn_filter.pn
 
 #### 输出大小
 
 对于一个输入$Input_{(W, H, D)}$，若过滤器数为$Filter_{(size=L×L, step=S, padding=P, deep=N)}$，则输出$Output_{(W, H, D)}$的属性为：
 
-- $Output.W = \dfrac{W-L+2P}{S+1}$
-- $Output.H = \dfrac{H-L+2P}{S+1}$
+- $Output.W = \dfrac{W-L+2P}{S} + 1$
+- $Output.H = \dfrac{H-L+2P}{S} + 1$
 - $Output.D = N$
 
 #### 扩展卷积
