@@ -45,5 +45,15 @@
                 thead.remove();
             }
         }
+
+        // Mermaid子图展开
+        for (let mermaid of document.querySelectorAll("div[class='mermaid']")) {
+            const clusters = mermaid.querySelector("g[class='clusters']");
+            // 有子图Mermaid
+            if (clusters.children.length) {
+                mermaid.style.width = '92%';
+                mermaid.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            }
+        }
     };
 })();
