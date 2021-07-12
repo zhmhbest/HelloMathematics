@@ -77,6 +77,7 @@ $
 - $(kA)(lB) = kl⋅AB$
 - $AE=A$、$EA=A$
 - $AO=O$、$EO=O$
+- ${\rm d}(AB) = {\rm d}(A)B + A{\rm d}(B)$
 
 ### 行列式
 
@@ -162,6 +163,7 @@ $$
 - $(A + B)^T = A^T + B^T$
 - $(kA)^T = kA^T$
 - $(AB)^T = B^TA^T$
+- ${\rm d}(A^T) = ({\rm d}A)^T$
 
 ### 共轭
 
@@ -197,6 +199,162 @@ $$(A | E) \xrightarrow{初等行变换} (E | A^{-1})$$
 - $A$可逆$\ \ \ ⇔ \ \ \ Ax=0$仅有$0$解
 - $A$可逆$\ \ \ ⇔ \ \ \ A$的行（列）向量线性无关
 - $A$可逆$\ \ \ ⇔ \ \ \ 0$不是$A$的特征值
+
+### 求导
+
+矩阵求导的本质（$\frac{∂A}{∂B}$或$\frac{{\rm d}A}{{\rm d}B}$）就是矩阵$A$中的每一个元素对矩阵B中的每一个元素求导。其有两个求导布局：**分子布局**<span class='hint'>（求导结果的维度以分子为主）</span>和**分母布局**<span class='hint'>（求导结果的维度以分母为主）</span>。
+
+#### 分子布局（Numerator layout）
+
+**标量函数/向量**：$
+    \dfrac{{\rm d}f(x)}{{\rm d}x_{n×1}}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f(x)}{∂x_{11}}
+    &   \cdots
+    &   \frac{∂f(x)}{∂x_{n1}}
+    \end{array}\right]_{1×n}
+$
+
+**向量函数/标量**：$
+    \dfrac{{\rm d}f_{n×1}(x)}{{\rm d}x}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f_{11}(x)}{∂x}
+    \\  \vdots
+    \\  \frac{∂f_{n1}(x)}{∂x}
+    \end{array}\right]_{n×1}
+$
+
+**向量函数/向量**：$
+    \dfrac{{\rm d}f_{m×1}(x)}{{\rm d}x_{n×1}}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f_{11}(x)}{∂x_{11}} & \frac{∂f_{11}(x)}{∂x_{21}}
+            & \cdots & \frac{∂f_{11}(x)}{∂x_{n1}}
+    \\  \frac{∂f_{21}(x)}{∂x_{11}} & \frac{∂f_{21}(x)}{∂x_{21}}
+            & \cdots & \frac{∂f_{21}(x)}{∂x_{n1}}
+    \\  \vdots & \vdots & \ddots & \vdots
+    \\  \frac{∂f_{m1}(x)}{∂x_{11}} & \frac{∂f_{m1}(x)}{∂x_{21}}
+            & \cdots & \frac{∂f_{m1}(x)}{∂x_{n1}}
+    \end{array}\right]_{m×n}
+$（**雅可比矩阵**）
+
+#### 分母布局（Denominator layout）
+
+**标量函数/向量**：$
+    \dfrac{{\rm d}f(x)}{{\rm d}x_{n×1}}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f(x)}{∂x_{11}}
+    \\  \vdots
+    \\  \frac{∂f(x)}{∂x_{n1}}
+    \end{array}\right]_{n×1}
+$
+
+**向量函数/标量**：$
+    \dfrac{{\rm d}f_{n×1}(x)}{{\rm d}x}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f_{11}(x)}{∂x}
+    &   \cdots
+    &   \frac{∂f_{n1}(x)}{∂x}
+    \end{array}\right]_{1×n}
+$
+
+**向量函数/向量**：$
+    \dfrac{{\rm d}f_{m×1}(x)}{{\rm d}x_{n×1}}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f_{11}(x)}{∂x_{11}} & \frac{∂f_{21}(x)}{∂x_{11}}
+            & \cdots & \frac{∂f_{m1}(x)}{∂x_{11}}
+    \\  \frac{∂f_{11}(x)}{∂x_{21}} & \frac{∂f_{21}(x)}{∂x_{21}}
+            & \cdots & \frac{∂f_{m1}(x)}{∂x_{21}}
+    \\  \vdots & \vdots & \ddots & \vdots
+    \\  \frac{∂f_{11}(x)}{∂x_{n1}} & \frac{∂f_{21}(x)}{∂x_{n1}}
+            & \cdots & \frac{∂f_{m1}(x)}{∂x_{n1}}
+    \end{array}\right]_{n×m}
+$（**梯度矩阵**）
+
+#### 混合布局
+
+在一些情况下，我们未指明具体使用哪种布局，则默认按以下要求。
+
+- 如果**向量或矩阵**对**标量**求导，使用分子布局。
+- 如果**标量**对**向量或矩阵**求导，使用分母布局。
+- 如果**向量**对**向量**求导，一般以分子布局的雅可比矩阵为主。
+
+**【例1】**：对于$α=\left[\begin{array}{c} α_1 \\ \vdots \\ α_n  \end{array}\right]_{n×1}$、$x=\left[\begin{array}{c} x_1 \\ \vdots \\ x_n  \end{array}\right]_{n×1}$，有$f(x)=α^Tx=x^Tα=\sum_{i}{α_i x_i}$，即$f$为标量函数。
+
+则$
+    \dfrac{{\rm d}f}{{\rm d}x}
+    =
+    \dfrac{{\rm d}(α^Tx)}{{\rm d}x}
+    =
+    \dfrac{{\rm d}(x^Tα)}{{\rm d}x}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f}{∂x_{1}}
+    \\  \vdots
+    \\  \frac{∂f}{∂x_n}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        α_1
+    \\  \vdots
+    \\  α_n
+    \end{array}\right]
+    = α
+$
+
+**【例2】**：对于$x=\left[\begin{array}{c} x_1 \\ \vdots \\ x_n  \end{array}\right]_{n×1}$，$A=\left[\begin{array}{c}
+    a_{11} & \cdots & a_{1n}
+\\  \vdots & \ddots & \vdots
+\\  a_{n1} & \cdots & a_{nn}
+\end{array}\right]_{n×n}$，有$f(x)=x^TAx=\sum_{i}\sum_{j} {a_{ij}x_{i}x_{j}}$，即$f$为标量函数。
+
+则$
+    \dfrac{{\rm d}f}{{\rm d}x}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f}{∂x_{1}}
+    \\  \vdots
+    \\  \frac{∂f}{∂x_n}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        \sum_{j} a_{1j} \cdot x_{j}
+    \\  \vdots
+    \\  \sum_{j} a_{nj} \cdot x_{j}
+    \end{array}\right]
+    +
+    \left[\begin{array}{c}
+        \sum_{i} a_{i1} \cdot x_{i}
+    \\  \vdots
+    \\  \sum_{i} a_{in} \cdot x_{i}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        a_{11} & \cdots & a_{1n}
+    \\  \vdots & \ddots & \vdots
+    \\  a_{n1} & \cdots & a_{nn}
+    \end{array}\right]
+    \left[\begin{array}{c} x_1 \\ \vdots \\ x_n  \end{array}\right]
+    +
+    \left[\begin{array}{c}
+        a_{11} & \cdots & a_{n1}
+    \\  \vdots & \ddots & \vdots
+    \\  a_{1n} & \cdots & a_{nn}
+    \end{array}\right]
+    \left[\begin{array}{c} x_1 \\ \vdots \\ x_n  \end{array}\right]
+    = (A + A^T)x
+$
+
+#### $Wx$ vs $xW$
+
+$z = Wx$，$\dfrac{∂z}{∂x} = W$
+
+$z = xW$，$\dfrac{∂z}{∂x} = W^T$
 
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
 
@@ -388,7 +546,7 @@ $A=
     \\  x_1       & x_2       & \cdots & x_n
     \\  x_1^2     & x_2^2     & \cdots & x_n^2
     \\  \vdots    & \vdots    &        & \vdots
-    \\  x_1^{n-1} & x_2^{n-1} &        & x_n^{n-1} 
+    \\  x_1^{n-1} & x_2^{n-1} &        & x_n^{n-1}
     \end{array}\right]_{n×n}
 $
 
@@ -410,7 +568,7 @@ $
 
 **充要条件**
 
-$A = 
+$A =
     \left[\begin{matrix}
         a_1 & a_2 & \cdots & a_n
     \end{matrix}\right]
