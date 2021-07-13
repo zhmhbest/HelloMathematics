@@ -200,6 +200,15 @@ $$(A | E) \xrightarrow{初等行变换} (E | A^{-1})$$
 - $A$可逆$\ \ \ ⇔ \ \ \ A$的行（列）向量线性无关
 - $A$可逆$\ \ \ ⇔ \ \ \ 0$不是$A$的特征值
 
+### 微分
+
+**计算性质**
+
+- ${\rm d}(A ± B) = {\rm d}(A) ± {\rm d}(B)$
+- ${\rm d}(AB) = {\rm d}(A)B + A{\rm d}(B)$
+- ${\rm d}(A^T) = {\rm d}(A)^T$
+- ${\rm d}(tr(A)) = tr({\rm d}(A))$
+
 ### 求导
 
 矩阵求导的本质（$\frac{∂A}{∂B}$或$\frac{{\rm d}A}{{\rm d}B}$）就是矩阵$A$中的每一个元素对矩阵B中的每一个元素求导。其有两个求导布局：**分子布局**<span class='hint'>（求导结果的维度以分子为主）</span>和**分母布局**<span class='hint'>（求导结果的维度以分母为主）</span>。
@@ -350,11 +359,143 @@ $
     = (A + A^T)x
 $
 
-#### $Wx$ vs $xW$
+#### 常见情况
 
-$z = Wx$，$\dfrac{∂z}{∂x} = W$
+- $\vec{x}$表示行向量
+- $\hat{y}$表示列向量
+- 明显$\vec{x}_{1×n} \cdot \hat{y}_{n×1}$为标量
 
-$z = xW$，$\dfrac{∂z}{∂x} = W^T$
+（1）$z_{n×t} = w_{n×m} x_{m×t}$
+
+$
+    \begin{array}{l}
+        ⇒
+        \left[\begin{array}{c}
+            \hat{z}_1 & \cdots & \hat{z}_t
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            \vec{w}_1 \\ \vdots \\ \vec{w}_n
+        \end{array}\right]
+        \left[\begin{array}{c}
+            \hat{x}_1 & \cdots & \hat{x}_t
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_1 \hat{x}_t
+        \\  \vdots & \ddots & \vdots
+        \\  \vec{w}_n \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_t
+        \end{array}\right]
+        \\ ⇒
+        \begin{cases}
+            \hat{z}_1 = \left[\begin{array}{c}
+                \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_1
+            \end{array}\right]^T
+        \\  \vdots
+        \\  \hat{z}_t = \left[\begin{array}{c}
+                \vec{w}_1 \hat{x}_t & \cdots & \vec{w}_n \hat{x}_t
+            \end{array}\right]^T
+        \end{cases}
+        \\\\ ⇒
+        \dfrac{∂\hat{z}_i}{∂\hat{x}_i} = w, { \ \ \ } i \in [1,t]
+    \end{array}
+$
+
+（2）$z_{t×n} = x_{t×m} w_{m×n}$
+
+$
+    \begin{array}{l}
+        ⇒
+        \left[\begin{array}{c}
+            \vec{z}_1 \\ \vdots \\ \vec{z}_t
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            \vec{x}_1 \\ \vdots \\ \vec{x}_t
+        \end{array}\right]
+        \left[\begin{array}{c}
+            \hat{w}_1 & \cdots & \hat{w}_n
+        \end{array}\right]
+        \\\\ ⇒
+        z^T_{n×t} = w^T_{n×m} x^T_{m×t}
+        \\ ⇒
+        \left[\begin{array}{c}
+            (\vec{z}_1)^T & \cdots & (\vec{z}_t)^T
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            (\hat{w}_1)^T \\ \vdots \\ (\hat{w}_n)^T
+        \end{array}\right]
+        \left[\begin{array}{c}
+            (\vec{x}_1)^T & \cdots & (\vec{x}_t)^T
+        \end{array}\right]
+        \\ ⇒
+        \dfrac{∂(\vec{z}_i)^T}{∂(\vec{x}_i)^T} = w^T, { \ \ \ } i \in [1,t]
+    \end{array}
+$
+
+（3）$
+    \begin{array}{l}
+        \left[\begin{array}{c}
+            z_1 \\ \vdots \\ z_n
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            x_1 \\ \vdots \\ x_n
+        \end{array}\right]
+        ⇒
+        \dfrac{∂z}{∂x} = I
+    \end{array}
+$
+
+（4）$
+    \begin{array}{l}
+        \left[\begin{array}{c}
+            z_1 \\ \vdots \\ z_n
+        \end{array}\right]
+        =
+        f\left(\left[\begin{array}{c}
+            x_1 \\ \vdots \\ x_n
+        \end{array}\right]\right)
+        ⇒
+        \dfrac{∂z}{∂x} = \mathrm{diag}(f'(x_i))
+    \end{array}
+$
+
+（5）$z_{n×1}=w_{n×m}x_{m×1}$、$\dfrac{∂J}{∂z}=δ_{n×1}$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?_{n×m}$
+
+$
+    \begin{array}{l}
+        \dfrac{∂z}{∂w_{ij}}
+        =
+            \left[\begin{array}{c}
+                0 \\ \vdots \\ x_j \\ \vdots \\ 0
+            \end{array}\right]
+            \leftarrow i{\rm th}
+        { \ \ \ ⇒ \ \ \ }
+            \dfrac{∂J}{∂w_{ij}}
+            = \dfrac{∂J}{∂z} \dfrac{∂z}{∂w_{ij}}
+            = δ_i x_j
+            \end{array}
+        \\ ⇒
+        \dfrac{∂J}{∂w} = δ^T x^T
+$
+
+（6）$z=xw_{n×m}$、$\dfrac{∂J}{∂z}=δ$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?$
+
+$
+    \begin{array}{l}
+        \dfrac{∂J}{∂w}=x^Tδ
+    \end{array}
+$
+
+（7）$\tilde{y} = \mathrm{Softmax}(θ)$、$L = \mathrm{CE}(y, \tilde{y})$、$\dfrac{∂J}{∂θ}=?$
+
+$
+    \begin{array}{l}
+        \dfrac{∂J}{∂θ}=\tilde{y} - y
+    \end{array}
+$
 
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
 
