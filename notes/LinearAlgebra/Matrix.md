@@ -81,14 +81,15 @@ $
 
 ### 行列式
 
-$$|A|=\det(A)=
-    \left|\begin{array}{c}
-        a_{11} & \cdots & a_{1n}
-    \\  \vdots & \ddots & \vdots
-    \\  a_{n1} & \cdots & a_{nn}
-    \end{array}\right|_{n×n}
-    = \sum\limits_{j=1}^{n} a_{rj}A_{rj}
-    = \sum\limits_{i=1}^{n} a_{ic}A_{ic}
+$$
+    |A|=\det(A)=
+        \left|\begin{array}{c}
+            a_{11} & \cdots & a_{1n}
+        \\  \vdots & \ddots & \vdots
+        \\  a_{n1} & \cdots & a_{nn}
+        \end{array}\right|_{n×n}
+        = \sum\limits_{j=1}^{n} a_{rj}A_{rj}
+        = \sum\limits_{i=1}^{n} a_{ic}A_{ic}
 $$
 
 - $r$：选定的行
@@ -239,6 +240,13 @@ $
     \dfrac{{\rm d}f_{m×1}(x)}{{\rm d}x_{n×1}}
     =
     \left[\begin{array}{c}
+        \frac{∂f_{11}(x)}{∂x_{n×1}}
+    \\  \frac{∂f_{21}(x)}{∂x_{n×1}}
+    \\  \vdots
+    \\  \frac{∂f_{m1}(x)}{∂x_{n×1}}
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
         \frac{∂f_{11}(x)}{∂x_{11}} & \frac{∂f_{11}(x)}{∂x_{21}}
             & \cdots & \frac{∂f_{11}(x)}{∂x_{n1}}
     \\  \frac{∂f_{21}(x)}{∂x_{11}} & \frac{∂f_{21}(x)}{∂x_{21}}
@@ -273,6 +281,13 @@ $
 
 **向量函数/向量**：$
     \dfrac{{\rm d}f_{m×1}(x)}{{\rm d}x_{n×1}}
+    =
+    \left[\begin{array}{c}
+        \frac{∂f_{m×1}(x)}{∂x_{11}}
+    \\  \frac{∂f_{m×1}(x)}{∂x_{21}}
+    \\  \vdots
+    \\  \frac{∂f_{m×1}(x)}{∂x_{n1}}
+    \end{array}\right]
     =
     \left[\begin{array}{c}
         \frac{∂f_{11}(x)}{∂x_{11}} & \frac{∂f_{21}(x)}{∂x_{11}}
@@ -363,28 +378,28 @@ $
 
 - $\vec{x}$表示行向量
 - $\hat{y}$表示列向量
-- 明显$\vec{x}_{1×n} \cdot \hat{y}_{n×1}$为标量
+- 明显$\vec{x}_{1×?} \cdot \hat{y}_{?×1}$为标量
 
-（1）$z_{n×t} = w_{n×m} x_{m×t}$
+（1）$z_{n×k} = w_{n×m} x_{m×k}$
 
 $
     \begin{array}{l}
         ⇒
         \left[\begin{array}{c}
-            \hat{z}_1 & \cdots & \hat{z}_t
+            \hat{z}_1 & \cdots & \hat{z}_k
         \end{array}\right]
         =
         \left[\begin{array}{c}
             \vec{w}_1 \\ \vdots \\ \vec{w}_n
         \end{array}\right]
         \left[\begin{array}{c}
-            \hat{x}_1 & \cdots & \hat{x}_t
+            \hat{x}_1 & \cdots & \hat{x}_k
         \end{array}\right]
         =
         \left[\begin{array}{c}
-            \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_1 \hat{x}_t
+            \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_1 \hat{x}_k
         \\  \vdots & \ddots & \vdots
-        \\  \vec{w}_n \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_t
+        \\  \vec{w}_n \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_k
         \end{array}\right]
         \\ ⇒
         \begin{cases}
@@ -392,108 +407,53 @@ $
                 \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_1
             \end{array}\right]^T
         \\  \vdots
-        \\  \hat{z}_t = \left[\begin{array}{c}
-                \vec{w}_1 \hat{x}_t & \cdots & \vec{w}_n \hat{x}_t
+        \\  \hat{z}_j = \left[\begin{array}{c}
+                \vec{w}_1 \hat{x}_j & \cdots & \vec{w}_n \hat{x}_j
+            \end{array}\right]^T
+        \\  \vdots
+        \\  \hat{z}_k = \left[\begin{array}{c}
+                \vec{w}_1 \hat{x}_k & \cdots & \vec{w}_n \hat{x}_k
             \end{array}\right]^T
         \end{cases}
         \\\\ ⇒
-        \dfrac{∂\hat{z}_i}{∂\hat{x}_i} = w, { \ \ \ } i \in [1,t]
+        \dfrac{∂\hat{z}_j}{∂\hat{x}_j} = w
     \end{array}
 $
 
-（2）$z_{t×n} = x_{t×m} w_{m×n}$
+（2）$z_{k×n} = x_{k×m} w_{m×n}$
 
 $
     \begin{array}{l}
         ⇒
         \left[\begin{array}{c}
-            \vec{z}_1 \\ \vdots \\ \vec{z}_t
+            \vec{z}_1 \\ \vdots \\ \vec{z}_k
         \end{array}\right]
         =
         \left[\begin{array}{c}
-            \vec{x}_1 \\ \vdots \\ \vec{x}_t
+            \vec{x}_1 \\ \vdots \\ \vec{x}_k
         \end{array}\right]
         \left[\begin{array}{c}
             \hat{w}_1 & \cdots & \hat{w}_n
         \end{array}\right]
         \\\\ ⇒
-        z^T_{n×t} = w^T_{n×m} x^T_{m×t}
+        z^T_{n×k} = w^T_{n×m} x^T_{m×k}
         \\ ⇒
         \left[\begin{array}{c}
-            (\vec{z}_1)^T & \cdots & (\vec{z}_t)^T
+            (\vec{z}_1)^T & \cdots & (\vec{z}_k)^T
         \end{array}\right]
         =
         \left[\begin{array}{c}
             (\hat{w}_1)^T \\ \vdots \\ (\hat{w}_n)^T
         \end{array}\right]
         \left[\begin{array}{c}
-            (\vec{x}_1)^T & \cdots & (\vec{x}_t)^T
+            (\vec{x}_1)^T & \cdots & (\vec{x}_k)^T
         \end{array}\right]
         \\ ⇒
-        \dfrac{∂(\vec{z}_i)^T}{∂(\vec{x}_i)^T} = w^T, { \ \ \ } i \in [1,t]
-    \end{array}
-$
-
-（3）$
-    \begin{array}{l}
-        \left[\begin{array}{c}
-            z_1 \\ \vdots \\ z_n
-        \end{array}\right]
-        =
-        \left[\begin{array}{c}
-            x_1 \\ \vdots \\ x_n
-        \end{array}\right]
-        ⇒
-        \dfrac{∂z}{∂x} = I
-    \end{array}
-$
-
-（4）$
-    \begin{array}{l}
-        \left[\begin{array}{c}
-            z_1 \\ \vdots \\ z_n
-        \end{array}\right]
-        =
-        f\left(\left[\begin{array}{c}
-            x_1 \\ \vdots \\ x_n
-        \end{array}\right]\right)
-        ⇒
-        \dfrac{∂z}{∂x} = \mathrm{diag}(f'(x_i))
-    \end{array}
-$
-
-（5）$z_{n×1}=w_{n×m}x_{m×1}$、$\dfrac{∂J}{∂z}=δ_{n×1}$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?_{n×m}$
-
-$
-    \begin{array}{l}
-        \dfrac{∂z}{∂w_{ij}}
-        =
-            \left[\begin{array}{c}
-                0 \\ \vdots \\ x_j \\ \vdots \\ 0
-            \end{array}\right]
-            \leftarrow i{\rm th}
-        { \ \ \ ⇒ \ \ \ }
-            \dfrac{∂J}{∂w_{ij}}
-            = \dfrac{∂J}{∂z} \dfrac{∂z}{∂w_{ij}}
-            = δ_i x_j
-            \end{array}
-        \\ ⇒
-        \dfrac{∂J}{∂w} = δ^T x^T
-$
-
-（6）$z=xw_{n×m}$、$\dfrac{∂J}{∂z}=δ$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?$
-
-$
-    \begin{array}{l}
-        \dfrac{∂J}{∂w}=x^Tδ
-    \end{array}
-$
-
-（7）$\tilde{y} = \mathrm{Softmax}(θ)$、$L = \mathrm{CE}(y, \tilde{y})$、$\dfrac{∂J}{∂θ}=?$
-
-$
-    \begin{array}{l}
-        \dfrac{∂J}{∂θ}=\tilde{y} - y
+        (\vec{z}_i)^T = \left[\begin{array}{c}
+                (\hat{w}_1)^T (\vec{x}_i)^T  & \cdots & (\hat{w}_n)^T (\vec{x}_i)^T
+            \end{array}\right]^T
+        \\\\ ⇒
+        \dfrac{∂(\vec{z}_i)^T}{∂(\vec{x}_i)^T} = w^T
     \end{array}
 $
 
