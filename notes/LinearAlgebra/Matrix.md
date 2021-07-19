@@ -385,36 +385,36 @@ $
 $
     \begin{array}{l}
         ⇒
-        \left[\begin{array}{c}
-            \hat{z}_1 & \cdots & \hat{z}_k
-        \end{array}\right]
-        =
-        \left[\begin{array}{c}
-            \vec{w}_1 \\ \vdots \\ \vec{w}_n
-        \end{array}\right]
-        \left[\begin{array}{c}
-            \hat{x}_1 & \cdots & \hat{x}_k
-        \end{array}\right]
-        =
-        \left[\begin{array}{c}
-            \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_1 \hat{x}_k
-        \\  \vdots & \ddots & \vdots
-        \\  \vec{w}_n \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_k
-        \end{array}\right]
+            \left[\begin{array}{c}
+                \hat{z}_1 & \cdots & \hat{z}_k
+            \end{array}\right]
+            =
+            \left[\begin{array}{c}
+                \vec{w}_1 \\ \vdots \\ \vec{w}_n
+            \end{array}\right]
+            \left[\begin{array}{c}
+                \hat{x}_1 & \cdots & \hat{x}_k
+            \end{array}\right]
+            =
+            \left[\begin{array}{c}
+                \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_1 \hat{x}_k
+            \\  \vdots & \ddots & \vdots
+            \\  \vec{w}_n \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_k
+            \end{array}\right]
         \\ ⇒
-        \begin{cases}
-            \hat{z}_1 = \left[\begin{array}{c}
-                \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_1
-            \end{array}\right]^T
-        \\  \vdots
-        \\  \hat{z}_j = \left[\begin{array}{c}
-                \vec{w}_1 \hat{x}_j & \cdots & \vec{w}_n \hat{x}_j
-            \end{array}\right]^T
-        \\  \vdots
-        \\  \hat{z}_k = \left[\begin{array}{c}
-                \vec{w}_1 \hat{x}_k & \cdots & \vec{w}_n \hat{x}_k
-            \end{array}\right]^T
-        \end{cases}
+            \begin{cases}
+                \hat{z}_1 = \left[\begin{array}{c}
+                    \vec{w}_1 \hat{x}_1 & \cdots & \vec{w}_n \hat{x}_1
+                \end{array}\right]^T
+            \\  \vdots
+            \\  \hat{z}_j = \left[\begin{array}{c}
+                    \vec{w}_1 \hat{x}_j & \cdots & \vec{w}_n \hat{x}_j
+                \end{array}\right]^T
+            \\  \vdots
+            \\  \hat{z}_k = \left[\begin{array}{c}
+                    \vec{w}_1 \hat{x}_k & \cdots & \vec{w}_n \hat{x}_k
+                \end{array}\right]^T
+            \end{cases}
         \\\\ ⇒
         \dfrac{∂\hat{z}_j}{∂\hat{x}_j} = w
     \end{array}
@@ -425,37 +425,156 @@ $
 $
     \begin{array}{l}
         ⇒
-        \left[\begin{array}{c}
-            \vec{z}_1 \\ \vdots \\ \vec{z}_k
-        \end{array}\right]
-        =
-        \left[\begin{array}{c}
-            \vec{x}_1 \\ \vdots \\ \vec{x}_k
-        \end{array}\right]
-        \left[\begin{array}{c}
-            \hat{w}_1 & \cdots & \hat{w}_n
-        \end{array}\right]
+            \left[\begin{array}{c}
+                \vec{z}_1 \\ \vdots \\ \vec{z}_k
+            \end{array}\right]
+            =
+            \left[\begin{array}{c}
+                \vec{x}_1 \\ \vdots \\ \vec{x}_k
+            \end{array}\right]
+            \left[\begin{array}{c}
+                \hat{w}_1 & \cdots & \hat{w}_n
+            \end{array}\right]
+            =
+            \left[\begin{array}{c}
+                \vec{x}_1 \hat{w}_1 & \cdots & \vec{x}_1 \hat{w}_n
+            \\  \vdots & \ddots & \vdots
+            \\  \vec{x}_k \hat{w}_1 & \cdots & \vec{x}_k \hat{w}_n
+            \end{array}\right]
         \\\\ ⇒
-        z^T_{n×k} = w^T_{n×m} x^T_{m×k}
-        \\ ⇒
-        \left[\begin{array}{c}
-            (\vec{z}_1)^T & \cdots & (\vec{z}_k)^T
-        \end{array}\right]
-        =
-        \left[\begin{array}{c}
-            (\hat{w}_1)^T \\ \vdots \\ (\hat{w}_n)^T
-        \end{array}\right]
-        \left[\begin{array}{c}
-            (\vec{x}_1)^T & \cdots & (\vec{x}_k)^T
-        \end{array}\right]
-        \\ ⇒
-        (\vec{z}_i)^T = \left[\begin{array}{c}
+            \vec{z}_i
+            =
+            \left[\begin{array}{c}
+                \vec{x}_i \hat{w}_1 & \cdots & \vec{x}_i \hat{w}_n
+            \end{array}\right]
+        \\\\
+            z^T_{n×k} = w^T_{n×m} x^T_{m×k}
+        \\\\ ⇒
+            (\vec{z}_i)^T
+            =
+            \left[\begin{array}{c}
                 (\hat{w}_1)^T (\vec{x}_i)^T  & \cdots & (\hat{w}_n)^T (\vec{x}_i)^T
             \end{array}\right]^T
         \\\\ ⇒
-        \dfrac{∂(\vec{z}_i)^T}{∂(\vec{x}_i)^T} = w^T
+            \dfrac{∂(\vec{z}_i)^T}{∂(\vec{x}_i)^T} = w^T
     \end{array}
 $
+
+（3）$
+    \begin{array}{l}
+        \left[\begin{array}{c}
+            z_1 \\ \vdots \\ z_n
+        \end{array}\right]
+        =
+        \left[\begin{array}{c}
+            x_1 \\ \vdots \\ x_n
+        \end{array}\right]
+        ⇒
+        \dfrac{∂z}{∂x} = I
+    \end{array}
+$
+
+（4）$
+    \begin{array}{l}
+        \left[\begin{array}{c}
+            z_1 \\ \vdots \\ z_n
+        \end{array}\right]
+        =
+        f\left(\left[\begin{array}{c}
+            x_1 \\ \vdots \\ x_n
+        \end{array}\right]\right)
+        ⇒
+        \dfrac{∂z}{∂x} = \mathrm{diag}(f'(x_i))
+    \end{array}
+$
+
+（5）$z_{n×1}=w_{n×m}x_{m×1}$、$\dfrac{∂J}{∂z}=δ_{n×1}$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?_{n×m}$
+
+$
+    w_{n×m}x_{m×1}
+    =
+    \left[\begin{array}{c}
+        \sum_{j=1}^{m} w_{1j}x_{j}
+    \\  \vdots
+    \\  \sum_{j=1}^{m} w_{ij}x_{j}
+    \\  \vdots
+    \\  \sum_{j=1}^{m} w_{nj}x_{j}
+    \end{array}\right]
+    ⇒
+    \dfrac{∂z}{∂w_{ij}}=
+    \left[\begin{array}{c}
+        0
+    \\  \vdots
+    \\  x_{j}
+    \\  \vdots
+    \\  0
+    \end{array}\right]_{n×1}
+    ← i {\rm th}
+$
+
+$
+    \dfrac{∂z}{∂w}
+    =
+    \left[{\dfrac{∂z}{∂w_{ij}}}\right]_{(n×1)×(n×m)}
+    =
+    \left[\begin{array}{c}
+        \left[\begin{array}{c}
+            x_1
+        \\  \vdots
+        \\  0
+        \end{array}\right]
+        & \cdots &
+        \left[\begin{array}{c}
+            x_m
+        \\  \vdots
+        \\  0
+        \end{array}\right]
+        \\ \vdots & \ddots & \vdots \\
+        \left[\begin{array}{c}
+            0
+        \\  \vdots
+        \\  x_1
+        \end{array}\right]
+        & \cdots &
+        \left[\begin{array}{c}
+            0
+        \\  \vdots
+        \\  x_m
+        \end{array}\right]
+    \end{array}\right]
+$
+
+$
+    \dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}
+    =
+    δ_{(1×n)×1} \dfrac{∂z}{∂w}
+    =
+    \left[\begin{array}{c}
+        δ_1 x_1 & \cdots & δ_1 x_m
+        \\ \vdots & \ddots & \vdots \\
+        δ_n x_1 & \cdots & δ_n x_m
+    \end{array}\right]
+    =
+    \left[\begin{array}{c}
+        δ_1 \\ \vdots \\ δ_n
+    \end{array}\right]
+    \left[\begin{array}{c}
+        x_1 & \cdots & x_m
+    \end{array}\right]
+    = δ x^T
+$
+
+（6）$z_{1×n}=x_{1×m}w_{m×n}$、$\dfrac{∂J}{∂z}=δ_{1×n}$、$\dfrac{∂J}{∂w}=\dfrac{∂J}{∂z}\dfrac{∂z}{∂w}=?$
+
+$z^T_{n×1}=w^T_{n×m}x^T_{m×1}$、$\dfrac{∂J}{∂z^T}=δ^T_{n×1}$
+
+$\dfrac{∂J}{∂w^T}=δ^Tx ⇒ \dfrac{∂J}{∂w}=x^Tδ$
+
+（7）$\tilde{y} = \mathrm{Softmax}(θ)$、$L = \mathrm{CE}(y, \tilde{y})$、$\dfrac{∂J}{∂θ}=?$
+
+$y$为行向量$\dfrac{∂J}{∂θ}=\tilde{y} - y$
+
+$y$为列向量$\dfrac{∂J}{∂θ}=(\tilde{y} - y)^T$
 
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ -->
 
