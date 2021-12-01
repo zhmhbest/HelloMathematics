@@ -40,6 +40,7 @@ pre[data-role="codeBlock"] {
 
 /* 数字 */
 .token.property,
+.language-json .token.property,
 .token.number,
 .token.boolean,
 .token.entity,
